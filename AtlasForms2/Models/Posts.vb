@@ -29,7 +29,7 @@ Public Class Posts
     Public Property PostTitle As String
 
     <Required()>
-    <StringLength(200)>
+    <StringLength(2000)>
     <Display(Name:="Περίληψη")>
     Public Property PostSummary As String
 

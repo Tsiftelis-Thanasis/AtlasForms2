@@ -1199,5 +1199,44 @@ if (jQuery('.kopa-slider-ip').length > 0) {
            //thanasis - changed the divs to the header jQuery('kopa-header').waypoint('sticky');            
         }
     }]);
-
+    
 });
+
+
+
+
+
+
+/* =========================================================
+Appending to top 5
+============================================================ */
+function appendTop5Container(choiceContainer, result) {
+
+    
+    var p = 1;
+    if (result.length > 0) {
+        choiceContainer.empty();
+        $.each(result, function () {
+           var d = ' <li> ' +
+                ' <div class="point-item"> ' +
+                ' <div class="point-left"> ' +
+                ' <div class="point-thumb"> ' +
+                ' <img src="Content/images/point/1.jpg" alt="" /> ' +
+                ' <span>' + p + '</span> ' +
+                ' </div> ' +
+                ' <div class="point-content"> ' +
+                ' <p><a href="http://atlasstatistics.gr/Players/Details/' + this.pid + '">' + this.pname + '</a></p> ' +
+                ' <span><a href="http://atlasstatistics.gr/Teams/Details/' + this.tid + '">' + this.tname + '</a></span> ' +
+                ' </div> ' +
+                ' </div> ' +
+                ' <div class ="point-right"> ' +
+                ' <p>' + this.val.toFixed(0) + '</p> ' +
+                ' <span> </span> ' +
+                ' </div> ' +
+                ' </div> ' +
+                ' </li> ';
+            choiceContainer.append(d);
+            p++;
+        });
+    }
+}

@@ -158,10 +158,10 @@
                                     <div class="widget kopa-sub-list-widget">
                                         <ul class="sub-menu">
                                             <li>
-                                                <a href="@Url.Action("Index", "Posts")">νεα</a>
+                                                <a href="@Url.Action("Index", "Posts", New With {.yk = 9})">νεα</a>
                                             </li>
                                             <li>
-                                                <a href="viewTeams.aspx?title=Ομάδες&g=α">ομαδες</a>
+                                                <a href="@Url.Action("Index", "Posts", New With {.yk = 10})">ομάδες</a>
                                             </li>
                                             <li>
                                                 <a href="viewPunish.aspx?title=Τιμωριες=α">τιμωριες</a>
@@ -271,8 +271,6 @@
             <!-- wrapper -->
 
             <div class="kopa-sub-page kopa-single-page">
-
-
                 <div class="widget kopa-tab-score-widget">
                     <div class="kopa-tab style1">
                         <div class="tab-content">
@@ -547,9 +545,8 @@
             //apend omilos1row
             $.ajax({
                 type: "POST",
-                url: baseUrl + '@Url.Action("GetLastNews", "Posts")',
-                //data: "{nCount : " + thisid + "}",
-                data: "{nCount : 10}",
+                url: baseUrl + '@Url.Action("GetLastNewsByCategory", "Posts")',
+                data: "{nCount : 6, yk : 9}",
                 async: false,
                 contentType: "application/json; charset=utf-8",
                 dataType: "json",
@@ -562,13 +559,11 @@
                         choiceContainer.empty();
 
                         $.each(result.data, function () {
-                                                                                   
-                           
                             var d = ' <li class="col-md-4 col-xs-4 col-sm-4"> ' +
                                     ' <article class="entry-item"> ' +
                                     ' <a href="' + baseUrl + '/Posts/Details/' + this.Id + '"> ' +
                                     ' <div class="entry-thumb"> ' +
-                                    ' <img src="' + baseUrl + '/Content/images/sub-menu/1.jpg" alt=""> ' +
+                                    ' <img src="' + this.PostPhoto + '" alt=""> ' +
                                     ' </div> </a>' +
                                     ' <h4 class="entry-title">' + this.PostTitle + '</h4> ' +
                                     ' </article> ' +

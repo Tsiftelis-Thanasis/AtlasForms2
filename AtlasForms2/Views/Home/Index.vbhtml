@@ -964,7 +964,7 @@ End Code
                 type: "POST",
                 url: baseUrl + '@Url.Action("GetLastNewsByCategory", "Posts")',
                 //data: "{nCount : " + thisid + "}",
-                data: "{nCount : 10, kId: 2}",
+                data: "{nCount : 10, yk: 9}",
                 async: false,
                 contentType: "application/json; charset=utf-8",
                 dataType: "json",
@@ -1041,34 +1041,7 @@ End Code
                 success: function (result) {
                     
                     var choiceContainer = $("#pointsul");
-                    var p = 1;
-                    if (result.length > 0) {
-                        choiceContainer.empty();
-                        $.each(result, function () {
-                           
-                            d = ' <li> ' +
-                                ' <div class="point-item"> ' +
-                                ' <div class="point-left"> ' +
-                                ' <div class="point-thumb"> ' +
-                                ' <img src="Content/images/point/1.jpg" alt="" /> ' +
-                                ' <span>' + p + '</span> ' +
-                                ' </div> ' +
-                                ' <div class="point-content"> ' +
-                                ' <p><a href="http://atlasstatistics.gr/Players/Details/339">' + this.pname + '</a></p> ' +
-                                ' <span><a href="http://atlasstatistics.gr/Teams/Details/31">' + this.tname + '</a></span> ' +
-                                ' </div> ' +
-                                ' </div> ' +
-                                ' <div class ="point-right"> ' +
-                                ' <p>' + this.val.toFixed(0) + '</p> ' +
-                                ' <span> </span> ' +
-                                ' </div> ' +
-                                ' </div> ' +
-                                ' </li> ';
-                                                        
-                            choiceContainer.append(d);
-                            p++;
-                        });
-                    }
+                    appendTop5Container(choiceContainer, result);
                 },
                 error: function (result) {
                     alert(result.status + ' ' + result.statusText);
@@ -1086,34 +1059,7 @@ End Code
                 success: function (result) {
                     
                     var choiceContainer = $("#assistul");
-                    var p = 1;
-                    if (result.length > 0) {
-                        choiceContainer.empty();
-                        $.each(result, function () {
-                           
-                            d = ' <li> ' +
-                                ' <div class="point-item"> ' +
-                                ' <div class="point-left"> ' +
-                                ' <div class="point-thumb"> ' +
-                                ' <img src="Content/images/point/1.jpg" alt="" /> ' +
-                                ' <span>' + p + '</span> ' +
-                                ' </div> ' +
-                                ' <div class="point-content"> ' +
-                                ' <p><a href="http://atlasstatistics.gr/Players/Details/339">' + this.pname + '</a></p> ' +
-                                ' <span><a href="http://atlasstatistics.gr/Teams/Details/31">' + this.tname + '</a></span> ' +
-                                ' </div> ' +
-                                ' </div> ' +
-                                ' <div class ="point-right"> ' +
-                                ' <p>' + this.val.toFixed(0) + '</p> ' +
-                                ' <span> </span> ' +
-                                ' </div> ' +
-                                ' </div> ' +
-                                ' </li> ';
-                                                        
-                            choiceContainer.append(d);
-                            p++;
-                        });
-                    }
+                    appendTop5Container(choiceContainer, result);
                 },
                 error: function (result) {
                     alert(result.status + ' ' + result.statusText);
@@ -1131,34 +1077,7 @@ End Code
                 success: function (result) {
                     
                     var choiceContainer = $("#reboundul");
-                    var p = 1;
-                    if (result.length > 0) {
-                        choiceContainer.empty();
-                        $.each(result, function () {
-                           
-                            d = ' <li> ' +
-                                ' <div class="point-item"> ' +
-                                ' <div class="point-left"> ' +
-                                ' <div class="point-thumb"> ' +
-                                ' <img src="Content/images/point/1.jpg" alt="" /> ' +
-                                ' <span>' + p + '</span> ' +
-                                ' </div> ' +
-                                ' <div class="point-content"> ' +
-                                ' <p><a href="http://atlasstatistics.gr/Players/Details/339">' + this.pname + '</a></p> ' +
-                                ' <span><a href="http://atlasstatistics.gr/Teams/Details/31">' + this.tname + '</a></span> ' +
-                                ' </div> ' +
-                                ' </div> ' +
-                                ' <div class ="point-right"> ' +
-                                ' <p>' + this.val.toFixed(0) + '</p> ' +
-                                ' <span> </span> ' +
-                                ' </div> ' +
-                                ' </div> ' +
-                                ' </li> ';
-                                                        
-                            choiceContainer.append(d);
-                            p++;
-                        });
-                    }
+                    appendTop5Container(choiceContainer, result);
                 },
                 error: function (result) {
                     alert(result.status + ' ' + result.statusText);
@@ -1176,34 +1095,7 @@ End Code
                 success: function (result) {
                     
                     var choiceContainer = $("#stealsul");
-                    var p = 1;
-                    if (result.length > 0) {
-                        choiceContainer.empty();
-                        $.each(result, function () {
-                           
-                            d = ' <li> ' +
-                                ' <div class="point-item"> ' +
-                                ' <div class="point-left"> ' +
-                                ' <div class="point-thumb"> ' +
-                                ' <img src="Content/images/point/1.jpg" alt="" /> ' +
-                                ' <span>' + p + '</span> ' +
-                                ' </div> ' +
-                                ' <div class="point-content"> ' +
-                                ' <p><a href="http://atlasstatistics.gr/Players/Details/339">' + this.pname + '</a></p> ' +
-                                ' <span><a href="http://atlasstatistics.gr/Teams/Details/31">' + this.tname + '</a></span> ' +
-                                ' </div> ' +
-                                ' </div> ' +
-                                ' <div class ="point-right"> ' +
-                                ' <p>' + this.val.toFixed(0) + '</p> ' +
-                                ' <span> </span> ' +
-                                ' </div> ' +
-                                ' </div> ' +
-                                ' </li> ';
-                                                        
-                            choiceContainer.append(d);
-                            p++;
-                        });
-                    }
+                    appendTop5Container(choiceContainer, result);
                 },
                 error: function (result) {
                     alert(result.status + ' ' + result.statusText);
@@ -1220,34 +1112,7 @@ End Code
                 success: function (result) {
                     
                     var choiceContainer = $("#blocksul");
-                    var p = 1;
-                    if (result.length > 0) {
-                        choiceContainer.empty();
-                        $.each(result, function () {
-                           
-                            d = ' <li> ' +
-                                ' <div class="point-item"> ' +
-                                ' <div class="point-left"> ' +
-                                ' <div class="point-thumb"> ' +
-                                ' <img src="Content/images/point/1.jpg" alt="" /> ' +
-                                ' <span>' + p + '</span> ' +
-                                ' </div> ' +
-                                ' <div class="point-content"> ' +
-                                ' <p><a href="http://atlasstatistics.gr/Players/Details/339">' + this.pname + '</a></p> ' +
-                                ' <span><a href="http://atlasstatistics.gr/Teams/Details/31">' + this.tname + '</a></span> ' +
-                                ' </div> ' +
-                                ' </div> ' +
-                                ' <div class ="point-right"> ' +
-                                ' <p>' + this.val.toFixed(0) + '</p> ' +
-                                ' <span> </span> ' +
-                                ' </div> ' +
-                                ' </div> ' +
-                                ' </li> ';
-                                                        
-                            choiceContainer.append(d);
-                            p++;
-                        });
-                    }
+                    appendTop5Container(choiceContainer, result);
                 },
                 error: function (result) {
                     alert(result.status + ' ' + result.statusText);

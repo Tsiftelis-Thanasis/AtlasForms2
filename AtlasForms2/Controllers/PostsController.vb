@@ -8,12 +8,18 @@ Namespace Controllers
         Private pdb As New atlasEntities
 
         ' GET: Posts
-        Function Index() As ActionResult
+        Function Index(Optional ByVal k As Integer = 0, Optional ByVal yk As Integer = 0) As ActionResult
+
+
+            ViewBag.Kathgoria = k
+            ViewBag.Ypokathgoria = yk
+
             Return View()
+
         End Function
 
         ' GET: Posts/Details/5
-        Function Details(ByVal id As Integer) As ActionResult
+        Function Details(ByVal id As Integer, Optional ByVal k As Integer = 0, Optional ByVal yk As Integer = 0) As ActionResult
 
             Dim q = (From t In pdb.BlogPostsTable
                      Where t.Id = id
@@ -22,11 +28,10 @@ Namespace Controllers
             Dim t1 As New Posts
             t1.Id = q.Id
             t1.Activepost = q.Activepost
-            't1.KathgoriaId = q.KathgoriaId
-            't1.YpoKathgoriaId = q.YpoKathgoriaId
             t1.PostTitle = q.PostTitle
             t1.PostBody = q.PostBody
             t1.PostPhoto = q.PostPhoto
+            t1.PostSummary = q.PostSummary
             t1.Youtubelink = "https://www.youtube.com/embed/" & q.Youtubelink & "?rel=0"
             t1.Statslink = q.Statslink
             t1.createdby = q.CreatedBy
@@ -65,8 +70,6 @@ Namespace Controllers
             Dim t1 As New Posts
             t1.Id = q.Id
             t1.Activepost = q.Activepost
-            't1.KathgoriaId = q.KathgoriaId
-            't1.YpoKathgoriaId = q.YpoKathgoriaId
             t1.PostTitle = q.PostTitle
             t1.PostSummary = q.PostSummary
             t1.PostBody = q.PostBody
@@ -105,8 +108,6 @@ Namespace Controllers
             If ModelState.IsValid Then
 
                 Try
-
-
 
                     Dim editpost = pdb.BlogPostsTable.Find(p1.Id)
 
@@ -191,7 +192,7 @@ Namespace Controllers
 
             Dim q = (From p In pdb.BlogPostsTable
                      Select p).AsEnumerable().[Select](
-                    Function(o) New With {.Id = o.Id, .PostTitle = o.PostTitle, .PostSummary = o.PostSummary, .PostBody = o.PostBody,
+                    Function(o) New With {.Id = o.Id, .PostTitle = o.PostTitle, .PostSummary = o.PostSummary, .PostBody = o.PostBody, .editby = o.EditBy,
                     .PostPhoto = If(o.PostPhoto Is Nothing, "", String.Format("data:image/png;base64,{0}", Convert.ToBase64String(o.PostPhoto)))}).ToList
 
             Dim dtm As New DataTableModel
@@ -206,7 +207,7 @@ Namespace Controllers
         End Function
 
 
-        Function GetLastNews(nCount As Integer) As JsonResult
+        Function GetLastNews(ByVal nCount As Integer) As JsonResult
 
             Dim q = (From p In pdb.BlogPostsTable
                      Select p
@@ -227,35 +228,28 @@ Namespace Controllers
         End Function
 
 
-        Function GetLastNewsByCategory(nCount As Integer, kId As Integer) As JsonResult
+        Function GetLastNewsByCategory(ByVal nCount As Integer, Optional ByVal k As Integer = 0, Optional ByVal yk As Integer = 0) As JsonResult
+
+            'Dim newAnonType = New With {Key .Id = 0, .PostTitle = "", .PostSummary = "", .PostBody = "",
+            '                        .PostPhoto = "", .Youtubelink = "", .KatName = "", .Ypokatname = ""}
 
 
-            ''.
-            'Union(
-            '        From p In pdb.BlogPostsTable
-            '        Join p1 In pdb.BlogPostKathgoriaTable On p1.PostId Equals p.Id
-            '        Join p2 In pdb.BlogYpokathgoriesTable On p2.Id Equals p1.YpokathgoriaId
-            '        Join p3 In pdb.BlogKathgoriesTable On p3.Id Equals p2.KathgoriaId
-            '        Where (p1.KathgoriaId = kId And p1.YpokathgoriaId Is Nothing)
-            '        Select Id = p.Id, PostTitle = p.PostTitle, PostSummary = p.PostSummary, PostBody = p.PostBody,
-            '            PostPhoto = p.PostPhoto, Youtubelink = p.Youtubelink,
-            '            KatName = p3.KathgoriaName, Ypokatname = p2.YpokathgoriaName).
+            If yk > 0 Then
 
-            Dim q = (From p In pdb.BlogPostsTable
-                     Join p1 In pdb.BlogPostKathgoriaTable On p1.PostId Equals p.Id
-                     Join p2 In pdb.BlogKathgoriesTable On p2.Id Equals p1.KathgoriaId
-                     Where (p1.KathgoriaId = kId And p1.YpokathgoriaId Is Nothing)
-                     Select Id = p.Id, PostTitle = p.PostTitle, PostSummary = p.PostSummary, PostBody = p.PostBody,
-                         PostPhoto = p.PostPhoto, Youtubelink = p.Youtubelink,
-                        KatName = p2.KathgoriaName, Ypokatname = "").
-                    AsEnumerable().[Select](
-                    Function(o) New With {.Id = o.Id, .PostTitle = o.PostTitle, .PostSummary = o.PostSummary, .PostBody = o.PostBody,
-                    .PostPhoto = If(o.PostPhoto Is Nothing, "", String.Format("data:image/png;base64,{0}", Convert.ToBase64String(o.PostPhoto))), .Youtubelink = o.Youtubelink,
-                    .KatName = o.KatName, .Ypokatname = o.Ypokatname}).ToList
+                Dim q = (From p In pdb.BlogPostsTable
+                         Join p1 In pdb.BlogPostKathgoriaTable On p1.PostId Equals p.Id
+                         Join p3 In pdb.BlogYpokathgoriesTable On p3.Id Equals p1.YpokathgoriaId
+                         Join p2 In pdb.BlogKathgoriesTable On p2.Id Equals p3.KathgoriaId
+                         Where (p1.KathgoriaId Is Nothing And p1.YpokathgoriaId = yk)
+                         Select Id = p.Id, PostTitle = p.PostTitle, PostSummary = p.PostSummary, PostBody = p.PostBody,
+                                 PostPhoto = p.PostPhoto, Youtubelink = p.Youtubelink,
+                                KatName = p2.KathgoriaName, Ypokatname = p3.YpokathgoriaName).
+                     AsEnumerable().[Select](
+                     Function(o) New With {.Id = o.Id, .PostTitle = o.PostTitle, .PostSummary = o.PostSummary, .PostBody = o.PostBody,
+                     .PostPhoto = If(o.PostPhoto Is Nothing, "", String.Format("data:image/png;base64,{0}", Convert.ToBase64String(o.PostPhoto))), .Youtubelink = o.Youtubelink,
+                     .KatName = o.KatName, .Ypokatname = o.Ypokatname}).ToList
 
-
-
-            Dim dtm As New DataTableModel
+                Dim dtm As New DataTableModel
                 If q IsNot Nothing Then
                     dtm.data = q.Cast(Of Object).ToList
                 End If
@@ -264,6 +258,35 @@ Namespace Controllers
                 dtm.recordsFiltered = dtm.recordsTotal
 
                 Return Json(dtm, JsonRequestBehavior.AllowGet)
+
+            Else
+
+                Dim q = (From p In pdb.BlogPostsTable
+                         Join p1 In pdb.BlogPostKathgoriaTable On p1.PostId Equals p.Id
+                         Join p2 In pdb.BlogKathgoriesTable On p2.Id Equals p1.KathgoriaId
+                         Where (p1.KathgoriaId = k And p1.YpokathgoriaId Is Nothing)
+                         Select Id = p.Id, PostTitle = p.PostTitle, PostSummary = p.PostSummary, PostBody = p.PostBody,
+                             PostPhoto = p.PostPhoto, Youtubelink = p.Youtubelink,
+                            KatName = p2.KathgoriaName, Ypokatname = "").
+                        AsEnumerable().[Select](
+                        Function(o) New With {.Id = o.Id, .PostTitle = o.PostTitle, .PostSummary = o.PostSummary, .PostBody = o.PostBody,
+                        .PostPhoto = If(o.PostPhoto Is Nothing, "", String.Format("data:image/png;base64,{0}", Convert.ToBase64String(o.PostPhoto))), .Youtubelink = o.Youtubelink,
+                        .KatName = o.KatName, .Ypokatname = o.Ypokatname}).ToList
+                Dim dtm As New DataTableModel
+                If q IsNot Nothing Then
+                    dtm.data = q.Cast(Of Object).ToList
+                End If
+                dtm.draw = 0
+                dtm.recordsTotal = dtm.data.Count
+                dtm.recordsFiltered = dtm.recordsTotal
+
+                Return Json(dtm, JsonRequestBehavior.AllowGet)
+
+            End If
+
+
+
+
         End Function
 
     End Class

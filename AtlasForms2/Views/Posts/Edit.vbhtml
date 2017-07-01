@@ -1,7 +1,7 @@
 ﻿@ModelType AtlasForms2.Posts
 
 @Code
-    ViewData("Title") = Model.PostTitle
+    ViewData("Title") = "EDIT " & Model.PostTitle
 
     @Html.ValidationMessage("error_msg")
 
@@ -91,25 +91,25 @@ End Code
         </p>
 
 
-            <h4 Class="entry-title">@Html.EditorFor(Function(model) model.PostSummary)</h4>
+        <h4 Class="entry-title" >@Html.EditorFor(Function(model) model.PostSummary)</h4>
 
-<p Class="short-des"><i>@Html.TextAreaFor(Function(m) m.PostBody)   </i></p>
-        <p Class="short-des"><i>@Html.EditorFor(Function(model) model.Youtubelink)</i></p>
-        <p Class="short-des"><i>@Html.EditorFor(Function(model) model.Statslink)</i></p>
+        <p Class="short-des"><i>@Html.TextAreaFor(Function(m) m.PostBody)   </i></p>
+        Youtube link (code): <p Class="short-des"><i>@Html.EditorFor(Function(model) model.Youtubelink)</i></p>
+        Statistics Link (just the number): <p Class="short-des"><i>@Html.EditorFor(Function(model) model.Statslink)</i></p>
 
-        <p Class="short-des"><i>@Html.CheckBoxFor(Function(m) m.Activepost)</i></p>
+        Activate : <p Class="short-des"><i>@Html.CheckBoxFor(Function(m) m.Activepost)</i></p>
         
         <div Class="entry-meta">
             <span Class="entry-author">Created by @Html.DisplayFor(Function(model) model.createdby)</span>
             <span Class="entry-date">Created on @Html.DisplayFor(Function(model) model.creationdate)</span>
+            <br />
             <span Class="entry-author">Edit by @Html.DisplayFor(Function(model) model.editby)</span>
             <span Class="entry-date">Edited on @Html.DisplayFor(Function(model) model.editdate)</span>
         </div>
 
         @Html.LabelFor(Function(m) m.PostPhoto)
         <div Class="entry-thumb">
-                        <img src="@imageSrc" style="height:320px;width:320px;"/>
-        
+            <img src="@imageSrc" style="height:320px;width:320px;"/>
         </div>
         
         <input type="file" id="uploadEditorImage" name="uploadEditorImage" />
