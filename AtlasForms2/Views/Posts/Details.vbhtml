@@ -128,11 +128,20 @@ End Code
 
                         <!-- end of body-->
 
+                        @code
+                            If Model.Youtubelink <> "" Then
+                        End Code
                         <hr />
                         <iframe title="YouTube video player" class="youtube-player" type="text/html"
                                 height="315" src="@Html.DisplayFor(Function(model) model.Youtubelink)"
                                 frameborder="0" allowFullScreen>
                         </iframe>
+                        @code
+                            End If
+                        End Code
+
+
+
 
 
                     </article>

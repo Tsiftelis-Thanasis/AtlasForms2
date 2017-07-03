@@ -9,6 +9,13 @@
         <EntityTypeShape EntityType="atlasModel.BlogPostKathgoriaTable" Width="1.5" PointX="2.75" PointY="0.75" />
         <EntityTypeShape EntityType="atlasModel.BlogPostsTable" Width="1.5" PointX="4.75" PointY="0.75" />
         <EntityTypeShape EntityType="atlasModel.BlogYpokathgoriesTable" Width="1.5" PointX="0.75" PointY="4.75" />
+        <EntityTypeShape EntityType="atlasModel.AspNetRoles" Width="1.5" PointX="3.375" PointY="7.875" />
+        <EntityTypeShape EntityType="atlasModel.AspNetUserClaims" Width="1.5" PointX="7.875" PointY="6.625" />
+        <EntityTypeShape EntityType="atlasModel.AspNetUserLogins" Width="1.5" PointX="7.875" PointY="9.375" />
+        <EntityTypeShape EntityType="atlasModel.AspNetUsers" Width="1.5" PointX="5.625" PointY="6.125" />
+        <AssociationConnector Association="atlasModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" />
+        <AssociationConnector Association="atlasModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" />
+        <AssociationConnector Association="atlasModel.AspNetUserRoles" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

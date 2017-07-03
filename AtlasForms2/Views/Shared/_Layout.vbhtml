@@ -64,6 +64,9 @@
                                 <li><a href="gallery4.html">επικοινωνια</a></li>
                             </ul>
                         </li>
+                        @If (User.IsInRole("Admins")) Then
+                            @<li Class="current-menu-item"><a href="@Url.Action("Panel", "Home")"><span>διαχειριση</span></a></li>
+                        End If
                     </ul>
                 </nav>
 
@@ -158,19 +161,19 @@
                                     <div class="widget kopa-sub-list-widget">
                                         <ul class="sub-menu">
                                             <li>
-                                                <a href="@Url.Action("Index", "Posts", New With {.yk = 9})">νεα</a>
+                                                <a href="@Url.Action("Index", "Posts", New With {.yk = 2})">νεα</a>
                                             </li>
                                             <li>
-                                                <a href="@Url.Action("Index", "Posts", New With {.yk = 10})">ομάδες</a>
+                                                <a href="@Url.Action("Index", "Posts", New With {.yk = 3})">ομάδες</a>
                                             </li>
                                             <li>
-                                                <a href="viewPunish.aspx?title=Τιμωριες=α">τιμωριες</a>
+                                                <a href="@Url.Action("Index", "Posts", New With {.yk = 4})">τιμωριες</a>
                                             </li>
                                             <li>
-                                                <a href="viewFixture.aspx?title=Προγραμμα=α">προγραμμα</a>
+                                                <a href="@Url.Action("Index", "Posts", New With {.yk = 5})">προγραμμα</a>
                                             </li>
                                             <li>
-                                                <a href="viewStandings?title=Βαθμολογια=α">βαθμολογια</a>
+                                                <a href="@Url.Action("Index", "Posts", New With {.yk = 6})">βαθμολογια</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -503,6 +506,8 @@
 
                 <nav class="bottom-nav">
 
+                    @Html.Partial("_LoginPartial")
+
                 </nav>
                 <!--/end bottom-nav-->
                 <!--/main-menu-mobile-->
@@ -530,6 +535,7 @@
 
     <a href="#" class="scrollup"><span class="fa fa-chevron-up"></span></a>
     @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryui")
     @Scripts.Render("~/bundles/jqueryval")
     @Scripts.Render("~/bundles/bootstrap")
     @Scripts.Render("~/bundles/custom")
@@ -546,7 +552,7 @@
             $.ajax({
                 type: "POST",
                 url: baseUrl + '@Url.Action("GetLastNewsByCategory", "Posts")',
-                data: "{nCount : 6, yk : 9}",
+                data: "{nCount : 5, yk : 2}",
                 async: false,
                 contentType: "application/json; charset=utf-8",
                 dataType: "json",

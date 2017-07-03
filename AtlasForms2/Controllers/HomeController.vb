@@ -5,13 +5,12 @@
         Return View()
     End Function
 
-    Function About() As ActionResult
-        ViewData("Message") = "Your application description page."
+
+    <Authorize(Roles:="Admins")>
+    Function Panel() As ActionResult
+        ViewData("Message") = "Control panel page."
+
         Return View()
     End Function
 
-    Function Contact() As ActionResult
-        ViewData("Message") = "Your contact page."
-        Return View()
-    End Function
 End Class

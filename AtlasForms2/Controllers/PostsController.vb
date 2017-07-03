@@ -143,14 +143,11 @@ Namespace Controllers
                         newlink.PostId = p1.Id
                         If Not (kat Is Nothing) Then newlink.KathgoriaId = kat
                         If Not (ypokat Is Nothing) Then newlink.YpokathgoriaId = ypokat
-                        newlink.CreatedBy = User.Identity.Name
                         newlink.CreationDate = Now()
                         newlink.EditBy = User.Identity.Name
                         newlink.EditDate = Now()
                         pdb.BlogPostKathgoriaTable.Add(newlink)
                         pdb.SaveChanges()
-
-
                     End If
 
                     Return RedirectToAction("Index", "Posts")
@@ -242,10 +239,10 @@ Namespace Controllers
                          Join p2 In pdb.BlogKathgoriesTable On p2.Id Equals p3.KathgoriaId
                          Where (p1.KathgoriaId Is Nothing And p1.YpokathgoriaId = yk)
                          Select Id = p.Id, PostTitle = p.PostTitle, PostSummary = p.PostSummary, PostBody = p.PostBody,
-                                 PostPhoto = p.PostPhoto, Youtubelink = p.Youtubelink,
+                                 PostPhoto = p.PostPhoto, Youtubelink = p.Youtubelink, editBy = p.EditBy,
                                 KatName = p2.KathgoriaName, Ypokatname = p3.YpokathgoriaName).
                      AsEnumerable().[Select](
-                     Function(o) New With {.Id = o.Id, .PostTitle = o.PostTitle, .PostSummary = o.PostSummary, .PostBody = o.PostBody,
+                     Function(o) New With {.Id = o.Id, .PostTitle = o.PostTitle, .PostSummary = o.PostSummary, .PostBody = o.PostBody, .editBy = o.editBy,
                      .PostPhoto = If(o.PostPhoto Is Nothing, "", String.Format("data:image/png;base64,{0}", Convert.ToBase64String(o.PostPhoto))), .Youtubelink = o.Youtubelink,
                      .KatName = o.KatName, .Ypokatname = o.Ypokatname}).ToList
 
@@ -266,10 +263,10 @@ Namespace Controllers
                          Join p2 In pdb.BlogKathgoriesTable On p2.Id Equals p1.KathgoriaId
                          Where (p1.KathgoriaId = k And p1.YpokathgoriaId Is Nothing)
                          Select Id = p.Id, PostTitle = p.PostTitle, PostSummary = p.PostSummary, PostBody = p.PostBody,
-                             PostPhoto = p.PostPhoto, Youtubelink = p.Youtubelink,
+                             PostPhoto = p.PostPhoto, Youtubelink = p.Youtubelink, editBy = p.EditBy,
                             KatName = p2.KathgoriaName, Ypokatname = "").
                         AsEnumerable().[Select](
-                        Function(o) New With {.Id = o.Id, .PostTitle = o.PostTitle, .PostSummary = o.PostSummary, .PostBody = o.PostBody,
+                        Function(o) New With {.Id = o.Id, .PostTitle = o.PostTitle, .PostSummary = o.PostSummary, .PostBody = o.PostBody, .editBy = o.editBy,
                         .PostPhoto = If(o.PostPhoto Is Nothing, "", String.Format("data:image/png;base64,{0}", Convert.ToBase64String(o.PostPhoto))), .Youtubelink = o.Youtubelink,
                         .KatName = o.KatName, .Ypokatname = o.Ypokatname}).ToList
                 Dim dtm As New DataTableModel

@@ -14,9 +14,10 @@ Public Class KathgoriesController
     Function GetKathgoriesList() As JsonResult
 
         Dim q = (From t In pdb.BlogKathgoriesTable
-                 Select t.Id, t.KathgoriaName
+                 Select t.Id, t.KathgoriaName, t.ActiveKathgoria
                 ).AsEnumerable().[Select](
-                Function(o) New With {.Kathgoriesid = o.Id, .KathgoriaName = o.KathgoriaName}).ToList
+                Function(o) New With {.Kathgoriesid = o.Id, .KathgoriaName = o.KathgoriaName,
+                .ActiveKathgoria = If(o.ActiveKathgoria = 0, "Ανενεργή", "Ενεργή")}).ToList
 
         Dim dtm As New DataTableModel
         If q IsNot Nothing Then
@@ -158,21 +159,21 @@ Public Class KathgoriesController
 
 
 
-    ' GET: /Profile/Details/5
-    Function Details(ByVal id As Integer) As ActionResult
+    '' GET: /Profile/Details/5
+    'Function Details(ByVal id As Integer) As ActionResult
 
-        Dim q = (From t In pdb.BlogKathgoriesTable
-                 Where t.Id = id
-                 Select t).First
+    '    Dim q = (From t In pdb.BlogKathgoriesTable
+    '             Where t.Id = id
+    '             Select t).First
 
-        Dim t1 As New Kathgories
-        t1.Id = q.Id
-        t1.kathgorianame = q.KathgoriaName
-        t1.ActiveKathgoria = q.ActiveKathgoria
+    '    Dim t1 As New Kathgories
+    '    t1.Id = q.Id
+    '    t1.kathgorianame = q.KathgoriaName
+    '    t1.ActiveKathgoria = q.ActiveKathgoria
 
-        Return View(t1)
+    '    Return View(t1)
 
-    End Function
+    'End Function
 
 
 End Class

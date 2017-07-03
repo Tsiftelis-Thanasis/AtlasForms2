@@ -167,22 +167,22 @@ Public Class YpokathgoriesController
     End Function
 
 
-    ' GET: /Profile/Details/5
-    Function Details(ByVal id As Integer) As ActionResult
+    '' GET: /Profile/Details/5
+    'Function Details(ByVal id As Integer) As ActionResult
 
-        Dim q = (From t In pdb.BlogYpokathgoriesTable
-                 Where t.Id = id
-                 Select t).First
+    '    Dim q = (From t In pdb.BlogYpokathgoriesTable
+    '             Where t.Id = id
+    '             Select t).First
 
-        Dim t1 As New Ypokathgories
-        t1.Id = q.Id
-        t1.kathgoriaid = q.KathgoriaId
-        t1.Ypokathgorianame = q.YpokathgoriaName
-        t1.ActiveYpoKathgoria = q.ActiveKathgoria
+    '    Dim t1 As New Ypokathgories
+    '    t1.Id = q.Id
+    '    t1.kathgoriaid = q.KathgoriaId
+    '    t1.Ypokathgorianame = q.YpokathgoriaName
+    '    t1.ActiveYpoKathgoria = q.ActiveKathgoria
 
-        Return View(t1)
+    '    Return View(t1)
 
-    End Function
+    'End Function
 
 
 
