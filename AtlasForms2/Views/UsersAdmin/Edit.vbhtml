@@ -1,4 +1,4 @@
-﻿@modeltype atlasbasketstatistics.EditUserViewModel
+﻿@*@modeltype atlasbasketstatistics.EditUserViewModel
 
 @code
     ViewBag.Title = "Edit"
@@ -8,10 +8,12 @@ End code
 
 @Using (Html.BeginForm)
     @Html.AntiForgeryToken()
-    
+
     @<div class="form-horizontal">
         <h4>Edit User Form.</h4>
         <hr />
+        
+        @Html.AntiForgeryToken()
         @Html.ValidationSummary(true)
         @Html.HiddenFor(Function(m) m.Id)
          @Html.HiddenFor(Function(m) m._showcompanies)
@@ -137,4 +139,4 @@ End Using
     </script>
     
 
-End Section
+End Section*@

@@ -1,24 +1,26 @@
-﻿@ModelType AtlasForms2.Kathgories
+﻿@ModelType AtlasForms2.Ypokathgories
 @Code
-    ViewData("Title") = "Κατηγοριες"
+    ViewData("Title") = "υποκατηγοριες"
 End Code
 <h2>@ViewBag.Title</h2>
 <hr />
 
 
-<p> Θα πρέπει να γινεται επικοινωνία! 
-    @Html.ActionLink("Δημιουργία νεας Κατηγορίας", "Create")
+<p>
+    Θα πρέπει να γινεται επικοινωνία!
+    @Html.ActionLink("Δημιουργία νεας υποκατηγορίας", "Create")
 </p>
 
-@Using (Html.BeginForm("Index", "Kathgories", FormMethod.Post, New With {.role = "form"}))
+@Using (Html.BeginForm("Index", "Ypokathgories", FormMethod.Post, New With {.role = "form"}))
     @Html.AntiForgeryToken()
 
     @<div id="container">
-        <table id="kathgoriesdatatable">
+        <table id="ypokathgoriesdatatable">
             <thead>
                 <tr>
                     <th>Επιλογές</th>
                     <th>Κατηγορία</th>
+                    <th>Υποκατηγορία</th>
                     <th>Ενεργή</th>
                 </tr>
             </thead>
@@ -50,16 +52,17 @@ End Using
             height: 'auto',
             open: function (event, ui) { $(".ui-dialog-titlebar-close", $(this).parent()).hide(); }
         });
-        
 
-        $('#kathgoriesdatatable').DataTable({
-            "sAjaxSource": baseUrl + '@Url.Action("GetKathgoriesList")',
+
+        $('#ypokathgoriesdatatable').DataTable({
+            "sAjaxSource": baseUrl + '@Url.Action("GetYpokathgoriesList")',
             "contentType": "application/json; charset=utf-8",
             "language": { "url": baseUrl + "/Scripts/DataTables/Greek.json" },
             "bProcessing": true,
             "aoColumns": [
                           {},
                           { "mData": "KathgoriaName" },
+                          { "mData": "YpokathgoriaName" },
                           { "mData": "ActiveKathgoria" },
             ],
             "columnDefs": [
@@ -68,7 +71,7 @@ End Using
                         "render": function (data, type, row) {
                             if (row === undefined || row === null) return '';
 
-                                var btnEdit = '<a href="@Url.Action("Edit", "Kathgories")/' + row.Kathgoriesid + '"><i class="fa fa-pencil-square-o fa-fw"></i>Αλλαγή της κατηγορίας</a>'
+                                var btnEdit = '<a href="@Url.Action("Edit", "Ypokathgories")/' + row.Ypokathgoriesid + '"><i class="fa fa-pencil-square-o fa-fw"></i>Αλλαγή της υποκατηγορίας</a>'
                                 var DropDownAction = '<div class="btn-group">' +
                                                 '<button type="button" class="btn btn-warning btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">' +
                                                 '<i class="fa fa-gear"></i><span class="caret"></span>' +

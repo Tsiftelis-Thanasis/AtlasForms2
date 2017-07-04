@@ -32,4 +32,6 @@ Partial Public Class atlasEntities
     Public Overridable Property AspNetUsers() As DbSet(Of AspNetUsers)
     Public Property KathgoriesTables As System.Data.Entity.DbSet(Of KathgoriesTable)
     Public Property Kathgories As System.Data.Entity.DbSet(Of Kathgories)
+    Public Property Ypokathgories As System.Data.Entity.DbSet(Of Ypokathgories)
+    Public Property Posts As System.Data.Entity.DbSet(Of Posts)
 End Class

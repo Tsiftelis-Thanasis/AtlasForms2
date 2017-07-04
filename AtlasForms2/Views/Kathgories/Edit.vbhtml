@@ -10,9 +10,9 @@ End Code
 
 @Using (Html.BeginForm("Edit", "Kathgories", FormMethod.Post, New With {.enctype = "multipart/form-data"}))
 
+    @Html.AntiForgeryToken()
     @Html.ValidationSummary(True)
     @Html.HiddenFor(Function(model) model.Id)
-
 
     @<div Class="row">
     @Html.LabelFor(Function(m) m.kathgorianame, htmlAttributes:=New With {.class = "control-label col-md-4"})
@@ -22,7 +22,6 @@ End Code
     @Html.LabelFor(Function(m) m.ActiveKathgoria, htmlAttributes:=New With {.class = "control-label col-md-4"})
     @Html.CheckBoxFor(Function(m) m.ActiveKathgoria, New With {.htmlAttributes = New With {.class = "form-control"}})
     </div>
-
 
     @<div Class="row">
     @Html.LabelFor(Function(m) m.createdby, htmlAttributes:=New With {.class = "control-label col-md-4"})
@@ -52,7 +51,7 @@ End Using
             @Html.ActionLink("Επιστροφή", "Index", "Kathgories")
         </div>
 
-
+@Scripts.Render("~/bundles/jqueryval")
         @Section Scripts
             <script type="text/javascript">
 

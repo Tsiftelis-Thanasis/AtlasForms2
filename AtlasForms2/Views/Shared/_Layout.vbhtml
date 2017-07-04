@@ -535,8 +535,7 @@
 
     <a href="#" class="scrollup"><span class="fa fa-chevron-up"></span></a>
     @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/jqueryui")
-    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/jqueryui")   
     @Scripts.Render("~/bundles/bootstrap")
     @Scripts.Render("~/bundles/custom")
     @RenderSection("scripts", required:=False)
@@ -545,6 +544,14 @@
 
 
 <script type="text/javascript" language="javascript">
+
+    /*** Handle jQuery plugin naming conflict between jQuery UI and Bootstrap ***/
+    $.widget.bridge('uibutton', $.ui.button);
+    $.widget.bridge('uitooltip', $.ui.tooltip);
+    $(function () {
+        var bootstrapButton = $.fn.button.noConflict();// return $.fn.button to previously assigned value
+        $.fn.bootstrapBtn = bootstrapButton;           // give $().bootstrapBtn the Bootstrap functionality
+    });
 
         $(document).ready(function () {
 

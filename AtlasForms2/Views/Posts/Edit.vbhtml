@@ -61,18 +61,12 @@ End Code
 
 @Using (Html.BeginForm("Edit", "Posts", FormMethod.Post, New With {Key .enctype = "multipart/form-data"}))
 
-
+    @Html.AntiForgeryToken()
     @Html.ValidationSummary(True)
-
     @Html.HiddenFor(Function(model) model.Id)
 
-
-
-
-
     @<div Class="kopa-entry-post">
-
-
+    
     <article Class="entry-item">
         <p Class="entry-categories style-s">
         <a href="#">ΕΔΩ ΘΑ ΜΠΕΙ ΤΟ ΟΝΟΜΑ ΤΗΣ ΚΑΤΗΓΟΡΙΑΣ η ΥΠΟΚΑΤΗΓΟΡΙΑΣ</a>

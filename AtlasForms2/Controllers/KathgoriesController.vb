@@ -7,6 +7,7 @@ Public Class KathgoriesController
 
     Private pdb As New atlasEntities
 
+    <Authorize(Roles:="Admins")>
     Function Index() As ActionResult
         Return View()
     End Function
@@ -32,7 +33,7 @@ Public Class KathgoriesController
 
     '
     ' GET: /Profile/Create
-    '<Authorize(Roles:="Admins")>
+    <Authorize(Roles:="Admins")>
     Function Create() As ActionResult
 
         Dim t = New Kathgories
@@ -43,7 +44,7 @@ Public Class KathgoriesController
 
     '
     ' POST: /Profile/Create
-    '<Authorize(Roles:="Admins")>
+    <Authorize(Roles:="Admins")>
     <HttpPost()>
     Function Create(ByVal _kat As Kathgories) As ActionResult
         Try
@@ -88,7 +89,7 @@ Public Class KathgoriesController
 
 
     ' GET: /Profile/Edit/5
-    '<Authorize(Roles:="Admins")>
+    <Authorize(Roles:="Admins")>
     Function Edit(ByVal id As Integer) As ActionResult
 
         Dim q = (From t In pdb.BlogKathgoriesTable
@@ -110,7 +111,7 @@ Public Class KathgoriesController
 
 
     ' POST: /Profile/Edit
-    '<Authorize(Roles:="Admins")>
+    <Authorize(Roles:="Admins")>
     <HttpPost()>
     Function Edit(ByVal _edkat As Kathgories) As ActionResult
 

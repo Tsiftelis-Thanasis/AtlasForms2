@@ -11,12 +11,13 @@ End Code
 
 @Using (Html.BeginForm("Create", "Kathgories", FormMethod.Post, New With {Key .enctype = "multipart/form-data"}))
 
+@Html.AntiForgeryToken()
 @Html.ValidationSummary(True)
 
 
 @<div Class="row">
-    @Html.LabelFor(Function(m) m.KathgoriaName, htmlAttributes:=New With {.class = "control-label"})
-    @Html.EditorFor(Function(m) m.KathgoriaName, New With {.htmlAttributes = New With {.class = "form-control"}})    
+    @Html.LabelFor(Function(m) m.kathgorianame, htmlAttributes:=New With {.class = "control-label"})
+    @Html.EditorFor(Function(m) m.kathgorianame, New With {.htmlAttributes = New With {.class = "form-control"}})    
 </div>
 
 @<div class="row">

@@ -879,6 +879,10 @@ End Code
     <Script type="text/javascript" language="javascript">
     $(document).ready(function () {
 
+
+        alert($('#kathgoriaid').val());
+        alert($('#ypokathgoriaid').val());
+        
         if (@ViewBag.Ypokathgoria != 6) {//βαθμολογια
             $("#divstandings1").hide();
             $("#divstandings2").hide();

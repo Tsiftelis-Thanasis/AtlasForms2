@@ -1129,6 +1129,10 @@
     <Content Include="Views\Kathgories\Create.vbhtml" />
     <Content Include="Views\Kathgories\Edit.vbhtml" />
     <Content Include="Views\Kathgories\Index.vbhtml" />
+    <Content Include="Views\Ypokathgories\Edit.vbhtml" />
+    <Content Include="Views\Ypokathgories\Create.vbhtml" />
+    <Content Include="Views\Ypokathgories\Index.vbhtml" />
+    <Content Include="Views\Posts\All.vbhtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
@@ -1238,7 +1242,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\images\icons\" />
-    <Folder Include="Views\Ypokathgories\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

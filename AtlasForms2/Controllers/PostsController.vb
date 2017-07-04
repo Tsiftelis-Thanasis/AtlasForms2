@@ -18,6 +18,17 @@ Namespace Controllers
 
         End Function
 
+
+
+        ' GET: Posts
+        <Authorize(Roles:="Admins")>
+        Function All() As ActionResult
+
+            Return View()
+
+        End Function
+
+
         ' GET: Posts/Details/5
         Function Details(ByVal id As Integer, Optional ByVal k As Integer = 0, Optional ByVal yk As Integer = 0) As ActionResult
 
@@ -44,12 +55,14 @@ Namespace Controllers
         End Function
 
         ' GET: Posts/Create
+        <Authorize(Roles:="Admins")>
         Function Create() As ActionResult
             Return View()
         End Function
 
         ' POST: Posts/Create
         <HttpPost()>
+        <Authorize(Roles:="Admins")>
         Function Create(ByVal collection As FormCollection) As ActionResult
             Try
                 ' TODO: Add insert logic here
@@ -61,6 +74,7 @@ Namespace Controllers
         End Function
 
         ' GET: Posts/Edit/5
+        <Authorize(Roles:="Admins")>
         Function Edit(ByVal id As Integer) As ActionResult
 
             Dim q = (From t In pdb.BlogPostsTable
@@ -90,6 +104,7 @@ Namespace Controllers
         '<Authorize(Roles:="Admins")>
 
         <HttpPost()>
+        <Authorize(Roles:="Admins")>
         Function Edit(ByVal p1 As Posts, ByVal kathgoria As String(), ByVal ypokathgoria As String(),
             ByVal uploadEditorImage As HttpPostedFileBase) As ActionResult
 
@@ -166,22 +181,24 @@ Namespace Controllers
 
         End Function
 
-        ' GET: Posts/Delete/5
-        Function Delete(ByVal id As Integer) As ActionResult
-            Return View()
-        End Function
+        '' GET: Posts/Delete/5
+        '<Authorize(Roles:="Admins")>
+        'Function Delete(ByVal id As Integer) As ActionResult
+        '    Return View()
+        'End Function
 
-        ' POST: Posts/Delete/5
-        <HttpPost()>
-        Function Delete(ByVal id As Integer, ByVal collection As FormCollection) As ActionResult
-            Try
-                ' TODO: Add delete logic here
+        '' POST: Posts/Delete/5
+        '<HttpPost()>
+        '<Authorize(Roles:="Admins")>
+        'Function Delete(ByVal id As Integer, ByVal collection As FormCollection) As ActionResult
+        '    Try
+        '        ' TODO: Add delete logic here
 
-                Return RedirectToAction("Index")
-            Catch
-                Return View()
-            End Try
-        End Function
+        '        Return RedirectToAction("Index")
+        '    Catch
+        '        Return View()
+        '    End Try
+        'End Function
 
 
 
@@ -281,7 +298,40 @@ Namespace Controllers
 
             End If
 
+        End Function
 
+
+
+
+        Function GetAllNewsWithCategory() As JsonResult
+
+
+            Dim q = (From p In pdb.BlogPostsTable
+                     Join p1 In pdb.BlogPostKathgoriaTable On p1.PostId Equals p.Id
+                     Join p2 In pdb.BlogKathgoriesTable On p2.Id Equals p1.KathgoriaId
+                     Select Id = p.Id, PostTitle = p.PostTitle, PostSummary = p.PostSummary,
+                     editBy = p.EditBy, editDate = p.EditDate, KatName = p2.KathgoriaName, Ypokatname = "").
+                     Union(
+                        From p In pdb.BlogPostsTable
+                        Join p1 In pdb.BlogPostKathgoriaTable On p1.PostId Equals p.Id
+                        Join p3 In pdb.BlogYpokathgoriesTable On p3.Id Equals p1.YpokathgoriaId
+                        Join p2 In pdb.BlogKathgoriesTable On p2.Id Equals p3.KathgoriaId
+                        Select Id = p.Id, PostTitle = p.PostTitle, PostSummary = p.PostSummary,
+                        editBy = p.EditBy, editDate = p.EditDate,
+                        KatName = p2.KathgoriaName, Ypokatname = p3.YpokathgoriaName).
+                    AsEnumerable().[Select](
+                    Function(o) New With {.Id = o.Id, .PostTitle = o.PostTitle, .PostSummary = o.PostSummary,
+                    .editBy = o.editBy, .editDate = CDate(o.editDate).ToString("dd/MM/yyyy"), .KatName = o.KatName, .Ypokatname = o.Ypokatname}).ToList
+
+            Dim dtm As New DataTableModel
+            If q IsNot Nothing Then
+                dtm.data = q.Cast(Of Object).ToList
+            End If
+            dtm.draw = 0
+            dtm.recordsTotal = dtm.data.Count
+            dtm.recordsFiltered = dtm.recordsTotal
+
+            Return Json(dtm, JsonRequestBehavior.AllowGet)
 
 
         End Function

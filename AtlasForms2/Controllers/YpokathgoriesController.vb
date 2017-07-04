@@ -8,6 +8,7 @@ Public Class YpokathgoriesController
 
     Private pdb As New atlasEntities
 
+    <Authorize(Roles:="Admins")>
     Function Index() As ActionResult
         Return View()
     End Function
@@ -29,9 +30,10 @@ Public Class YpokathgoriesController
 
         Dim q = (From t In pdb.BlogYpokathgoriesTable
                  Join o In pdb.BlogKathgoriesTable On o.Id Equals t.KathgoriaId
-                 Select t.Id, t.YpokathgoriaName, o.KathgoriaName
+                 Select t.Id, t.YpokathgoriaName, o.KathgoriaName, t.ActiveKathgoria
         ).AsEnumerable().[Select](
-        Function(o) New With {.Ypokathgoriesid = o.Id, .YpokathgoriaName = o.YpokathgoriaName, .KathgoriaName = o.KathgoriaName}).ToList
+        Function(o) New With {.Ypokathgoriesid = o.Id, .YpokathgoriaName = o.YpokathgoriaName, .KathgoriaName = o.KathgoriaName,
+            .ActiveKathgoria = If(o.ActiveKathgoria = 0, "Ανενεργή", "Ενεργή")}).ToList
 
         Dim dtm As New DataTableModel
         If q IsNot Nothing Then
@@ -46,7 +48,7 @@ Public Class YpokathgoriesController
 
     '
     ' GET: /Profile/Create
-    '<Authorize(Roles:="Admins")>
+    <Authorize(Roles:="Admins")>
     Function Create() As ActionResult
 
         Dim t = New Ypokathgories
@@ -57,16 +59,16 @@ Public Class YpokathgoriesController
 
     '
     ' POST: /Profile/Create
-    '<Authorize(Roles:="Admins")>
+    <Authorize(Roles:="Admins")>
     <HttpPost()>
-    Function Create(ByVal ypo As Ypokathgories, ByVal KathgoriesList As String()) As ActionResult
+    Function Create(ByVal ypo As Ypokathgories, ByVal kathgorieslist As String()) As ActionResult
         Try
 
             If ModelState.IsValid Then
 
                 Try
 
-                    Dim kathgoriaid = KathgoriesList(0)
+                    Dim kathgoriaid = kathgorieslist(0)
 
                     Dim newypo As New BlogYpokathgoriesTable
 
@@ -107,7 +109,7 @@ Public Class YpokathgoriesController
 
 
     ' GET: /Profile/Edit/5
-    '<Authorize(Roles:="Admins")>
+    <Authorize(Roles:="Admins")>
     Function Edit(ByVal id As Integer) As ActionResult
 
         Dim q = (From t In pdb.BlogYpokathgoriesTable
@@ -132,7 +134,7 @@ Public Class YpokathgoriesController
 
 
     ' POST: /Profile/Edit
-    '<Authorize(Roles:="Admins")>
+    <Authorize(Roles:="Admins")>
     <HttpPost()>
     Function Edit(ByVal t1 As Ypokathgories, ByVal kathgorieslist As String()) As ActionResult
 
