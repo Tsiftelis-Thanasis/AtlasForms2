@@ -40,7 +40,7 @@
                 <nav class="kopa-main-nav">
                     <ul class="main-menu sf-menu">
                         <li class="current-menu-item">
-                            <a href="."><span>Αρχικη</span></a>
+                            <a href="' + baseUrl + '"><span>Αρχικη</span></a>
                         </li>
                         <li class="current-menu-item">
                             <a><span>πρωταθληματα</span></a>

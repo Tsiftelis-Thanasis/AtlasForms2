@@ -357,23 +357,7 @@ End Code
 
                             <div class="widget kopa-article-list-widget article-list-1">
                                 <h3 class="widget-title style2">Latest news</h3>
-                                <ul id="latestnewsid"class="clearfix">
-                                    <li>
-                                        <article class="entry-item">
-                                            <div class="entry-thumb">
-                                                <a href="#"><img src="~/Content/images/post2/1.jpg" alt=""></a>
-                                            </div>
-                                            <div class="entry-content">
-                                                <div class="content-top">
-                                                    <h4 class="entry-title"><a href="#">USMNT friendly roster about Dollovan, but also the future</a></h4>
-                                                </div>
-                                                <p>David Kin Chan dazzled in a stunning 12 round win over Luis Collazo in a performance which he dominated from start to finish and had his opponet on the floor three times. More to follow.... </p>
-                                                <footer>
-                                                    <p class="entry-author">by <a href="#">Michel bellar</a></p>
-                                                </footer>
-                                            </div>                                           
-                                        </article>
-                                    </li>
+                                <ul id="latestnewsid"class="clearfix">                                  
                                 
                                 </ul>
                             </div>
@@ -836,93 +820,6 @@ End Code
             </section>
             <!-- kopa-area-1 -->
 
-            <div class="row">
-
-                <div class="widget-area-8 col-md-4 col-sm-4 col-xs-4">
-
-                    <div class="widget kopa-article-list-widget article-list-6">
-                        <h3 class="widget-title style1">rugby</h3>
-                        <ul class="clearfix">
-                            <li>
-                                <article class="entry-item">
-                                    <div class="entry-thumb">
-                                        <a href="#"><img src="~/Content/images/one-post/4.jpg" alt=""></a>
-                                    </div>
-                                    <div class="entry-content">
-                                        <div class="content-top">
-                                            <h4 class="entry-title"><a href="#">NFL's Biggest Fan Ben Comebacks by Frenchan</a></h4>
-                                        </div>
-                                        <footer>
-                                            <p class="entry-author">by <a href="#">Michel bellar</a></p>
-                                        </footer>
-                                    </div>                                   
-                                </article>
-                            </li>
-                        </ul>
-                    </div>
-
-                </div>
-                <!-- widget-area-8  -->
-
-                <div class="widget-area-9 col-md-4 col-sm-4 col-xs-4">
-
-                    <div class="widget kopa-article-list-widget article-list-6">
-                        <h3 class="widget-title style1">photos</h3>
-                        <ul class="clearfix">
-                            <li>
-                                <article class="entry-item">
-                                    <div class="entry-thumb">
-                                        <a href="#"><img src="~/Content/images/one-post/5.jpg" alt=""></a>
-                                    </div>
-                                    <div class="entry-content">
-                                        <div class="content-top have-count">
-                                            <div class="item-count">
-                                                <span class="count-1"></span>
-                                                <span class="count-2"></span>
-                                                <span class="count-3">30</span>
-                                            </div>
-                                            <h4 class="entry-title"><a href="#">Sports Fan Ben Affleck</a></h4>
-                                        </div>
-                                        <footer>
-                                            <p class="entry-author">by <a href="#">Michel bellar</a></p>
-                                        </footer>
-                                    </div>                                  
-                                </article>
-                            </li>
-                        </ul>
-                    </div>
-
-                </div>
-                <!-- widget-area-9  -->
-
-                <div class="widget-area-10 col-md-4 col-sm-4 col-xs-4">
-
-                    <div class="widget kopa-article-list-widget article-list-6">
-                        <h3 class="widget-title style1">club news</h3>
-                        <ul class="clearfix">
-                            <li>
-                                <article class="entry-item">
-                                    <div class="entry-thumb">
-                                        <a href="#"><img src="~/Content/images/one-post/6.jpg" alt=""></a>
-                                    </div>
-                                    <div class="entry-content">
-                                        <div class="content-top">
-                                            <h4 class="entry-title"><a href="#">NFL's Biggest Fan Ben Comebacks by Frenchan</a></h4>
-                                        </div>
-                                        <footer>
-                                            <p class="entry-author">by <a href="#">Michel bellar</a></p>
-                                        </footer>
-                                    </div>
-                                  </article>
-                            </li>
-                        </ul>
-                    </div>
-
-                </div>
-                <!-- widget-area-10  -->
-
-            </div>
-            <!-- row -->
             
             <div class="widget-area-24 kopa-area kopa-area-2">
 

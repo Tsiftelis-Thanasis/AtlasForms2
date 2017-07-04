@@ -1133,6 +1133,7 @@
     <Content Include="Views\Ypokathgories\Create.vbhtml" />
     <Content Include="Views\Ypokathgories\Index.vbhtml" />
     <Content Include="Views\Posts\All.vbhtml" />
+    <Content Include="Views\Posts\Create.vbhtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />

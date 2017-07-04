@@ -63,14 +63,72 @@ Namespace Controllers
         ' POST: Posts/Create
         <HttpPost()>
         <Authorize(Roles:="Admins")>
-        Function Create(ByVal collection As FormCollection) As ActionResult
-            Try
-                ' TODO: Add insert logic here
+        Function Create(ByVal p1 As Posts, ByVal kathgoria As String(), ByVal ypokathgoria As String(),
+            ByVal uploadEditorImage As HttpPostedFileBase) As ActionResult
 
-                Return RedirectToAction("Index")
-            Catch
-                Return View()
-            End Try
+            Dim logodata As Byte() = Nothing
+
+            If uploadEditorImage IsNot Nothing Then
+                If uploadEditorImage.ContentLength > 0 Then
+
+                    Dim target As New MemoryStream()
+                    uploadEditorImage.InputStream.CopyTo(target)
+                    logodata = target.ToArray()
+
+                End If
+            End If
+
+            If ModelState.IsValid Then
+
+                Try
+
+
+                    Dim newpost As New BlogPostsTable
+
+                    newpost.PostTitle = p1.PostTitle
+                    newpost.PostBody = p1.PostBody
+                    If Not logodata Is Nothing Then
+                        newpost.PostPhoto = logodata
+                    End If
+                    newpost.Youtubelink = p1.Youtubelink
+                    newpost.Statslink = p1.Statslink
+                    newpost.Activepost = p1.Activepost
+                    newpost.CreatedBy = User.Identity.Name
+                    newpost.CreationDate = Now()
+                    newpost.EditBy = User.Identity.Name
+                    newpost.EditDate = Now()
+                    pdb.SaveChanges()
+
+                    Dim kat = If(kathgoria Is Nothing, Nothing, kathgoria(0))
+                    Dim ypokat = If(ypokathgoria Is Nothing, Nothing, ypokathgoria(0))
+
+                    If Not (kat Is Nothing And ypokat Is Nothing) Then
+
+                        Dim newlink As New BlogPostKathgoriaTable
+                        newlink.PostId = newpost.Id
+                        If Not (kat Is Nothing) Then newlink.KathgoriaId = kat
+                        If Not (ypokat Is Nothing) Then newlink.YpokathgoriaId = ypokat
+                        newlink.CreationDate = Now()
+                        newlink.EditBy = User.Identity.Name
+                        newlink.EditDate = Now()
+                        pdb.BlogPostKathgoriaTable.Add(newlink)
+                        pdb.SaveChanges()
+                    End If
+
+                    Return RedirectToAction("Index", "Posts")
+
+                Catch ex As Exception
+                    ModelState.AddModelError("error_msg", ex.Message)
+                    Return View(p1)
+                End Try
+
+
+            Else
+                ModelState.AddModelError("error_msg", "error with model")
+                Return View(p1)
+
+            End If
+
         End Function
 
         ' GET: Posts/Edit/5
