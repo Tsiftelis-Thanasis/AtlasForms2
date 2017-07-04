@@ -13,6 +13,44 @@
     End If
 
 
+    Dim kathgorianamestr As String = ""
+    Dim ypokathgorianamestr As String = ""
+
+    Dim a = (From pk In pdb.BlogPostKathgoriaTable
+             Where pk.PostId = Model.Id
+             Select pk.KathgoriaId, pk.YpokathgoriaId).FirstOrDefault
+
+    Dim katid As Integer = If(a.KathgoriaId Is Nothing, 0, a.KathgoriaId)
+    Dim ypokatid As Integer = If(a.YpokathgoriaId Is Nothing, 0, a.YpokathgoriaId)
+
+    If katid > 0 Then
+        kathgorianamestr = (From k In pdb.BlogKathgoriesTable
+                            Where k.Id = katid
+                            Select k.KathgoriaName).FirstOrDefault
+    ElseIf ypokatid > 0 Then
+        ypokathgorianamestr = (From y In pdb.BlogYpokathgoriesTable
+                               Where y.Id = ypokatid
+                               Select y.YpokathgoriaName).FirstOrDefault
+        Dim klist = (From k In pdb.BlogKathgoriesTable
+                     Join y In pdb.BlogYpokathgoriesTable On y.KathgoriaId Equals k.Id
+                     Where y.Id = ypokatid
+                     Select k.Id, k.KathgoriaName).FirstOrDefault
+
+        kathgorianamestr = klist.KathgoriaName
+        katid = klist.Id
+
+    End If
+
+    Dim mergenames As String = ""
+    If kathgorianamestr <> "" Then
+        mergenames = kathgorianamestr
+    End If
+    If mergenames = "" Then
+        mergenames = ypokathgorianamestr
+    Else
+        mergenames &= " - " & ypokathgorianamestr
+    End If
+
 End Code
 
 
@@ -22,62 +60,77 @@ End Code
 
         <div class="main-top">
             <div class="kopa-ticker">
-                <span class="ticker-title"><i class="fa fa-angle-double-right"></i>νεα ομίλου</span>
-                <div class="ticker-wrap">
-                    <dl class="ticker-1">
+                <span Class="ticker-title"><i class="fa fa-angle-double-right"></i>@Model.PostTitle</span>
+                <div Class="ticker-wrap">
+
+                    <dl Class="ticker-1">
                         <dt></dt>
                         <dd>
-                            <a><span>@Html.DisplayFor(Function(model) model.PostTitle)</span></a>
-                        </dd>                        
+                            <a> <span>&nbsp; </span></a> @*&nbsp; @Html.DisplayFor(Function(model) model.PostTitle)</span></a>*@
+                        </dd>
                     </dl>
                     <!--ticker-1-->
                 </div>
             </div>
-            <!-- kopa-ticker -->           
+            <!-- kopa-ticker -->
         </div>
         <!-- main-top -->
 
         <div class="row">
-
-            <div class="kopa-main-col">               
+            <div class="kopa-main-col">
                 <div class="kopa-entry-post">
                     <article class="entry-item">
-                        <p class="entry-categories style-s"><a href="#">Αρχικη</a><a href="#">νεα ομίλου</a><a href="#">@Html.DisplayFor(Function(model) model.PostTitle)</a></p>
-                        <h4 class="entry-title">@Html.DisplayFor(Function(model) model.PostTitle)</h4>
+
+                        <p class="entry-categories style-s">
+                            <a href="@Url.Action("Index", "Home")">Αρχικη</a>
+                            @code
+                                If kathgorianamestr <> "" Then
+                                    @<a href="@Url.Action("Index", "Posts", New With {.k = katid})">@kathgorianamestr</a>
+                                End If
+                            End Code
+                            @code
+                                If ypokathgorianamestr <> "" Then
+                                    @<a href="@Url.Action("Index", "Posts", New With {.yk = ypokatid})">@ypokathgorianamestr</a>
+                                End If
+                            End Code
+                            <a>@Html.DisplayFor(Function(model) model.PostTitle)</a>
+                        </p>
+
+
+                        @*<h4 class="entry-title">@Html.DisplayFor(Function(model) model.PostTitle)</h4>*@
                         <div class="entry-meta">
                             <span class="entry-author">by <a href="#">@Html.DisplayFor(Function(model) model.editby)</a></span>
                             <span class="entry-date">@Html.DisplayFor(Function(model) model.editdate)</span>
                         </div>
                         <p class="short-des"><i>@Html.DisplayFor(Function(model) model.PostSummary)</i></p>
-                        
+
                         <div class="entry-thumb">
                             <img src="@imageSrc" alt="">
                         </div>
-                                              
+
                         <p Class="short-des"><i>@Html.TextAreaFor(Function(m) m.PostBody)   </i></p>
                         <br /><br />
-                       
+
                         @code
                             If Model.Statslink <> "" Then
                                 @<p Class="short-des" style="text-align:center">
-                                    <a target = "_blank" href="http://atlasstatistics.gr/Games/Details/@Html.DisplayFor(Function(model) model.Statslink)">
-                                        <img src = "~/Content/images/various/stats.jpg" border="0" />
+                                    <a target="_blank" href="http://atlasstatistics.gr/Games/Details/@Html.DisplayFor(Function(model) model.Statslink)">
+                                        <img src="~/Content/images/various/stats.jpg" border="0" />
                                     </a>
                                 </p>
                             End If
                         End Code
-                                               
+
                         @code
                             If Model.Youtubelink <> "" Then
                                 @<iframe title="YouTube video player" Class="youtube-player" type="text/html"
-                                        height = "315" src="@Html.DisplayFor(Function(model) model.Youtubelink)"
-                                        frameborder="0" allowFullScreen>
-                                </iframe>
+                                         height="315" src="@Html.DisplayFor(Function(model) model.Youtubelink)"
+                                         frameborder="0" allowFullScreen></iframe>
                             End If
                         End Code
 
                     </article>
-                        
+
                 </div>
                 <!-- kopa-entry-post -->
 
@@ -85,7 +138,7 @@ End Code
             <!-- main-col -->
 
             <div class="sidebar widget-area-11">
-                              
+
                 <div class="widget kopa-ads-widget">
                     <a href="#"><img src="http://www.atlasbasket.gr/images/banners/blueiceok.png" alt=""></a>
                 </div>
@@ -102,7 +155,7 @@ End Code
                     <a href="#"><img src="~/Content/images/ads/1.jpg" alt=""></a>
                 </div>
                 <!-- widget -->
-               
+
             </div>
             <!-- sidebar -->
 

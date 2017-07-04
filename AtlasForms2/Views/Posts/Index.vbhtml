@@ -1,6 +1,7 @@
 ﻿@ModelType IEnumerable(Of AtlasForms2.Posts)
 @Code
     Dim innerTitle As String = ""
+
     If ViewBag.Ypokathgoria = 2 Then
         ViewData("Title") = "Τελευταία νέα"
         innerTitle = "τελευταια νεα"

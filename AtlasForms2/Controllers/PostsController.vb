@@ -333,13 +333,19 @@ Namespace Controllers
 
             Else
 
+                'Thanasis - Erwtisi...
+                'na fernei ta posts tou omilou? ta posts twn ypokathgoriwn tou omilou?
+                'pws na to sxediasoume???
+
+
                 Dim q = (From p In pdb.BlogPostsTable
                          Join p1 In pdb.BlogPostKathgoriaTable On p1.PostId Equals p.Id
                          Join p2 In pdb.BlogKathgoriesTable On p2.Id Equals p1.KathgoriaId
+                         Join p3 In pdb.BlogYpokathgoriesTable On p3.KathgoriaId Equals p2.Id
                          Where (p1.KathgoriaId = k And p1.YpokathgoriaId Is Nothing)
                          Select Id = p.Id, PostTitle = p.PostTitle, PostSummary = p.PostSummary, PostBody = p.PostBody,
                              PostPhoto = p.PostPhoto, Youtubelink = p.Youtubelink, editBy = p.EditBy,
-                            KatName = p2.KathgoriaName, Ypokatname = "").
+                            KatName = p2.KathgoriaName, Ypokatname = p3.YpokathgoriaName).
                         AsEnumerable().[Select](
                         Function(o) New With {.Id = o.Id, .PostTitle = o.PostTitle, .PostSummary = o.PostSummary, .PostBody = o.PostBody, .editBy = o.editBy,
                         .PostPhoto = If(o.PostPhoto Is Nothing, "", String.Format("data:image/png;base64,{0}", Convert.ToBase64String(o.PostPhoto))), .Youtubelink = o.Youtubelink,

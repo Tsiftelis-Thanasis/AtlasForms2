@@ -40,7 +40,7 @@
                 <nav class="kopa-main-nav">
                     <ul class="main-menu sf-menu">
                         <li class="current-menu-item">
-                            <a href="' + baseUrl + '"><span>Αρχικη</span></a>
+                            <a href="@Url.Action("Index", "Home")"><span>Αρχικη</span></a>
                         </li>
                         <li class="current-menu-item">
                             <a><span>πρωταθληματα</span></a>
@@ -572,6 +572,7 @@
                         choiceContainer.empty();
 
                         $.each(result.data, function () {
+
                             var d = ' <li class="col-md-4 col-xs-4 col-sm-4"> ' +
                                     ' <article class="entry-item"> ' +
                                     ' <a href="' + baseUrl + '/Posts/Details/' + this.Id + '"> ' +
