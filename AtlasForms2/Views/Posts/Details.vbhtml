@@ -146,19 +146,15 @@ End Code
             <div class="sidebar widget-area-11">
 
                 <div class="widget kopa-ads-widget">
-                    <a href="#"><img src="http://www.atlasbasket.gr/images/banners/blueiceok.png" alt=""></a>
+                    <a href="http://www.blue-ice.gr/"><img src="http://www.atlasbasket.gr/images/banners/blueiceok.png" alt=""></a>
                 </div>
 
                 <div class="widget kopa-ads-widget">
-                    <a href="#"><img src="http://www.atlasbasket.gr/images/banners/risko.jpg" alt=""></a>
+                    <a href="https://www.facebook.com/therisko2reloaded/?ref=ts&fref=ts"><img src="http://www.atlasbasket.gr/images/banners/risko.jpg" alt=""></a>
                 </div>
 
                 <div class="widget kopa-ads-widget">
-                    <a href="#"><img src="http://www.atlasbasket.gr/images/banners/65c14b0a-e3b2-4e15-8f14-1ba31c041f20.png" alt=""></a>
-                </div>
-
-                <div class="widget kopa-ads-widget">
-                    <a href="#"><img src="~/Content/images/ads/1.jpg" alt=""></a>
+                    <a href="http://www.atlassportswear.gr/"><img src="http://www.atlasbasket.gr/images/banners/65c14b0a-e3b2-4e15-8f14-1ba31c041f20.png" alt=""></a>
                 </div>
                 <!-- widget -->
 
