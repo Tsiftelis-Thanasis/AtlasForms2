@@ -11,7 +11,10 @@ End Code
                 <h4><i class="icon-cpanel homeicons"></i> άρθρα</h4>
             </div>
             <div class="panel-body">
-                <p> @Html.ActionLink("Λίστα όλων των άρθων", "All", "Posts") </p>
+                <p>  @Html.ActionLink("Νέο Άρθρο", "Posts", "Create") </p>
+            </div>
+            <div class="panel-body">
+                <p> @Html.ActionLink("Λίστα όλων των άρθρων", "All", "Posts") </p>
             </div>
         </div>
     </div>
@@ -19,7 +22,10 @@ End Code
      <div class="col-md-4">
         <div class="panel panel-default">
             <div class="panel-heading">
-                <h4><i class="icon-cpanel homeicons"></i> Κατηγοριες</h4>
+                <h4><i class="icon-cpanel homeicons"></i> Κατηγοριες </h4>
+            </div>
+            <div class="panel-body">
+                <p> @Html.ActionLink("Νέο Κατηγορία", "Posts", "Create") </p>
             </div>
             <div class="panel-body">
                 <p> @Html.ActionLink("Λίστα Κατηγοριών", "Index", "Kathgories") </p>
@@ -33,11 +39,14 @@ End Code
                 <h4><i class="icon-cpanel homeicons"></i> Υπο - Κατηγοριες</h4>
             </div>
             <div class="panel-body">
+                <p> @Html.ActionLink("Νέο Υπο-Κατηγορία", "UsersAdmin", "Create") </p>
+            </div>
+            <div class="panel-body">
                 <p> @Html.ActionLink("Λίστα Υπο-Κατηγοριών", "Index", "Ypokathgories") </p>
             </div>
         </div>
     </div>
-
+    
 </div>
 
 <div class="row ">
@@ -45,6 +54,9 @@ End Code
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h4><i class="icon-useralt homeicons"></i> Διαχειριση χρηστων</h4>
+            </div>
+            <div class="panel-body">
+                <p> @Html.ActionLink("Νέος Χρήστης", "All", "Create") </p>
             </div>
             <div class="panel-body">
                 <p> @Html.ActionLink("Χρήστες", "Index", "UsersAdmin") </p>
