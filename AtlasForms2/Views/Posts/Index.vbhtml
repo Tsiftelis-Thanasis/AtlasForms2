@@ -1,25 +1,40 @@
 ﻿@ModelType IEnumerable(Of AtlasForms2.Posts)
 @Code
+
+    Dim pdb As New atlasEntities
+
+    Dim a = (From pk In pdb.BlogKathgoriesTable
+             Where pk.Id = 6
+             Select pk.KathgoriaName).FirstOrDefault
+
+    Dim katName As String = If(a Is Nothing, 0, a)
+
     Dim innerTitle As String = ""
 
     If ViewBag.Ypokathgoria = 2 Then
-        ViewData("Title") = "Τελευταία νέα"
-        innerTitle = "τελευταια νεα"
+        ViewData("Title") = "Τελευταία νέα " & katName
+        innerTitle = "τελευταια νεα " & katName
     End If
     If ViewBag.Ypokathgoria = 3 Then
-        ViewData("Title") = "Ομάδες"
-        innerTitle = "ομαδες"
+        ViewData("Title") = "Ομάδες " & katName
+        innerTitle = "ομαδες " & katName
     End If
     If ViewBag.Ypokathgoria = 4 Then
-        ViewData("Title") = "Τιμωρίες"
-        innerTitle = "τιμωριες"
+        ViewData("Title") = "Τιμωρίες " & katName
+        innerTitle = "τιμωριες " & katName
+    End If
+    If ViewBag.Ypokathgoria = 5 Then
+        ViewData("Title") = "Πρόγραμμα " & katName
+        innerTitle = "προγραμμα " & katName
     End If
     If ViewBag.Ypokathgoria = 6 Then
-        ViewData("Title") = "Βαθμολογία Ομίλου ΧΧΧΧ"
-        innerTitle = "βαθμολογια ομιλου χχχχ"
+        ViewData("Title") = "Βαθμολογία " & katName
+        innerTitle = "βαθμολογια " & katName
     End If
 
 End Code
+
+
 
 @Html.Hidden("kathgoriaid", ViewBag.Kathgoria)
 @Html.Hidden("ypokathgoriaid", ViewBag.Ypokathgoria)
@@ -32,7 +47,7 @@ End Code
                 <div Class="kopa-main-col">
 
                     <div id="divteams" class="widget kopa-entry-list">
-                        <h3 class="widget-title style12">@innerTitle xxxx ομιλου<span class="ttg"></span></h3>
+                        <h3 class="widget-title style12">@innerTitle<span class="ttg"></span></h3>
                             <table id="teamstable">
                                 <tr>
                                     <td>
@@ -44,7 +59,7 @@ End Code
 
                     <div id="divcommon" Class="widget-area-2">
                         <div Class="widget kopa-article-list-widget article-list-1">
-                            <h3 Class="widget-title style2">@innerTitle x!!x ομιλου</h3>
+                            <h3 Class="widget-title style2">@innerTitle</h3>
                             <table id="newstable">
                                 <tr>
                                     <td>
