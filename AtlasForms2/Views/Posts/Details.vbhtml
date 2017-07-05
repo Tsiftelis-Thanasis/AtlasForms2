@@ -2,8 +2,6 @@
 @Code
     ViewData("Title") = Model.PostTitle
 
-
-
     Dim pdb As New atlasEntities
 
     Dim imageSrc As String = ""
@@ -122,7 +120,7 @@ End Code
                         End Code
 
                         @code
-                            If Model.Youtubelink <> "" Then
+                            If Model.Youtubelink.Length > 36 Then
                                 @<iframe title="YouTube video player" Class="youtube-player" type="text/html"
                                          height="315" src="@Html.DisplayFor(Function(model) model.Youtubelink)"
                                          frameborder="0" allowFullScreen></iframe>
