@@ -1,6 +1,5 @@
 ﻿@ModelType AtlasForms2.Posts
 @Code
-    ViewData("Title") = Model.PostTitle
 
     Dim pdb As New atlasEntities
 
@@ -49,6 +48,15 @@
         mergenames &= " - " & ypokathgorianamestr
     End If
 
+    Dim cTitle As String = ""
+    If ypokathgorianamestr = "Ομάδες" Then
+        Dim teamDet = Model.PostTitle.Split("-")
+        cTitle = teamDet(1)
+    Else
+        cTitle = Model.PostTitle
+    End If
+    ViewData("Title") = cTitle
+
 End Code
 
 
@@ -58,7 +66,7 @@ End Code
 
         <div class="main-top">
             <div class="kopa-ticker">
-                <span Class="ticker-title"><i class="fa fa-angle-double-right"></i>@Model.PostTitle</span>
+                <span Class="ticker-title"><i class="fa fa-angle-double-right"></i>@cTitle</span>
                 <div Class="ticker-wrap">
 
                     <dl Class="ticker-1">
@@ -91,11 +99,11 @@ End Code
                                     @<a href="@Url.Action("Index", "Posts", New With {.yk = ypokatid})">@ypokathgorianamestr</a>
                                 End If
                             End Code
-                            <a>@Html.DisplayFor(Function(model) model.PostTitle)</a>
+                            <a>@Html.DisplayFor(Function(model) cTitle)</a>
                         </p>
 
 
-                        @*<h4 class="entry-title">@Html.DisplayFor(Function(model) model.PostTitle)</h4>*@
+                        @*<h4 class="entry-title">@Html.DisplayFor(Function(model) cTitle)</h4>*@
                         <div class="entry-meta">
                             <span class="entry-author">by <a href="#">@Html.DisplayFor(Function(model) model.editby)</a></span>
                             <span class="entry-date">@Html.DisplayFor(Function(model) model.editdate)</span>
