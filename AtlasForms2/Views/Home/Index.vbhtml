@@ -380,78 +380,7 @@ End Code
                         </div>
                         <!-- widget -->
 
-                        <div class="widget kopa-tab-1-widget">
-                            <div class="kopa-tab style3">
-                                <ul class="nav nav-tabs">
-                                    <li class="active"><a href="#headlines" data-toggle="tab">headlines</a></li>
-                                    <li><a href="#news" data-toggle="tab">club news</a></li>
-                                </ul>
-                                <!-- nav-tabs -->
-                                <div class="tab-content">
-                                    <div class="tab-pane active" id="headlines">
-                                        <ul class="kopa-list clearfix">
-                                            <li>
-                                                <a href="#">Royals slip by Orioles for 3-0 advantage</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Error hands Giants victory over Cards, NLCS </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Lawyer: Hearing won't impact Winston's </a>
-                                            </li>
-                                            <li>
-                                                <span class="bg-red">Live</span>
-                                                <a href="#">Analyzing possible outcomes in Winston</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">USMNT draws with Honduras despite</a>
-                                            </li>
-                                            <li>
-                                                <span class="bg-blue">Must read</span>
-                                                <a href="#">New concern with concus</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Pavelski boosts Sharks over Capitals</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <!-- tab-pane -->
-                                    <div class="tab-pane" id="news">
-                                        <ul class="kopa-list clearfix">
-                                            <li>
-                                                <a href="#">USMNT draws with Honduras despite</a>
-                                            </li>
-                                            <li>
-                                                <span class="bg-blue">Must read</span>
-                                                <a href="#">New concern with concus</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Pavelski boosts Sharks over Capitals</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Royals slip by Orioles for 3-0 advantage</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Error hands Giants victory over Cards, NLCS </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Lawyer: Hearing won't impact Winston's </a>
-                                            </li>
-                                            <li>
-                                                <span class="bg-red">Live</span>
-                                                <a href="#">Analyzing possible outcomes in Winston</a>
-                                            </li>
-                                        </ul>
-
-                                    </div>
-                                    <!-- tab-pane -->
-                                </div>
-                            </div>
-                            <!-- kopa-tab -->
-
-                        </div>
-                        <!-- widget -->
-
+                   
 
                         @*<div class="widget kopa-point-widget">*@
                             <div class="widget kopa-tab-1-widget kopa-point-widget">

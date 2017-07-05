@@ -42,19 +42,14 @@
                         <li class="current-menu-item">
                             <a href="@Url.Action("Index", "Home")"><span>Αρχικη</span></a>
                         </li>
-                        @*<li class="current-menu-item">
-                            <a><span>διοργανώσεις</span></a>
-                            <ul class="sub-menu">
-                                <li><a href="categories2.html">πρωταθλημα</a>
-                                    <ul class="sub-menu">
-                                        <li><a href="viewNews.aspx?typ=org&title=κανονες - οροι συμμετοχης">κανονες οροι συμμετοχης</a></li>
-                                    </ul>
-
-                                </li>
-                                <li><a href="categories3.html">summer league</a></li>
-                                <li><a href="categories1.html">κυπελλο</a></li>
-                            </ul>
-                        </li>*@
+                        <li class="current-menu-item">
+                                <a><span>διοργανώσεις</span></a>
+                                <ul class="sub-menu">
+                                    <li><a href="categories2.html">πρωταθλημα</a></li>
+                                    <li><a href="categories3.html">summer league</a></li>
+                                    <li><a href="categories1.html">κυπελλο</a></li>
+                                </ul>
+                            </li>
                         <li class="current-menu-item">
                             <a><span>διοργανωτρια αρχη</span></a>
                             <ul class="sub-menu">
@@ -75,7 +70,8 @@
                     </ul>
                 </nav>
 
-                <nav class="main-nav-mobile clearfix">
+
+                @*<nav class="main-nav-mobile clearfix">
                     <a class="pull fa fa-bars"></a>
                     <ul class="main-menu-mobile">
                         <li>
@@ -144,7 +140,7 @@
                         <li><a href="team.html"><span>team news</span></a></li>
                         <li><a href="shop.html"><span>Shop</span></a></li>
                     </ul>
-                </nav>
+                </nav>*@
                 <!--/main-menu-mobile-->
 
             </div>
@@ -152,389 +148,417 @@
 
         </div>
         <!-- kopa-header-middle -->
+        @*<ul class="sub-menu">
+                <li>
+                    <span>α ομιλος</span>
+                    <div class="sf-mega col-md-push-0 col-xs-push-0 col-sm-push-0">
+                        <div class="sf-mega-section col-md-3 col-xs-3 col-sm-3">
+                            <div class="widget kopa-sub-list-widget">
+                                <ul class="sub-menu">
+                                    <li>
+                                        <a href="@Url.Action("Index", "Posts", New With {.yk = 2})">νεα</a>
+                                    </li>
+                                    <li>
+                                        <a href="@Url.Action("Index", "Posts", New With {.yk = 3})">ομάδες</a>
+                                    </li>
+                                    <li>
+                                        <a href="@Url.Action("Index", "Posts", New With {.yk = 4})">τιμωριες</a>
+                                    </li>
+                                    <li>
+                                        <a href="@Url.Action("Index", "Posts", New With {.yk = 5})">προγραμμα</a>
+                                    </li>
+                                    <li>
+                                        <a href="@Url.Action("Index", "Posts", New With {.yk = 6})">βαθμολογια</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- widget -->
+                        </div>
+                        <!-- col-md-3 -->
+                        <div class="sf-mega-section col-md-9 col-xs-9 col-sm-9">
+                            <div class="widget kopa-sub-list-widget sub-list-1">
+                                <h4>Τελευταια νεα ομιλου</h4>
+                                <ul id="omilos1row" class="row"></ul>
+                            </div>
+                            <!-- widget -->
+                        </div>
+                        <!-- col-md-9 -->
+                    </div>
+                </li>
+            </ul>*@
+
+
+
+        @*<li>
+                <span>διοργανώσεις</span>
+                <div class="sf-mega col-md-push-0 col-xs-push-0 col-sm-push-0">
+                <div class="sf-mega-section col-md-3 col-xs-3 col-sm-3">
+                    <div class="widget kopa-sub-list-widget">
+                <ul class="sub-menu">
+                    <li>
+                        <a href="categories2.html">πρωταθλημα</a>
+
+                    </li>
+                    <li><a href="categories3.html">summer league</a></li>
+                    <li><a href="categories1.html">κυπελλο</a></li>
+                </ul>
+                </div>
+
+                </div>
+                </div>
+            </li>*@
+
 
         <div class="kopa-header-bottom">
 
-            <div class="wrapper">
+                    <div class="wrapper">
 
-                <nav class="kopa-main-nav-2">
-                    <ul class="main-menu-2 sf-menu">
-                        <li>
-                            <span>διοργανώσεις</span>
-                            @*<div class="sf-mega col-md-push-0 col-xs-push-0 col-sm-push-0">
-                                <div class="sf-mega-section col-md-3 col-xs-3 col-sm-3">
-                                    <div class="widget kopa-sub-list-widget">*@
-                                        <ul class="sub-menu">
-                                            <li>
-                                                <a href="categories2.html">πρωταθλημα</a>
+                        <nav class="kopa-main-nav-2">
+                            <ul class="main-menu-2 sf-menu">
+
+                                <li>
+                                    <span>α ομιλος</span>
+                                    <div class="sf-mega col-md-push-0 col-xs-push-0 col-sm-push-0">
+                                        <div class="sf-mega-section col-md-3 col-xs-3 col-sm-3">
+                                            <div class="widget kopa-sub-list-widget">
                                                 <ul class="sub-menu">
                                                     <li>
-                                                        <span>α ομιλος</span>
-                                                        <div class="sf-mega col-md-push-0 col-xs-push-0 col-sm-push-0">
-                                                            <div class="sf-mega-section col-md-3 col-xs-3 col-sm-3">
-                                                                <div class="widget kopa-sub-list-widget">
-                                                                    <ul class="sub-menu">
-                                                                        <li>
-                                                                            <a href="@Url.Action("Index", "Posts", New With {.yk = 2})">νεα</a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a href="@Url.Action("Index", "Posts", New With {.yk = 3})">ομάδες</a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a href="@Url.Action("Index", "Posts", New With {.yk = 4})">τιμωριες</a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a href="@Url.Action("Index", "Posts", New With {.yk = 5})">προγραμμα</a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a href="@Url.Action("Index", "Posts", New With {.yk = 6})">βαθμολογια</a>
-                                                                        </li>
-                                                                    </ul>
-                                                                </div>
-                                                                <!-- widget -->
-                                                            </div>
-                                                            <!-- col-md-3 -->
-                                                            <div class="sf-mega-section col-md-9 col-xs-9 col-sm-9">
-                                                                <div class="widget kopa-sub-list-widget sub-list-1">
-                                                                    <h4>Τελευταια νεα ομιλου</h4>
-                                                                    <ul id="omilos1row" class="row"></ul>
-                                                                </div>
-                                                                <!-- widget -->
-                                                            </div>
-                                                            <!-- col-md-9 -->
-                                                        </div>
+                                                        <a href="@Url.Action("Index", "Posts", New With {.yk = 2})">νεα</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="@Url.Action("Index", "Posts", New With {.yk = 3})">ομάδες</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="@Url.Action("Index", "Posts", New With {.yk = 4})">τιμωριες</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="@Url.Action("Index", "Posts", New With {.yk = 5})">προγραμμα</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="@Url.Action("Index", "Posts", New With {.yk = 6})">βαθμολογια</a>
                                                     </li>
                                                 </ul>
-                                            </li>
-                                            <li><a href="categories3.html">summer league</a></li>
-                                            <li><a href="categories1.html">κυπελλο</a></li>
-                                       </ul>
-                                    @*</div>*@
-                                    <!-- widget -->
-                                @*</div>
-                            </div>*@
-                        </li>
-                        <li>
-                            <span>α ομιλος</span>
-                            <div class="sf-mega col-md-push-0 col-xs-push-0 col-sm-push-0">
-                                <div class="sf-mega-section col-md-3 col-xs-3 col-sm-3">
-                                    <div class="widget kopa-sub-list-widget">
-                                        <ul class="sub-menu">
-                                            <li>
-                                                <a href="@Url.Action("Index", "Posts", New With {.yk = 2})">νεα</a>
-                                            </li>
-                                            <li>
-                                                <a href="@Url.Action("Index", "Posts", New With {.yk = 3})">ομάδες</a>
-                                            </li>
-                                            <li>
-                                                <a href="@Url.Action("Index", "Posts", New With {.yk = 4})">τιμωριες</a>
-                                            </li>
-                                            <li>
-                                                <a href="@Url.Action("Index", "Posts", New With {.yk = 5})">προγραμμα</a>
-                                            </li>
-                                            <li>
-                                                <a href="@Url.Action("Index", "Posts", New With {.yk = 6})">βαθμολογια</a>
-                                            </li>
-                                        </ul>
+                                            </div>
+                                            <!-- widget -->
+                                        </div>
+                                        <!-- col-md-3 -->
+                                        <div class="sf-mega-section col-md-9 col-xs-9 col-sm-9">
+                                            <div class="widget kopa-sub-list-widget sub-list-1">
+                                                <h4>Τελευταια νεα ομιλου</h4>
+                                                <ul id="omilos1row" class="row"></ul>
+                                            </div>
+                                            <!-- widget -->
+                                        </div>
+                                        <!-- col-md-9 -->
                                     </div>
-                                    <!-- widget -->
-                                </div>
-                                <!-- col-md-3 -->
-                                <div class="sf-mega-section col-md-9 col-xs-9 col-sm-9">
-                                    <div class="widget kopa-sub-list-widget sub-list-1">
-                                        <h4>Τελευταια νεα ομιλου</h4>
-                                        <ul id="omilos1row111111111111111" class="row">
-                                            @*<li class="col-md-4 col-xs-4 col-sm-4">
-                                                <article class="entry-item">
-                                                    <h5><a href="#">Τελευταια νεα ομιλου</a></h5>
-                                                    <div class="entry-thumb">
-                                                        <a href="#"><img src="~/Content/images/sub-menu/1.jpg" alt=""></a>
-                                                    </div>
-                                                    <h4 class="entry-title"><a href="#">Winners and losers from Week 1 in college football</a></h4>
-                                                </article>
-                                            </li>*@
-                                        </ul>
-                                    </div>
-                                    <!-- widget -->
-                                </div>
-                                <!-- col-md-9 -->
-                            </div>
-                        </li>
-                        <li>
-                            <a href="categories1.html"><span>β ομιλος</span></a>
-                            <div class="sf-mega col-md-push-0 col-xs-push-0 col-sm-push-0">
-                                <div class="sf-mega-section col-md-3 col-xs-3 col-sm-3">
-                                    <div class="widget kopa-sub-list-widget">
-                                        <ul class="sub-menu">
-                                            <li>
-                                                <a href="viewNewsGroup.aspx?g=β">νεα</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">ομαδες</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">τιμωριες</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">προγραμμα</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">βαθμολογια</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <!-- widget -->
-                                </div>
-                                <!-- col-md-3 -->
-                                <div class="sf-mega-section col-md-9 col-xs-9 col-sm-9">
-                                    <div class="widget kopa-sub-list-widget sub-list-1">
-                                        <ul class="row">
-                                            <li class="col-md-4 col-xs-4 col-sm-4">
-                                                <article class="entry-item">
-                                                    <h5><a href="#">Τελευταια νεα β ομιλου</a></h5>
-                                                    <div class="entry-thumb">
-                                                        <a href="#"><img src="~/Content/images/sub-menu/1.jpg" alt=""></a>
-                                                    </div>
-                                                    <h4 class="entry-title"><a href="#">Winners and losers from Week 1 in college football</a></h4>
-                                                </article>
-                                            </li>
-                                            <li class="col-md-4 col-xs-4 col-sm-4">
-                                                <article class="entry-item">
-                                                    <h5><a href="#">Most read</a></h5>
-                                                    <div class="entry-thumb">
-                                                        <a href="#"><img src="~/Content/images/sub-menu/2.jpg" alt=""></a>
-                                                    </div>
-                                                    <h4 class="entry-title"><a href="#">Michael Jordan becoming great owner, too, for Hornets</a></h4>
-                                                </article>
-                                            </li>
-                                            <li class="col-md-4 col-xs-4 col-sm-4">
-                                                <article class="entry-item">
-                                                    <h5><a href="#">Latest VIDEO</a></h5>
-                                                    <div class="entry-thumb">
-                                                        <a href="#"><img src="~/Content/images/sub-menu/3.jpg" alt=""></a>
-                                                    </div>
-                                                    <h4 class="entry-title"><a href="#">NFL roster cuts: Champ Bailey, Nate Burleson among victims</a></h4>
-                                                </article>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <!-- widget -->
-                                </div>
-                                <!-- col-md-9 -->
-                            </div>
-                        </li>
-                        <li><a href="categories2.html"><span>γ ομιλος</span></a></li>
-                        <li><a href="categories4.html"><span>δ ομιλος</span></a></li>
-                    </ul>
-                </nav>
-                <!--/end main-nav-2-->
+                                </li>
 
-            </div>
-            <!-- wrapper -->
+                                <li>
+                                    <span>α ομιλος 2 </span>
+                                </li>
+                                <li>
+                                    <span>α ομιλος 3</span>
+                                </li>
+                                <li>
+                                    <span>α ομιλος 4 </span>
+                                </li>
+                                <li>
+                                    <span>α ομιλος 5 </span>
+                                </li>
+                                <li>
+                                    <span>α ομιλος 6</span>
+                                </li>
+                                <li>
+                                    <span>α ομιλος 7</span>
+                                </li>
+                                <li>
+                                    <span>α ομιλος 8</span>
+                                </li>
+                                <li>
+                                    <span>α ομιλος 9 </span>
+                                </li>
+                                <li>
+                                    <span>α ομιλος 10</span>
+                                </li>
+                                <li>
+                                    <span>α ομιλος 11</span>
+                                </li>
 
-            <div class="kopa-sub-page kopa-single-page">
-                <div class="widget kopa-tab-score-widget">
-                    <div class="kopa-tab style1">
-                        <div class="tab-content">
-                            <div class="tab-pane active" id="agroup">
-                                <div class="owl-carousel owl-carousel-1">
-                                    <div class="item">
-                                        <div class="entry-item">
-                                            <a href="#">
-                                                <p>Σαβ 01/06/2017 19:00</p>
-                                                <ul class="clearfix">
-                                                    <li>
-                                                        <span title="all stars">all stars</span>
-                                                        <span>74</span>
-                                                    </li>
-                                                    <li>
-                                                        <span title="drink team tequila">drink team tequila</span>
-                                                        <span>64</span>
-                                                    </li>
-                                                </ul>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <!-- item -->
-                                    <div class="item">
-                                        <div class="entry-item">
-                                            <a href="#">
-                                                <p>Σαβ 01/06/2017 21:00</p>
-                                                <ul class="clearfix">
-                                                    <li>
-                                                        <span title="brooklyn bets">brooklyn bets</span>
-                                                        <span>48</span>
-                                                    </li>
-                                                    <li>
-                                                        <span title="crocodiles">crocodiles</span>
-                                                        <span>52</span>
-                                                    </li>
-                                                </ul>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <!-- item -->
-                                    <div class="item">
-                                        <div class="entry-item">
-                                            <a href="#">
-                                                <p>Κυρ 02/06/2017 11:00</p>
-                                                <ul class="clearfix">
-                                                    <li>
-                                                        <span title="ΚΑΡΕΑΣ">ΚΑΡΕΑΣ</span>
-                                                        <span>47</span>
-                                                    </li>
-                                                    <li>
-                                                        <span title="VIP">VIP</span>
-                                                        <span>43</span>
-                                                    </li>
-                                                </ul>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <!-- item -->
-                                    <div class="item">
-                                        <div class="entry-item">
-                                            <a href="#">
-                                                <p>Κυρ 02/06/2017 13:00</p>
-                                                <ul class="clearfix">
-                                                    <li>
-                                                        <span title="KYPSELI 38ers">KYPSELI 38ers</span>
-                                                        <span>48</span>
-                                                    </li>
-                                                    <li>
-                                                        <span title="ΟΙΩΝΟΣ CELTICS	">ΟΙΩΝΟΣ CELTICS</span>
-                                                        <span>72</span>
-                                                    </li>
-                                                </ul>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <!-- item -->
-                                    <div class="item">
-                                        <div class="entry-item">
-                                            <a href="#">
-                                                <p>Κυρ 02/06/2017 15:00</p>
-                                                <ul class="clearfix">
-                                                    <li>
-                                                        <span>BEAUX GOSSES	</span>
-                                                        <span>67</span>
-                                                    </li>
-                                                    <li>
-                                                        <span>BLACK WIDOWS	</span>
-                                                        <span>64</span>
-                                                    </li>
-                                                </ul>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <!-- item -->
-
-                                    <div class="item">
-                                        <div class="entry-item">
-                                            <a href="#">
-                                                <p>Σαβ 01/06/2017 19:00</p>
-                                                <ul class="clearfix">
-                                                    <li>
-                                                        <span title="all stars">all stars</span>
-                                                        <span>74</span>
-                                                    </li>
-                                                    <li>
-                                                        <span title="drink team tequila">drink team tequila</span>
-                                                        <span>64</span>
-                                                    </li>
-                                                </ul>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <!-- item -->
-                                    <div class="item">
-                                        <div class="entry-item">
-                                            <a href="#">
-                                                <p>Σαβ 01/06/2017 21:00</p>
-                                                <ul class="clearfix">
-                                                    <li>
-                                                        <span title="brooklyn bets">brooklyn bets</span>
-                                                        <span>48</span>
-                                                    </li>
-                                                    <li>
-                                                        <span title="crocodiles">crocodiles</span>
-                                                        <span>52</span>
-                                                    </li>
-                                                </ul>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <!-- item -->
-                                    <div class="item">
-                                        <div class="entry-item">
-                                            <a href="#">
-                                                <p>Κυρ 02/06/2017 11:00</p>
-                                                <ul class="clearfix">
-                                                    <li>
-                                                        <span title="ΚΑΡΕΑΣ">ΚΑΡΕΑΣ</span>
-                                                        <span>47</span>
-                                                    </li>
-                                                    <li>
-                                                        <span title="VIP">VIP</span>
-                                                        <span>43</span>
-                                                    </li>
-                                                </ul>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <!-- item -->
-                                    <div class="item">
-                                        <div class="entry-item">
-                                            <a href="#">
-                                                <p>Κυρ 02/06/2017 13:00</p>
-                                                <ul class="clearfix">
-                                                    <li>
-                                                        <span title="KYPSELI 38ers">KYPSELI 38ers</span>
-                                                        <span>48</span>
-                                                    </li>
-                                                    <li>
-                                                        <span title="ΟΙΩΝΟΣ CELTICS	">ΟΙΩΝΟΣ CELTICS</span>
-                                                        <span>72</span>
-                                                    </li>
-                                                </ul>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <!-- item -->
-                                    <div class="item">
-                                        <div class="entry-item">
-                                            <a href="#">
-                                                <p>Κυρ 02/06/2017 15:00</p>
-                                                <ul class="clearfix">
-                                                    <li>
-                                                        <span>BEAUX GOSSES	</span>
-                                                        <span>67</span>
-                                                    </li>
-                                                    <li>
-                                                        <span>BLACK WIDOWS	</span>
-                                                        <span>64</span>
-                                                    </li>
-                                                </ul>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <!-- item -->
-
-                                </div>
-                                <!-- owl-carousel-1 -->
-                            </div>
-
-                            <!-- tab-pane -->
+                                    @*<li>
+                <a href="categories1.html"><span>β ομιλος</span></a>
+                <div class="sf-mega col-md-push-0 col-xs-push-0 col-sm-push-0">
+                    <div class="sf-mega-section col-md-3 col-xs-3 col-sm-3">
+                        <div class="widget kopa-sub-list-widget">
+                            <ul class="sub-menu">
+                                <li>
+                                    <a href="viewNewsGroup.aspx?g=β">νεα</a>
+                                </li>
+                                <li>
+                                    <a href="#">ομαδες</a>
+                                </li>
+                                <li>
+                                    <a href="#">τιμωριες</a>
+                                </li>
+                                <li>
+                                    <a href="#">προγραμμα</a>
+                                </li>
+                                <li>
+                                    <a href="#">βαθμολογια</a>
+                                </li>
+                            </ul>
                         </div>
+                        <!-- widget -->
                     </div>
-                    <!-- kopa-tab -->
+                    <!-- col-md-3 -->
+                    <div class="sf-mega-section col-md-9 col-xs-9 col-sm-9">
+                        <div class="widget kopa-sub-list-widget sub-list-1">
+                            <ul class="row">
+                                <li class="col-md-4 col-xs-4 col-sm-4">
+                                    <article class="entry-item">
+                                        <h5><a href="#">Τελευταια νεα β ομιλου</a></h5>
+                                        <div class="entry-thumb">
+                                            <a href="#"><img src="~/Content/images/sub-menu/1.jpg" alt=""></a>
+                                        </div>
+                                        <h4 class="entry-title"><a href="#">Winners and losers from Week 1 in college football</a></h4>
+                                    </article>
+                                </li>
+                                <li class="col-md-4 col-xs-4 col-sm-4">
+                                    <article class="entry-item">
+                                        <h5><a href="#">Most read</a></h5>
+                                        <div class="entry-thumb">
+                                            <a href="#"><img src="~/Content/images/sub-menu/2.jpg" alt=""></a>
+                                        </div>
+                                        <h4 class="entry-title"><a href="#">Michael Jordan becoming great owner, too, for Hornets</a></h4>
+                                    </article>
+                                </li>
+                                <li class="col-md-4 col-xs-4 col-sm-4">
+                                    <article class="entry-item">
+                                        <h5><a href="#">Latest VIDEO</a></h5>
+                                        <div class="entry-thumb">
+                                            <a href="#"><img src="~/Content/images/sub-menu/3.jpg" alt=""></a>
+                                        </div>
+                                        <h4 class="entry-title"><a href="#">NFL roster cuts: Champ Bailey, Nate Burleson among victims</a></h4>
+                                    </article>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- widget -->
+                    </div>
+                    <!-- col-md-9 -->
+                </div>
+            </li>
+            <li><a href="categories2.html"><span>γ ομιλος</span></a></li>
+            <li><a href="categories4.html"><span>δ ομιλος</span></a></li>*@
+</ul>
+                        </nav>
+                        <!--/end main-nav-2-->
+
+                    </div>
+                    <!-- wrapper -->
+
+                    <div class="kopa-sub-page kopa-single-page">
+                        <div class="widget kopa-tab-score-widget">
+                            <div class="kopa-tab style1">
+                                <div class="tab-content">
+                                    <div class="tab-pane active" id="agroup">
+                                        <div class="owl-carousel owl-carousel-1">
+                                            <div class="item">
+                                                <div class="entry-item">
+                                                    <a href="#">
+                                                        <p>Σαβ 01/06/2017 19:00</p>
+                                                        <ul class="clearfix">
+                                                            <li>
+                                                                <span title="all stars">all stars</span>
+                                                                <span>74</span>
+                                                            </li>
+                                                            <li>
+                                                                <span title="drink team tequila">drink team tequila</span>
+                                                                <span>64</span>
+                                                            </li>
+                                                        </ul>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <!-- item -->
+                                            <div class="item">
+                                                <div class="entry-item">
+                                                    <a href="#">
+                                                        <p>Σαβ 01/06/2017 21:00</p>
+                                                        <ul class="clearfix">
+                                                            <li>
+                                                                <span title="brooklyn bets">brooklyn bets</span>
+                                                                <span>48</span>
+                                                            </li>
+                                                            <li>
+                                                                <span title="crocodiles">crocodiles</span>
+                                                                <span>52</span>
+                                                            </li>
+                                                        </ul>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <!-- item -->
+                                            <div class="item">
+                                                <div class="entry-item">
+                                                    <a href="#">
+                                                        <p>Κυρ 02/06/2017 11:00</p>
+                                                        <ul class="clearfix">
+                                                            <li>
+                                                                <span title="ΚΑΡΕΑΣ">ΚΑΡΕΑΣ</span>
+                                                                <span>47</span>
+                                                            </li>
+                                                            <li>
+                                                                <span title="VIP">VIP</span>
+                                                                <span>43</span>
+                                                            </li>
+                                                        </ul>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <!-- item -->
+                                            <div class="item">
+                                                <div class="entry-item">
+                                                    <a href="#">
+                                                        <p>Κυρ 02/06/2017 13:00</p>
+                                                        <ul class="clearfix">
+                                                            <li>
+                                                                <span title="KYPSELI 38ers">KYPSELI 38ers</span>
+                                                                <span>48</span>
+                                                            </li>
+                                                            <li>
+                                                                <span title="ΟΙΩΝΟΣ CELTICS	">ΟΙΩΝΟΣ CELTICS</span>
+                                                                <span>72</span>
+                                                            </li>
+                                                        </ul>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <!-- item -->
+                                            <div class="item">
+                                                <div class="entry-item">
+                                                    <a href="#">
+                                                        <p>Κυρ 02/06/2017 15:00</p>
+                                                        <ul class="clearfix">
+                                                            <li>
+                                                                <span>BEAUX GOSSES	</span>
+                                                                <span>67</span>
+                                                            </li>
+                                                            <li>
+                                                                <span>BLACK WIDOWS	</span>
+                                                                <span>64</span>
+                                                            </li>
+                                                        </ul>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <!-- item -->
+
+                                            <div class="item">
+                                                <div class="entry-item">
+                                                    <a href="#">
+                                                        <p>Σαβ 01/06/2017 19:00</p>
+                                                        <ul class="clearfix">
+                                                            <li>
+                                                                <span title="all stars">all stars</span>
+                                                                <span>74</span>
+                                                            </li>
+                                                            <li>
+                                                                <span title="drink team tequila">drink team tequila</span>
+                                                                <span>64</span>
+                                                            </li>
+                                                        </ul>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <!-- item -->
+                                            <div class="item">
+                                                <div class="entry-item">
+                                                    <a href="#">
+                                                        <p>Σαβ 01/06/2017 21:00</p>
+                                                        <ul class="clearfix">
+                                                            <li>
+                                                                <span title="brooklyn bets">brooklyn bets</span>
+                                                                <span>48</span>
+                                                            </li>
+                                                            <li>
+                                                                <span title="crocodiles">crocodiles</span>
+                                                                <span>52</span>
+                                                            </li>
+                                                        </ul>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <!-- item -->
+                                            <div class="item">
+                                                <div class="entry-item">
+                                                    <a href="#">
+                                                        <p>Κυρ 02/06/2017 11:00</p>
+                                                        <ul class="clearfix">
+                                                            <li>
+                                                                <span title="ΚΑΡΕΑΣ">ΚΑΡΕΑΣ</span>
+                                                                <span>47</span>
+                                                            </li>
+                                                            <li>
+                                                                <span title="VIP">VIP</span>
+                                                                <span>43</span>
+                                                            </li>
+                                                        </ul>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <!-- item -->
+                                            <div class="item">
+                                                <div class="entry-item">
+                                                    <a href="#">
+                                                        <p>Κυρ 02/06/2017 13:00</p>
+                                                        <ul class="clearfix">
+                                                            <li>
+                                                                <span title="KYPSELI 38ers">KYPSELI 38ers</span>
+                                                                <span>48</span>
+                                                            </li>
+                                                            <li>
+                                                                <span title="ΟΙΩΝΟΣ CELTICS	">ΟΙΩΝΟΣ CELTICS</span>
+                                                                <span>72</span>
+                                                            </li>
+                                                        </ul>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <!-- item -->
+                                            <div class="item">
+                                                <div class="entry-item">
+                                                    <a href="#">
+                                                        <p>Κυρ 02/06/2017 15:00</p>
+                                                        <ul class="clearfix">
+                                                            <li>
+                                                                <span>BEAUX GOSSES	</span>
+                                                                <span>67</span>
+                                                            </li>
+                                                            <li>
+                                                                <span>BLACK WIDOWS	</span>
+                                                                <span>64</span>
+                                                            </li>
+                                                        </ul>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <!-- item -->
+
+                                        </div>
+                                        <!-- owl-carousel-1 -->
+                                    </div>
+
+                                    <!-- tab-pane -->
+                                </div>
+                            </div>
+                            <!-- kopa-tab -->
+
+                        </div>
+                        <!-- widget -->
+                    </div>
 
                 </div>
-                <!-- widget -->
-            </div>
-
-        </div>
-        <!-- kopa-header-bottom -->
+                <!-- kopa-header-bottom -->
 
 
 
