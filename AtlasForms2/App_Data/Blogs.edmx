@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="atlasModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="atlasModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="AspNetRoles">
           <Key>
             <PropertyRef Name="Id" />
@@ -109,6 +109,21 @@
           <Property Name="EditDate" Type="datetime" />
           <Property Name="EditBy" Type="varchar" MaxLength="100" />
         </EntityType>
+        <EntityType Name="BlogProgramma">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OmadaA" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="OmadaB" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="gamedate" Type="date" Nullable="false" />
+          <Property Name="Omilosid" Type="int" />
+          <Property Name="GipedoId" Type="int" />
+          <Property Name="CreationDate" Type="datetime" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="100" />
+          <Property Name="EditDate" Type="datetime" />
+          <Property Name="EditBy" Type="varchar" MaxLength="100" />
+        </EntityType>
         <EntityType Name="BlogYpokathgoriesTable">
           <Key>
             <PropertyRef Name="Id" />
@@ -187,6 +202,7 @@
           <EntitySet Name="BlogKathgoriesTable" EntityType="Self.BlogKathgoriesTable" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="BlogPostKathgoriaTable" EntityType="Self.BlogPostKathgoriaTable" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="BlogPostsTable" EntityType="Self.BlogPostsTable" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BlogProgramma" EntityType="Self.BlogProgramma" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="BlogYpokathgoriesTable" EntityType="Self.BlogYpokathgoriesTable" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
             <End Role="AspNetUsers" EntitySet="AspNetUsers" />
@@ -230,6 +246,7 @@
             <End Role="AspNetRoles" EntitySet="AspNetRoles" />
             <End Role="AspNetUsers" EntitySet="AspNetUsers" />
           </AssociationSet>
+          <EntitySet Name="BlogProgramma" EntityType="atlasModel.BlogProgramma" />
         </EntityContainer>
         <EntityType Name="BlogKathgoriesTable">
           <Key>
@@ -378,6 +395,21 @@
           <End Type="atlasModel.AspNetRoles" Role="AspNetRoles" Multiplicity="*" />
           <End Type="atlasModel.AspNetUsers" Role="AspNetUsers" Multiplicity="*" />
         </Association>
+        <EntityType Name="BlogProgramma">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OmadaA" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="OmadaB" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="gamedate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Omilosid" Type="Int32" />
+          <Property Name="GipedoId" Type="Int32" />
+          <Property Name="CreationDate" Type="DateTime" Precision="3" />
+          <Property Name="CreatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="EditDate" Type="DateTime" Precision="3" />
+          <Property Name="EditBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -507,6 +539,22 @@
               <ScalarProperty Name="Id" ColumnName="RoleId" />
             </EndProperty>
           </AssociationSetMapping>
+          <EntitySetMapping Name="BlogProgramma">
+            <EntityTypeMapping TypeName="atlasModel.BlogProgramma">
+              <MappingFragment StoreEntitySet="BlogProgramma">
+                <ScalarProperty Name="EditBy" ColumnName="EditBy" />
+                <ScalarProperty Name="EditDate" ColumnName="EditDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+                <ScalarProperty Name="GipedoId" ColumnName="GipedoId" />
+                <ScalarProperty Name="Omilosid" ColumnName="Omilosid" />
+                <ScalarProperty Name="gamedate" ColumnName="gamedate" />
+                <ScalarProperty Name="OmadaB" ColumnName="OmadaB" />
+                <ScalarProperty Name="OmadaA" ColumnName="OmadaA" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

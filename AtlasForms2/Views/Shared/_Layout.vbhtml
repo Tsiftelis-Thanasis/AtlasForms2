@@ -42,14 +42,19 @@
                         <li class="current-menu-item">
                             <a href="@Url.Action("Index", "Home")"><span>Αρχικη</span></a>
                         </li>
-                        <li class="current-menu-item">
-                            <a><span>πρωταθληματα</span></a>
+                        @*<li class="current-menu-item">
+                            <a><span>διοργανώσεις</span></a>
                             <ul class="sub-menu">
-                                <li><a href="categories1.html">κυπελλο</a></li>
-                                <li><a href="categories2.html">πρωταθλημα</a></li>
+                                <li><a href="categories2.html">πρωταθλημα</a>
+                                    <ul class="sub-menu">
+                                        <li><a href="viewNews.aspx?typ=org&title=κανονες - οροι συμμετοχης">κανονες οροι συμμετοχης</a></li>
+                                    </ul>
+
+                                </li>
                                 <li><a href="categories3.html">summer league</a></li>
+                                <li><a href="categories1.html">κυπελλο</a></li>
                             </ul>
-                        </li>
+                        </li>*@
                         <li class="current-menu-item">
                             <a><span>διοργανωτρια αρχη</span></a>
                             <ul class="sub-menu">
@@ -155,6 +160,61 @@
                 <nav class="kopa-main-nav-2">
                     <ul class="main-menu-2 sf-menu">
                         <li>
+                            <span>διοργανώσεις</span>
+                            @*<div class="sf-mega col-md-push-0 col-xs-push-0 col-sm-push-0">
+                                <div class="sf-mega-section col-md-3 col-xs-3 col-sm-3">
+                                    <div class="widget kopa-sub-list-widget">*@
+                                        <ul class="sub-menu">
+                                            <li>
+                                                <a href="categories2.html">πρωταθλημα</a>
+                                                <ul class="sub-menu">
+                                                    <li>
+                                                        <span>α ομιλος</span>
+                                                        <div class="sf-mega col-md-push-0 col-xs-push-0 col-sm-push-0">
+                                                            <div class="sf-mega-section col-md-3 col-xs-3 col-sm-3">
+                                                                <div class="widget kopa-sub-list-widget">
+                                                                    <ul class="sub-menu">
+                                                                        <li>
+                                                                            <a href="@Url.Action("Index", "Posts", New With {.yk = 2})">νεα</a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a href="@Url.Action("Index", "Posts", New With {.yk = 3})">ομάδες</a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a href="@Url.Action("Index", "Posts", New With {.yk = 4})">τιμωριες</a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a href="@Url.Action("Index", "Posts", New With {.yk = 5})">προγραμμα</a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a href="@Url.Action("Index", "Posts", New With {.yk = 6})">βαθμολογια</a>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                                <!-- widget -->
+                                                            </div>
+                                                            <!-- col-md-3 -->
+                                                            <div class="sf-mega-section col-md-9 col-xs-9 col-sm-9">
+                                                                <div class="widget kopa-sub-list-widget sub-list-1">
+                                                                    <h4>Τελευταια νεα ομιλου</h4>
+                                                                    <ul id="omilos1row" class="row"></ul>
+                                                                </div>
+                                                                <!-- widget -->
+                                                            </div>
+                                                            <!-- col-md-9 -->
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="categories3.html">summer league</a></li>
+                                            <li><a href="categories1.html">κυπελλο</a></li>
+                                       </ul>
+                                    @*</div>*@
+                                    <!-- widget -->
+                                @*</div>
+                            </div>*@
+                        </li>
+                        <li>
                             <span>α ομιλος</span>
                             <div class="sf-mega col-md-push-0 col-xs-push-0 col-sm-push-0">
                                 <div class="sf-mega-section col-md-3 col-xs-3 col-sm-3">
@@ -183,7 +243,7 @@
                                 <div class="sf-mega-section col-md-9 col-xs-9 col-sm-9">
                                     <div class="widget kopa-sub-list-widget sub-list-1">
                                         <h4>Τελευταια νεα ομιλου</h4>
-                                        <ul id="omilos1row" class="row">
+                                        <ul id="omilos1row111111111111111" class="row">
                                             @*<li class="col-md-4 col-xs-4 col-sm-4">
                                                 <article class="entry-item">
                                                     <h5><a href="#">Τελευταια νεα ομιλου</a></h5>
@@ -265,7 +325,6 @@
                         </li>
                         <li><a href="categories2.html"><span>γ ομιλος</span></a></li>
                         <li><a href="categories4.html"><span>δ ομιλος</span></a></li>
-                        <li><a href="categories5.html"><span>κυπελλο</span></a></li>
                     </ul>
                 </nav>
                 <!--/end main-nav-2-->
@@ -483,11 +542,16 @@
     <!-- kopa-page-header -->
 
     <div class="kopa-sub-page kopa-single-page">
-
-
-        <div class="container body-content">
-            @RenderBody()
-            <hr />
+        <div class="container body-content" >
+            <div class="row">
+                <div width="90%">
+                    @RenderBody()
+                </div>
+                <div width="10%">
+                    <span>side bar for ads!!!</span>
+                </div>
+                <hr />
+            </div>
         </div>
 
     </div>

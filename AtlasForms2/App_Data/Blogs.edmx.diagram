@@ -16,6 +16,7 @@
         <AssociationConnector Association="atlasModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" />
         <AssociationConnector Association="atlasModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" />
         <AssociationConnector Association="atlasModel.AspNetUserRoles" />
+        <EntityTypeShape EntityType="atlasModel.BlogProgramma" Width="1.5" PointX="7.375" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -8,10 +8,13 @@ End Code
     <div class="col-md-4">
         <div class="panel panel-default">
             <div class="panel-heading">
-                <h4><i class="icon-cpanel homeicons"></i> άρθρα</h4>
+                <h4><i class="icon-cpanel homeicons"></i> άρθρα - διαφημίσεις</h4>
             </div>
             <div class="panel-body">
                 <p>  @Html.ActionLink("Νέο Άρθρο", "Posts", "Create") </p>
+            </div>
+            <div class="panel-body">
+                <p>  @Html.ActionLink("Νέα Διαφήμιση", "Posts", "Create") </p>
             </div>
             <div class="panel-body">
                 <p> @Html.ActionLink("Λίστα όλων των άρθρων", "All", "Posts") </p>
@@ -50,7 +53,7 @@ End Code
 </div>
 
 <div class="row ">
-    <div class="col-md-3">
+    <div class="col-md-4">
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h4><i class="icon-useralt homeicons"></i> Διαχειριση χρηστων</h4>

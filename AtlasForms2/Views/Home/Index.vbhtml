@@ -5,11 +5,11 @@ End Code
    
     <div class="wrapper mb-30">
 
-        <div class="widget-area-1">
+        @*<div class="widget-area-1">*@
 
-            <div class="widget kopa-sync-carousel-widget">
-                <div class="owl-carousel sync1">
-                    <div class="item">
+            @*<div class="widget kopa-sync-carousel-widget">
+                <div class="owl-carousel sync1">*@
+                    @*<div class="item">
                         <article class="entry-item">
                             <div class="entry-thumb">
                                 <a href="#"><img src="~/Content/images/slider/s1.png" alt=""></a>
@@ -47,8 +47,8 @@ End Code
                             </div>
                             <span></span>
                         </article>
-                    </div>
-                    <div class="item">
+                    </div>*@
+                    @*<div class="item">
                         <article class="entry-item">
                             <div class="entry-thumb">
                                 <a href="#"><img src="~/Content/images/slider/s4.png" alt=""></a>
@@ -60,8 +60,8 @@ End Code
                             </div>
                             <span></span>
                         </article>
-                    </div>
-                    <div class="item">
+                    </div>*@
+                    @*<div class="item">
                         <article class="entry-item">
                             <div class="entry-thumb">
                                 <a href="#"><img src="~/Content/images/slider/s5.png" alt=""></a>
@@ -74,13 +74,13 @@ End Code
                             <span></span>
                         </article>
                     </div>
-                </div>
+                </div>*@
                 <!-- sync1 -->
 
-            </div>
+            @*</div>*@
             <!-- kopa sync carousel widget -->
 
-            <div class="widget kopa-scroll-slider-widget">
+            @*<div class="widget kopa-scroll-slider-widget">
                 <h3 class="widget-title"><span><b>gallery post</b></span></h3>
                 <span class="thumb-left"></span>
                 <span class="thumb-right"></span>
@@ -170,15 +170,15 @@ End Code
                         </li>
 
                     </ul>
-                </div>
+                </div>*@
                 <!-- scroll-slider
                 </div>
                 <!-- widget -->
 
-            </div>
+            @*</div>*@
             <!-- widget-area-1 -->
 
-        </div>
+        @*</div>*@
         <!-- wrapper -->
 
         <div class="wrapper">

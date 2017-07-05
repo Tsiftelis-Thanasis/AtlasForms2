@@ -9,6 +9,10 @@
         imageSrc = String.Format("data:image/png;base64,{0}", imageBase64)
     End If
 
+    'to do
+    Dim ads = (From pk In pdb.BlogKathgoriesTable
+               Where pk.Id = 6
+               Select pk.KathgoriaName).FirstOrDefault
 
     Dim kathgorianamestr As String = ""
     Dim ypokathgorianamestr As String = ""
