@@ -10,21 +10,18 @@
 Imports System
 Imports System.Collections.Generic
 
-Partial Public Class temprankings
-    Public Property ncount As Long
+Partial Public Class GetWeeklyReportStat2All_Result
+    Public Property Row As Nullable(Of Long)
     Public Property thisname As String
     Public Property thisid As Integer
     Public Property SeasonName As String
     Public Property DiorganwshName As String
     Public Property OmilosName As String
     Public Property KathgoriaName As String
-    Public Property nikes As Decimal
-    Public Property isopalies As Decimal
-    Public Property httes As Decimal
-    Public Property mhdenismoi As Decimal
-    Public Property totalplayed As Decimal
-    Public Property totalpoints As Decimal
-    Public Property diaforapontwn As Decimal
-    Public Property bathmoi As Decimal
+    Public Property KathgoriaId As Integer
+    Public Property teamname As String
+    Public Property teamId As Integer
+    Public Property totalassists As Decimal
+    Public Property PlayerPhoto As Byte()
 
 End Class

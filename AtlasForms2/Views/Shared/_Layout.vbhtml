@@ -64,9 +64,9 @@
                                 <li><a href="gallery4.html">επικοινωνια</a></li>
                             </ul>
                         </li>
-                        @If (User.IsInRole("Admins")) Then
+                        @*thansis - den paizei!..... @If (User.Identity.IsAuthenticated And User.IsInRole("Admins")) Then
                             @<li Class="current-menu-item"><a href="@Url.Action("Panel", "Home")"><span>διαχειριση</span></a></li>
-                        End If
+                        End If*@
                     </ul>
                 </nav>
 

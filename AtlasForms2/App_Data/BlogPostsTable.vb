@@ -14,6 +14,7 @@ Partial Public Class BlogPostsTable
     Public Property Id As Integer
     Public Property Activepost As Boolean
     Public Property PostTitle As String
+    Public Property PostSummary As String
     Public Property PostBody As String
     Public Property PostPhoto As Byte()
     Public Property Youtubelink As String
@@ -22,6 +23,5 @@ Partial Public Class BlogPostsTable
     Public Property CreatedBy As String
     Public Property EditDate As Nullable(Of Date)
     Public Property EditBy As String
-    Public Property PostSummary As String
 
 End Class

@@ -1211,22 +1211,33 @@ if (jQuery('.kopa-slider-ip').length > 0) {
 Appending to top 5
 ============================================================ */
 function appendTop5Container(choiceContainer, result) {
-
-    
+              
     var p = 1;
     if (result.length > 0) {
         choiceContainer.empty();
         $.each(result, function () {
-           var d = ' <li> ' +
+
+
+            var _photo = "";
+
+            if (this.pphoto != "") {
+                _photo = this.pphoto;
+            }
+            else { 
+                _photo = "../Content/images/icons8-Basketball Player-50.png";
+            }
+                        
+            var d = ' <li> ' +
                 ' <div class="point-item"> ' +
                 ' <div class="point-left"> ' +
                 ' <div class="point-thumb"> ' +
-                ' <img src="Content/images/point/1.jpg" alt="" /> ' +
+                ' <img src="' + _photo  + '" alt="" /> ' +
                 ' <span>' + p + '</span> ' +
                 ' </div> ' +
                 ' <div class="point-content"> ' +
                 ' <p><a href="http://atlasstatistics.gr/Players/Details/' + this.pid + '">' + this.pname + '</a></p> ' +
-                ' <span><a href="http://atlasstatistics.gr/Teams/Details/' + this.tid + '">' + this.tname + '</a></span> ' +
+                ' <p><span><a href="http://atlasstatistics.gr/Teams/Details/' + this.tid + '">' + this.tname + '</a></span></p> ' +
+                ' <span>' + this.omilosname + '</span> ' +
                 ' </div> ' +
                 ' </div> ' +
                 ' <div class ="point-right"> ' +

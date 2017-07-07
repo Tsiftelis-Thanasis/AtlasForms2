@@ -782,7 +782,7 @@ End Code
 
 
     <script type="text/javascript">
-            
+
         $(document).ready(function () {
 
             //apend kalyteresfaseisid
@@ -810,7 +810,7 @@ End Code
                                '</p> ' +
                                '</div> ' +
                                '</article> ' +
-                               '</div> ';                                             
+                               '</div> ';
                             choiceContainer.append(d);
                         });
                     }
@@ -834,7 +834,7 @@ End Code
                     if (result.data.length > 0) {
                         choiceContainer.empty();
                         $.each(result.data, function () {
-                            
+
                             d = '<li> ' +
                                 ' <article class="entry-item"> ' +
                                 ' <div class="entry-thumb"> ' +
@@ -845,7 +845,7 @@ End Code
                                 ' <h4 class="entry-title"><a href="' + baseUrl + '/Posts/Details/' + this.Id + '">' + this.PostTitle + '</a></h4> ' +
                                 ' </div> ' +
                                 ' <p>' + this.PostSummary + '.... </p> ' +
-                                ' </div> ' +                                
+                                ' </div> ' +
                                 ' </article> ' +
                                 ' </li> '
                             choiceContainer.append(d);
@@ -856,93 +856,98 @@ End Code
                     alert(result.status + ' ' + result.statusText);
                 }
             });
-            
+
             //append pointsul
             $.ajax({
                 type: "POST",
-                url: 'http://atlasstatistics.gr/Home/GetWeeklyReportStat1',
+                url: baseUrl + '@Url.Action("GetWeeklyReportStat1", "Home")',
+                data: "{thisid : 0}",
                 async: false,
                 contentType: "application/json; charset=utf-8",
-                dataType: "json",                
+                dataType: "json",
                 success: function (result) {
-                    
+
                     var choiceContainer = $("#pointsul");
                     appendTop5Container(choiceContainer, result);
                 },
                 error: function (result) {
                     alert(result.status + ' ' + result.statusText);
-                }                
+                }
             });
 
 
             //append assistul
             $.ajax({
                 type: "POST",
-                url: 'http://atlasstatistics.gr/Home/GetWeeklyReportStat2',
+                url: baseUrl + '@Url.Action("GetWeeklyReportStat2", "Home")',
+                data: "{thisid : 0}",
                 async: false,
                 contentType: "application/json; charset=utf-8",
-                dataType: "json",                
+                dataType: "json",
                 success: function (result) {
-                    
+
                     var choiceContainer = $("#assistul");
                     appendTop5Container(choiceContainer, result);
                 },
                 error: function (result) {
                     alert(result.status + ' ' + result.statusText);
-                }                
+                }
             });
 
 
             //append reboundul
             $.ajax({
                 type: "POST",
-                url: 'http://atlasstatistics.gr/Home/GetWeeklyReportStat3',
+                url: baseUrl + '@Url.Action("GetWeeklyReportStat3", "Home")',
+                data: "{thisid : 0}",
                 async: false,
                 contentType: "application/json; charset=utf-8",
-                dataType: "json",                
+                dataType: "json",
                 success: function (result) {
-                    
+
                     var choiceContainer = $("#reboundul");
                     appendTop5Container(choiceContainer, result);
                 },
                 error: function (result) {
                     alert(result.status + ' ' + result.statusText);
-                }                
+                }
             });
 
 
             //append stealsul
             $.ajax({
                 type: "POST",
-                url: 'http://atlasstatistics.gr/Home/GetWeeklyReportStat4',
+                url: baseUrl + '@Url.Action("GetWeeklyReportStat4", "Home")',
+                data: "{thisid : 0}",
                 async: false,
                 contentType: "application/json; charset=utf-8",
-                dataType: "json",                
+                dataType: "json",
                 success: function (result) {
-                    
+
                     var choiceContainer = $("#stealsul");
                     appendTop5Container(choiceContainer, result);
                 },
                 error: function (result) {
                     alert(result.status + ' ' + result.statusText);
-                }                
+                }
             });
 
             //append blocksul
             $.ajax({
                 type: "POST",
-                url: 'http://atlasstatistics.gr/Home/GetWeeklyReportStat5',
+                url: baseUrl + '@Url.Action("GetWeeklyReportStat5", "Home")',
+                data: "{thisid : 0}",
                 async: false,
                 contentType: "application/json; charset=utf-8",
-                dataType: "json",                
+                dataType: "json",
                 success: function (result) {
-                    
+
                     var choiceContainer = $("#blocksul");
                     appendTop5Container(choiceContainer, result);
                 },
                 error: function (result) {
                     alert(result.status + ' ' + result.statusText);
-                }                
+                }
             });
 
 

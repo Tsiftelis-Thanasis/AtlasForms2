@@ -52,7 +52,7 @@ End Code
 
                             <div class="tab-pane active" id="fixtures">
 
-                                <div class="widget kopa-match-list-widget">
+                                @*<div class="widget kopa-match-list-widget">
 
                                     <div class="match-item last-item style1">
                                         <header>
@@ -310,7 +310,7 @@ End Code
                                         </ul>
                                     </div>*@
 
-                                </div>
+                                @*</div>*@
                                 <!-- widget -->
 
                             </div>
@@ -891,8 +891,7 @@ End Code
                         <!-- widget -->
                     </div>
                     <!-- widget-area-2 -->
-                    <div id="divstandings1" class="widget kopa-charts-widget">
-                        <h1>εδω μαλλον το πιο σωστο ειναι να φερνει τα δεδομενα απο το atlasstatistics.<br>επισης να υπαρχουν links για την καθε ομαδα</h1>
+                    <div id="divstandings1" class="widget kopa-charts-widget">                        
                         <h3 class="widget-title style17">ομιλος Α, κατηγορια Α1</h3>
                         <div class="widget-content">
                             <header>
@@ -1241,7 +1240,6 @@ End Code
                 <div Class="row">
 
                     <div id="divresults1" Class="widget-area-12">
-                        <h1>query για να γεμιζουν αποτελεσματα και επομενοι αγωνες</h1>
                         <div Class="widget kopa-result-widget">
                             <h3 Class="widget-title style6">αποτελεσματα α1</h3>
                             <div Class="widget-content">
@@ -1382,7 +1380,7 @@ End Code
 
                     <div id="divstandcommon1" Class="widget-area-13">
 
-                        <div Class="widget kopa-charts-widget">
+                        @*<div Class="widget kopa-charts-widget">
                             <h3 Class="widget-title style7"><span>βαθμολογια Α1</span></h3>
                             <div Class="widget-content">
                                 <header>
@@ -1455,7 +1453,7 @@ End Code
                                 </ul>
                                 <a Class="kopa-view-all" href="http://atlasstatistics.gr/Rankings">Εμφάνιση υπόλοιπων στατιστικών<span class="fa fa-chevron-right"></span></a>
                             </div>
-                        </div>
+                        </div>*@
                         <!-- widget -->
 
                     </div>
@@ -1607,7 +1605,7 @@ End Code
                     </div>
                     <!-- widget-area-12 -->
 
-                    <div id="divstandcommon2" Class="widget-area-13">
+                    @*<div id="divstandcommon2" Class="widget-area-13">
 
                         <div Class="widget kopa-charts-widget">
                             <h3 Class="widget-title style7"><span>βαθμολογια Α2</span></h3>
@@ -1683,9 +1681,8 @@ End Code
                                 <a Class="kopa-view-all" href="http://atlasstatistics.gr/Rankings">Εμφάνιση υπόλοιπων στατιστικών<span class="fa fa-chevron-right"></span></a>
                             </div>
                         </div>
-                        <!-- widget -->
-
-                    </div>
+                        
+                    </div>*@
 
                     <!-- widget-area-13 -->
 
@@ -1730,6 +1727,11 @@ End Code
             $("#divcommon").hide(); //includes divteams
             $("#divstandcommon1").hide();
             $("#divstandcommon2").hide();
+        }
+        else {
+            $("#divteams").hide();
+            $("#divcommon").hide();
+            $("#divfixture").hide();
         }
 
         $('#teamstable').DataTable({
@@ -1852,7 +1854,8 @@ End Code
         //append pointsul
         $.ajax({
             type: "POST",
-            url: 'http://atlasstatistics.gr/Home/GetWeeklyReportStat1',
+            url: baseUrl + '@Url.Action("GetWeeklyReportStat1", "Home")',
+            data: "{thisid : 49 }",
             async: false,
             contentType: "application/json; charset=utf-8",
             dataType: "json",
@@ -1869,7 +1872,8 @@ End Code
         //append assistul
         $.ajax({
             type: "POST",
-            url: 'http://atlasstatistics.gr/Home/GetWeeklyReportStat2',
+            url: baseUrl + '@Url.Action("GetWeeklyReportStat2", "Home")',
+            data: "{thisid : 49 }",
             async: false,
             contentType: "application/json; charset=utf-8",
             dataType: "json",
@@ -1886,7 +1890,8 @@ End Code
         //append reboundul
         $.ajax({
             type: "POST",
-            url: 'http://atlasstatistics.gr/Home/GetWeeklyReportStat3',
+            url: baseUrl + '@Url.Action("GetWeeklyReportStat3", "Home")',
+            data: "{thisid : 49}",
             async: false,
             contentType: "application/json; charset=utf-8",
             dataType: "json",
@@ -1904,7 +1909,8 @@ End Code
         //append stealsul
         $.ajax({
             type: "POST",
-            url: 'http://atlasstatistics.gr/Home/GetWeeklyReportStat4',
+            url: baseUrl + '@Url.Action("GetWeeklyReportStat4", "Home")',
+            data: "{thisid : 49}",
             async: false,
             contentType: "application/json; charset=utf-8",
             dataType: "json",
@@ -1921,7 +1927,8 @@ End Code
         //append blocksul
         $.ajax({
             type: "POST",
-            url: 'http://atlasstatistics.gr/Home/GetWeeklyReportStat5',
+            url: baseUrl + '@Url.Action("GetWeeklyReportStat5", "Home")',
+            data: "{thisid : 49}",
             async: false,
             contentType: "application/json; charset=utf-8",
             dataType: "json",

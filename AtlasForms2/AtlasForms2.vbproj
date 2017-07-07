@@ -248,40 +248,6 @@
     <Compile Include="App_Data\AgwnistikesTable.vb">
       <DependentUpon>AtlasStatistics.tt</DependentUpon>
     </Compile>
-    <Compile Include="App_Data\BlogPostKathgoriaTable.vb">
-      <DependentUpon>Blogs.tt</DependentUpon>
-    </Compile>
-    <Compile Include="App_Data\BlogProgramma.vb">
-      <DependentUpon>Blogs.tt</DependentUpon>
-    </Compile>
-    <Compile Include="App_Data\BlogYpokathgoriesTable.vb">
-      <DependentUpon>Blogs.tt</DependentUpon>
-    </Compile>
-    <Compile Include="App_Start\BundleConfig.vb" />
-    <Compile Include="App_Start\FilterConfig.vb" />
-    <Compile Include="App_Start\IdentityConfig.vb" />
-    <Compile Include="App_Start\RouteConfig.vb" />
-    <Compile Include="App_Data\BlogKathgoriesTable.vb">
-      <DependentUpon>Blogs.tt</DependentUpon>
-    </Compile>
-    <Compile Include="App_Data\BlogPostsTable.vb">
-      <DependentUpon>Blogs.tt</DependentUpon>
-    </Compile>
-    <Compile Include="App_Data\Blogs.Context.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Blogs.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="App_Data\Blogs.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Blogs.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="App_Data\Blogs.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Blogs.tt</DependentUpon>
-    </Compile>
     <Compile Include="App_Data\AspNetRoles.vb">
       <DependentUpon>Blogs.tt</DependentUpon>
     </Compile>
@@ -295,20 +261,108 @@
       <DependentUpon>Blogs.tt</DependentUpon>
     </Compile>
     <Compile Include="App_Data\AtlasStatistics.Context.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
       <DependentUpon>AtlasStatistics.Context.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
     </Compile>
     <Compile Include="App_Data\AtlasStatistics.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
       <DependentUpon>AtlasStatistics.edmx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
     </Compile>
     <Compile Include="App_Data\AtlasStatistics.vb">
-      <AutoGen>True</AutoGen>
+      <DependentUpon>AtlasStatistics.tt</DependentUpon>
       <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="App_Data\BlogKathgoriesTable.vb">
+      <DependentUpon>Blogs.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Data\BlogPostKathgoriaTable.vb">
+      <DependentUpon>Blogs.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Data\BlogPostsTable.vb">
+      <DependentUpon>Blogs.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Data\BlogProgramma.vb">
+      <DependentUpon>Blogs.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Data\Blogs.Context.vb">
+      <DependentUpon>Blogs.Context.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="App_Data\Blogs.Designer.vb">
+      <DependentUpon>Blogs.edmx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="App_Data\Blogs.vb">
+      <DependentUpon>Blogs.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="App_Data\BlogYpokathgoriesTable.vb">
+      <DependentUpon>Blogs.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Data\DiorganwshTable.vb">
       <DependentUpon>AtlasStatistics.tt</DependentUpon>
     </Compile>
+    <Compile Include="App_Data\GamesTable.vb">
+      <DependentUpon>AtlasStatistics.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Data\getallteamsrankings_Result.vb">
+      <DependentUpon>AtlasStatistics.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Data\GetWeeklyReportStat1All_Result.vb">
+      <DependentUpon>AtlasStatistics.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Data\GetWeeklyReportStat2All_Result.vb">
+      <DependentUpon>AtlasStatistics.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Data\GetWeeklyReportStat3All_Result.vb">
+      <DependentUpon>AtlasStatistics.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Data\GetWeeklyReportStat4All_Result.vb">
+      <DependentUpon>AtlasStatistics.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Data\GetWeeklyReportStat5All_Result.vb">
+      <DependentUpon>AtlasStatistics.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Data\GipedaTable.vb">
+      <DependentUpon>AtlasStatistics.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Data\KathgoriesTable.vb">
+      <DependentUpon>AtlasStatistics.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Data\OmilosTable.vb">
+      <DependentUpon>AtlasStatistics.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Data\PlayersStatisticsTable.vb">
+      <DependentUpon>AtlasStatistics.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Data\PlayersTable.vb">
+      <DependentUpon>AtlasStatistics.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Data\SeasonTable.vb">
+      <DependentUpon>AtlasStatistics.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Data\TeamsandKathgoriesTable.vb">
+      <DependentUpon>AtlasStatistics.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Data\TeamsandPlayersTable.vb">
+      <DependentUpon>AtlasStatistics.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Data\TeamsStatisticsTable.vb">
+      <DependentUpon>AtlasStatistics.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Data\TeamsTable.vb">
+      <DependentUpon>AtlasStatistics.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\BundleConfig.vb" />
+    <Compile Include="App_Start\FilterConfig.vb" />
+    <Compile Include="App_Start\IdentityConfig.vb" />
+    <Compile Include="App_Start\RouteConfig.vb" />
     <Compile Include="App_Start\Startup.Auth.vb" />
     <Compile Include="Controllers\AccountController.vb" />
     <Compile Include="Controllers\KathgoriesController.vb" />
@@ -316,81 +370,9 @@
     <Compile Include="Controllers\ProgrammaController.vb" />
     <Compile Include="Controllers\UserAdminController.vb" />
     <Compile Include="Controllers\YpokathgoriesController.vb" />
-    <Compile Include="App_Data\CupDiataksi.vb">
-      <DependentUpon>AtlasStatistics.tt</DependentUpon>
-    </Compile>
     <Compile Include="DataTableModel.vb" />
-    <Compile Include="App_Data\DiorganwshTable.vb">
-      <DependentUpon>AtlasStatistics.tt</DependentUpon>
-    </Compile>
-    <Compile Include="App_Data\fn_getTeamstats_Result.vb">
-      <DependentUpon>AtlasStatistics.tt</DependentUpon>
-    </Compile>
-    <Compile Include="App_Data\GamesTable.vb">
-      <DependentUpon>AtlasStatistics.tt</DependentUpon>
-    </Compile>
-    <Compile Include="App_Data\GamesTable_h.vb">
-      <DependentUpon>AtlasStatistics.tt</DependentUpon>
-    </Compile>
-    <Compile Include="App_Data\getallplayerstats_Result.vb">
-      <DependentUpon>AtlasStatistics.tt</DependentUpon>
-    </Compile>
-    <Compile Include="App_Data\getallteamsrankings_Result.vb">
-      <DependentUpon>AtlasStatistics.tt</DependentUpon>
-    </Compile>
-    <Compile Include="App_Data\getallteamstats_Result.vb">
-      <DependentUpon>AtlasStatistics.tt</DependentUpon>
-    </Compile>
-    <Compile Include="App_Data\getCupteamsstatsbydiataksi_Result.vb">
-      <DependentUpon>AtlasStatistics.tt</DependentUpon>
-    </Compile>
-    <Compile Include="App_Data\getplayerstats_Result.vb">
-      <DependentUpon>AtlasStatistics.tt</DependentUpon>
-    </Compile>
-    <Compile Include="App_Data\getplayoffteamsstatsbydiataksi_Result.vb">
-      <DependentUpon>AtlasStatistics.tt</DependentUpon>
-    </Compile>
-    <Compile Include="App_Data\GetReportStat1_Result.vb">
-      <DependentUpon>AtlasStatistics.tt</DependentUpon>
-    </Compile>
-    <Compile Include="App_Data\GetReportStat2_Result.vb">
-      <DependentUpon>AtlasStatistics.tt</DependentUpon>
-    </Compile>
-    <Compile Include="App_Data\GetReportStat3_Result.vb">
-      <DependentUpon>AtlasStatistics.tt</DependentUpon>
-    </Compile>
-    <Compile Include="App_Data\GetReportStat4_Result.vb">
-      <DependentUpon>AtlasStatistics.tt</DependentUpon>
-    </Compile>
-    <Compile Include="App_Data\GetReportStat5_Result.vb">
-      <DependentUpon>AtlasStatistics.tt</DependentUpon>
-    </Compile>
-    <Compile Include="App_Data\getteamstats_Result.vb">
-      <DependentUpon>AtlasStatistics.tt</DependentUpon>
-    </Compile>
-    <Compile Include="App_Data\GetWeeklyReportStat1_Result.vb">
-      <DependentUpon>AtlasStatistics.tt</DependentUpon>
-    </Compile>
-    <Compile Include="App_Data\GetWeeklyReportStat2_Result.vb">
-      <DependentUpon>AtlasStatistics.tt</DependentUpon>
-    </Compile>
-    <Compile Include="App_Data\GetWeeklyReportStat3_Result.vb">
-      <DependentUpon>AtlasStatistics.tt</DependentUpon>
-    </Compile>
-    <Compile Include="App_Data\GetWeeklyReportStat4_Result.vb">
-      <DependentUpon>AtlasStatistics.tt</DependentUpon>
-    </Compile>
-    <Compile Include="App_Data\GetWeeklyReportStat5_Result.vb">
-      <DependentUpon>AtlasStatistics.tt</DependentUpon>
-    </Compile>
-    <Compile Include="App_Data\GipedaTable.vb">
-      <DependentUpon>AtlasStatistics.tt</DependentUpon>
-    </Compile>
     <Compile Include="Global.asax.vb">
       <DependentUpon>Global.asax</DependentUpon>
-    </Compile>
-    <Compile Include="App_Data\KathgoriesTable.vb">
-      <DependentUpon>AtlasStatistics.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.vb" />
     <Compile Include="Models\AdminViewModels.vb" />
@@ -415,57 +397,6 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="Controllers\HomeController.vb" />
-    <Compile Include="App_Data\OmilosTable.vb">
-      <DependentUpon>AtlasStatistics.tt</DependentUpon>
-    </Compile>
-    <Compile Include="App_Data\PlayersStatisticsTable.vb">
-      <DependentUpon>AtlasStatistics.tt</DependentUpon>
-    </Compile>
-    <Compile Include="App_Data\PlayersStatisticsTable_h.vb">
-      <DependentUpon>AtlasStatistics.tt</DependentUpon>
-    </Compile>
-    <Compile Include="App_Data\PlayersTable.vb">
-      <DependentUpon>AtlasStatistics.tt</DependentUpon>
-    </Compile>
-    <Compile Include="App_Data\PlayoffsDiataksi.vb">
-      <DependentUpon>AtlasStatistics.tt</DependentUpon>
-    </Compile>
-    <Compile Include="App_Data\SeasonTable.vb">
-      <DependentUpon>AtlasStatistics.tt</DependentUpon>
-    </Compile>
-    <Compile Include="App_Data\TeamsandKathgoriesTable.vb">
-      <DependentUpon>AtlasStatistics.tt</DependentUpon>
-    </Compile>
-    <Compile Include="App_Data\TeamsandPlayersTable.vb">
-      <DependentUpon>AtlasStatistics.tt</DependentUpon>
-    </Compile>
-    <Compile Include="App_Data\TeamsStatisticsTable.vb">
-      <DependentUpon>AtlasStatistics.tt</DependentUpon>
-    </Compile>
-    <Compile Include="App_Data\TeamsStatisticsTable_h.vb">
-      <DependentUpon>AtlasStatistics.tt</DependentUpon>
-    </Compile>
-    <Compile Include="App_Data\TeamsTable.vb">
-      <DependentUpon>AtlasStatistics.tt</DependentUpon>
-    </Compile>
-    <Compile Include="App_Data\temprankings.vb">
-      <DependentUpon>AtlasStatistics.tt</DependentUpon>
-    </Compile>
-    <Compile Include="App_Data\temprankings2.vb">
-      <DependentUpon>AtlasStatistics.tt</DependentUpon>
-    </Compile>
-    <Compile Include="App_Data\temprankingsgroups.vb">
-      <DependentUpon>AtlasStatistics.tt</DependentUpon>
-    </Compile>
-    <Compile Include="App_Data\temprankingsgroups2.vb">
-      <DependentUpon>AtlasStatistics.tt</DependentUpon>
-    </Compile>
-    <Compile Include="App_Data\UserLogins.vb">
-      <DependentUpon>AtlasStatistics.tt</DependentUpon>
-    </Compile>
-    <Compile Include="App_Data\ZeroPointsRankingTeams.vb">
-      <DependentUpon>AtlasStatistics.tt</DependentUpon>
-    </Compile>
     <Compile Include="Startup.vb" />
   </ItemGroup>
   <ItemGroup>
@@ -477,25 +408,31 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\Blogs.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Blogs.edmx</DependentUpon>
-      <LastGenOutput>Blogs.Context.vb</LastGenOutput>
-    </Content>
-    <Content Include="App_Data\Blogs.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Blogs.edmx</DependentUpon>
-      <LastGenOutput>Blogs.vb</LastGenOutput>
-    </Content>
     <Content Include="App_Data\AtlasStatistics.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>AtlasStatistics.edmx</DependentUpon>
+      <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>AtlasStatistics.Context.vb</LastGenOutput>
     </Content>
-    <Content Include="App_Data\AtlasStatistics.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
+    <Content Include="App_Data\AtlasStatistics.edmx.diagram">
       <DependentUpon>AtlasStatistics.edmx</DependentUpon>
+    </Content>
+    <Content Include="App_Data\AtlasStatistics.tt">
+      <DependentUpon>AtlasStatistics.edmx</DependentUpon>
+      <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>AtlasStatistics.vb</LastGenOutput>
+    </Content>
+    <Content Include="App_Data\Blogs.Context.tt">
+      <DependentUpon>Blogs.edmx</DependentUpon>
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Blogs.Context.vb</LastGenOutput>
+    </Content>
+    <Content Include="App_Data\Blogs.edmx.diagram">
+      <DependentUpon>Blogs.edmx</DependentUpon>
+    </Content>
+    <Content Include="App_Data\Blogs.tt">
+      <DependentUpon>Blogs.edmx</DependentUpon>
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Blogs.vb</LastGenOutput>
     </Content>
     <Content Include="Content\bootstrap-slider.css" />
     <Content Include="Content\bootstrap-theme.css" />
@@ -672,6 +609,24 @@
     <Content Include="Content\images\apple-touch-icon-114x114.png" />
     <Content Include="Content\images\apple-touch-icon.png" />
     <Content Include="Content\images\atlastop10.PNG" />
+    <Content Include="Content\images\background\3.png" />
+    <Content Include="Content\images\background\bg-top-2.png" />
+    <Content Include="Content\images\background\bg-top.png" />
+    <Content Include="Content\images\background\bg\black\2.png" />
+    <Content Include="Content\images\background\bg\black\3.png" />
+    <Content Include="Content\images\background\bg\black\4.png" />
+    <Content Include="Content\images\background\bg\black\5.png" />
+    <Content Include="Content\images\background\bg\black\6.png" />
+    <Content Include="Content\images\background\bg\black\7.png" />
+    <Content Include="Content\images\background\bg\black\8.png" />
+    <Content Include="Content\images\background\bg\black\9.png" />
+    <Content Include="Content\images\background\bg\white\2.png" />
+    <Content Include="Content\images\background\bg\white\5.png" />
+    <Content Include="Content\images\background\bg\white\9.png" />
+    <Content Include="Content\images\background\black_twill.png" />
+    <Content Include="Content\images\background\cl.png" />
+    <Content Include="Content\images\background\t1.png" />
+    <Content Include="Content\images\background\t2.png" />
     <Content Include="Content\images\bg-top-2.png" />
     <Content Include="Content\images\bg-top.png" />
     <Content Include="Content\images\bg\black\2.png" />
@@ -720,6 +675,8 @@
     <Content Include="Content\images\gl4\3.jpg" />
     <Content Include="Content\images\gl4\4.jpg" />
     <Content Include="Content\images\gl4\5.jpg" />
+    <Content Include="Content\images\icons8-Basketball Player-40.png" />
+    <Content Include="Content\images\icons8-Basketball Player-50.png" />
     <Content Include="Content\images\ins\1.jpg" />
     <Content Include="Content\images\ins\2.jpg" />
     <Content Include="Content\images\ins\3.jpg" />
@@ -814,6 +771,8 @@
     <Content Include="Content\images\team\3.jpg" />
     <Content Include="Content\images\twitter\1.jpg" />
     <Content Include="Content\images\twitter\2.jpg" />
+    <Content Include="Content\images\various\plus.jpg" />
+    <Content Include="Content\images\various\stats.jpg" />
     <Content Include="Content\jquery.mCustomScrollbar.css" />
     <Content Include="Content\jquery.navgoco.css" />
     <Content Include="Content\megafish.css" />
@@ -879,23 +838,9 @@
     <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
-    <EntityDeploy Include="App_Data\Blogs.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Blogs.Designer.vb</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="App_Data\Blogs.edmx.diagram">
-      <DependentUpon>Blogs.edmx</DependentUpon>
-    </Content>
     <Content Include="Content\DataTables\css\semanticui.scss" />
     <Content Include="Content\DataTables\css\mixins.scss" />
     <Content Include="Content\DataTables\css\common.scss" />
-    <EntityDeploy Include="App_Data\AtlasStatistics.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>AtlasStatistics.Designer.vb</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="App_Data\AtlasStatistics.edmx.diagram">
-      <DependentUpon>AtlasStatistics.edmx</DependentUpon>
-    </Content>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="Content\bootstrap.min.css.map" />
     <Content Include="Content\bootstrap.css.map" />
@@ -1272,6 +1217,16 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="App_Data\AtlasStatistics.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>AtlasStatistics.Designer.vb</LastGenOutput>
+    </EntityDeploy>
+    <EntityDeploy Include="App_Data\Blogs.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Blogs.Designer.vb</LastGenOutput>
+    </EntityDeploy>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

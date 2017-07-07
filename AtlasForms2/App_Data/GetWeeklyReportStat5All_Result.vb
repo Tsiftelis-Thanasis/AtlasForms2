@@ -10,12 +10,18 @@
 Imports System
 Imports System.Collections.Generic
 
-Partial Public Class GetWeeklyReportStat5_Result
+Partial Public Class GetWeeklyReportStat5All_Result
     Public Property Row As Nullable(Of Long)
-    Public Property playername As String
-    Public Property playerid As Integer
+    Public Property thisname As String
+    Public Property thisid As Integer
+    Public Property SeasonName As String
+    Public Property DiorganwshName As String
+    Public Property OmilosName As String
+    Public Property KathgoriaName As String
+    Public Property KathgoriaId As Integer
     Public Property teamname As String
-    Public Property teamid As Integer
+    Public Property teamId As Integer
     Public Property totalblocks As Decimal
+    Public Property PlayerPhoto As Byte()
 
 End Class

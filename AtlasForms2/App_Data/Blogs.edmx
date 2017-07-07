@@ -226,14 +226,15 @@
     <edmx:ConceptualModels>
       <Schema Namespace="atlasModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="atlasEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="BlogKathgoriesTable" EntityType="atlasModel.BlogKathgoriesTable" />
-          <EntitySet Name="BlogPostKathgoriaTable" EntityType="atlasModel.BlogPostKathgoriaTable" />
-          <EntitySet Name="BlogPostsTable" EntityType="atlasModel.BlogPostsTable" />
-          <EntitySet Name="BlogYpokathgoriesTable" EntityType="atlasModel.BlogYpokathgoriesTable" />
           <EntitySet Name="AspNetRoles" EntityType="atlasModel.AspNetRoles" />
           <EntitySet Name="AspNetUserClaims" EntityType="atlasModel.AspNetUserClaims" />
           <EntitySet Name="AspNetUserLogins" EntityType="atlasModel.AspNetUserLogins" />
           <EntitySet Name="AspNetUsers" EntityType="atlasModel.AspNetUsers" />
+          <EntitySet Name="BlogKathgoriesTable" EntityType="atlasModel.BlogKathgoriesTable" />
+          <EntitySet Name="BlogPostKathgoriaTable" EntityType="atlasModel.BlogPostKathgoriaTable" />
+          <EntitySet Name="BlogPostsTable" EntityType="atlasModel.BlogPostsTable" />
+          <EntitySet Name="BlogProgramma" EntityType="atlasModel.BlogProgramma" />
+          <EntitySet Name="BlogYpokathgoriesTable" EntityType="atlasModel.BlogYpokathgoriesTable" />
           <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="atlasModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
             <End Role="AspNetUsers" EntitySet="AspNetUsers" />
             <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
@@ -246,63 +247,7 @@
             <End Role="AspNetRoles" EntitySet="AspNetRoles" />
             <End Role="AspNetUsers" EntitySet="AspNetUsers" />
           </AssociationSet>
-          <EntitySet Name="BlogProgramma" EntityType="atlasModel.BlogProgramma" />
         </EntityContainer>
-        <EntityType Name="BlogKathgoriesTable">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="KathgoriaName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="ActiveKathgoria" Type="Boolean" Nullable="false" />
-          <Property Name="CreationDate" Type="DateTime" Precision="3" />
-          <Property Name="CreatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="EditDate" Type="DateTime" Precision="3" />
-          <Property Name="EditBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-        </EntityType>
-        <EntityType Name="BlogPostKathgoriaTable">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="KathgoriaId" Type="Int32" />
-          <Property Name="YpokathgoriaId" Type="Int32" />
-          <Property Name="PostId" Type="Int32" Nullable="false" />
-          <Property Name="CreationDate" Type="DateTime" Precision="3" />
-          <Property Name="CreatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="EditDate" Type="DateTime" Precision="3" />
-          <Property Name="EditBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-        </EntityType>
-        <EntityType Name="BlogPostsTable">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Activepost" Type="Boolean" Nullable="false" />
-          <Property Name="PostTitle" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
-          <Property Name="PostBody" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="PostPhoto" Type="Binary" MaxLength="Max" FixedLength="false" />
-          <Property Name="Youtubelink" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
-          <Property Name="Statslink" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
-          <Property Name="CreationDate" Type="DateTime" Precision="3" />
-          <Property Name="CreatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="EditDate" Type="DateTime" Precision="3" />
-          <Property Name="EditBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="PostSummary" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
-        </EntityType>
-        <EntityType Name="BlogYpokathgoriesTable">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="KathgoriaId" Type="Int32" Nullable="false" />
-          <Property Name="YpokathgoriaName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="ActiveKathgoria" Type="Boolean" Nullable="false" />
-          <Property Name="CreationDate" Type="DateTime" Precision="3" />
-          <Property Name="CreatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="EditDate" Type="DateTime" Precision="3" />
-          <Property Name="EditBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-        </EntityType>
         <EntityType Name="AspNetRoles">
           <Key>
             <PropertyRef Name="Id" />
@@ -363,6 +308,76 @@
           <NavigationProperty Name="AspNetUserLogins" Relationship="atlasModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUsers" ToRole="AspNetUserLogins" />
           <NavigationProperty Name="AspNetRoles" Relationship="atlasModel.AspNetUserRoles" FromRole="AspNetUsers" ToRole="AspNetRoles" />
         </EntityType>
+        <EntityType Name="BlogKathgoriesTable">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="KathgoriaName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ActiveKathgoria" Type="Boolean" Nullable="false" />
+          <Property Name="CreationDate" Type="DateTime" Precision="3" />
+          <Property Name="CreatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="EditDate" Type="DateTime" Precision="3" />
+          <Property Name="EditBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="BlogPostKathgoriaTable">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="KathgoriaId" Type="Int32" />
+          <Property Name="YpokathgoriaId" Type="Int32" />
+          <Property Name="PostId" Type="Int32" Nullable="false" />
+          <Property Name="CreationDate" Type="DateTime" Precision="3" />
+          <Property Name="CreatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="EditDate" Type="DateTime" Precision="3" />
+          <Property Name="EditBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="BlogPostsTable">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Activepost" Type="Boolean" Nullable="false" />
+          <Property Name="PostTitle" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="PostSummary" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="PostBody" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="PostPhoto" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Youtubelink" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Statslink" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="CreationDate" Type="DateTime" Precision="3" />
+          <Property Name="CreatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="EditDate" Type="DateTime" Precision="3" />
+          <Property Name="EditBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="BlogProgramma">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OmadaA" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="OmadaB" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="gamedate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Omilosid" Type="Int32" />
+          <Property Name="GipedoId" Type="Int32" />
+          <Property Name="CreationDate" Type="DateTime" Precision="3" />
+          <Property Name="CreatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="EditDate" Type="DateTime" Precision="3" />
+          <Property Name="EditBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="BlogYpokathgoriesTable">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="KathgoriaId" Type="Int32" Nullable="false" />
+          <Property Name="YpokathgoriaName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ActiveKathgoria" Type="Boolean" Nullable="false" />
+          <Property Name="CreationDate" Type="DateTime" Precision="3" />
+          <Property Name="CreatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="EditDate" Type="DateTime" Precision="3" />
+          <Property Name="EditBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
         <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
           <End Type="atlasModel.AspNetUsers" Role="AspNetUsers" Multiplicity="1">
             <OnDelete Action="Cascade" />
@@ -395,86 +410,12 @@
           <End Type="atlasModel.AspNetRoles" Role="AspNetRoles" Multiplicity="*" />
           <End Type="atlasModel.AspNetUsers" Role="AspNetUsers" Multiplicity="*" />
         </Association>
-        <EntityType Name="BlogProgramma">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="OmadaA" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="OmadaB" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="gamedate" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="Omilosid" Type="Int32" />
-          <Property Name="GipedoId" Type="Int32" />
-          <Property Name="CreationDate" Type="DateTime" Precision="3" />
-          <Property Name="CreatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="EditDate" Type="DateTime" Precision="3" />
-          <Property Name="EditBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-        </EntityType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="atlasModelStoreContainer" CdmEntityContainer="atlasEntities">
-          <EntitySetMapping Name="BlogKathgoriesTable">
-            <EntityTypeMapping TypeName="atlasModel.BlogKathgoriesTable">
-              <MappingFragment StoreEntitySet="BlogKathgoriesTable">
-                <ScalarProperty Name="EditBy" ColumnName="EditBy" />
-                <ScalarProperty Name="EditDate" ColumnName="EditDate" />
-                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
-                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
-                <ScalarProperty Name="ActiveKathgoria" ColumnName="ActiveKathgoria" />
-                <ScalarProperty Name="KathgoriaName" ColumnName="KathgoriaName" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="BlogPostKathgoriaTable">
-            <EntityTypeMapping TypeName="atlasModel.BlogPostKathgoriaTable">
-              <MappingFragment StoreEntitySet="BlogPostKathgoriaTable">
-                <ScalarProperty Name="EditBy" ColumnName="EditBy" />
-                <ScalarProperty Name="EditDate" ColumnName="EditDate" />
-                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
-                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
-                <ScalarProperty Name="PostId" ColumnName="PostId" />
-                <ScalarProperty Name="YpokathgoriaId" ColumnName="YpokathgoriaId" />
-                <ScalarProperty Name="KathgoriaId" ColumnName="KathgoriaId" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="BlogPostsTable">
-            <EntityTypeMapping TypeName="atlasModel.BlogPostsTable">
-              <MappingFragment StoreEntitySet="BlogPostsTable">
-                <ScalarProperty Name="PostSummary" ColumnName="PostSummary" />
-                <ScalarProperty Name="EditBy" ColumnName="EditBy" />
-                <ScalarProperty Name="EditDate" ColumnName="EditDate" />
-                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
-                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
-                <ScalarProperty Name="Statslink" ColumnName="Statslink" />
-                <ScalarProperty Name="Youtubelink" ColumnName="Youtubelink" />
-                <ScalarProperty Name="PostPhoto" ColumnName="PostPhoto" />
-                <ScalarProperty Name="PostBody" ColumnName="PostBody" />
-                <ScalarProperty Name="PostTitle" ColumnName="PostTitle" />
-                <ScalarProperty Name="Activepost" ColumnName="Activepost" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="BlogYpokathgoriesTable">
-            <EntityTypeMapping TypeName="atlasModel.BlogYpokathgoriesTable">
-              <MappingFragment StoreEntitySet="BlogYpokathgoriesTable">
-                <ScalarProperty Name="EditBy" ColumnName="EditBy" />
-                <ScalarProperty Name="EditDate" ColumnName="EditDate" />
-                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
-                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
-                <ScalarProperty Name="ActiveKathgoria" ColumnName="ActiveKathgoria" />
-                <ScalarProperty Name="YpokathgoriaName" ColumnName="YpokathgoriaName" />
-                <ScalarProperty Name="KathgoriaId" ColumnName="KathgoriaId" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="AspNetRoles">
             <EntityTypeMapping TypeName="atlasModel.AspNetRoles">
               <MappingFragment StoreEntitySet="AspNetRoles">
@@ -531,14 +472,51 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <AssociationSetMapping Name="AspNetUserRoles" TypeName="atlasModel.AspNetUserRoles" StoreEntitySet="AspNetUserRoles">
-            <EndProperty Name="AspNetUsers">
-              <ScalarProperty Name="Id" ColumnName="UserId" />
-            </EndProperty>
-            <EndProperty Name="AspNetRoles">
-              <ScalarProperty Name="Id" ColumnName="RoleId" />
-            </EndProperty>
-          </AssociationSetMapping>
+          <EntitySetMapping Name="BlogKathgoriesTable">
+            <EntityTypeMapping TypeName="atlasModel.BlogKathgoriesTable">
+              <MappingFragment StoreEntitySet="BlogKathgoriesTable">
+                <ScalarProperty Name="EditBy" ColumnName="EditBy" />
+                <ScalarProperty Name="EditDate" ColumnName="EditDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+                <ScalarProperty Name="ActiveKathgoria" ColumnName="ActiveKathgoria" />
+                <ScalarProperty Name="KathgoriaName" ColumnName="KathgoriaName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BlogPostKathgoriaTable">
+            <EntityTypeMapping TypeName="atlasModel.BlogPostKathgoriaTable">
+              <MappingFragment StoreEntitySet="BlogPostKathgoriaTable">
+                <ScalarProperty Name="EditBy" ColumnName="EditBy" />
+                <ScalarProperty Name="EditDate" ColumnName="EditDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+                <ScalarProperty Name="PostId" ColumnName="PostId" />
+                <ScalarProperty Name="YpokathgoriaId" ColumnName="YpokathgoriaId" />
+                <ScalarProperty Name="KathgoriaId" ColumnName="KathgoriaId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BlogPostsTable">
+            <EntityTypeMapping TypeName="atlasModel.BlogPostsTable">
+              <MappingFragment StoreEntitySet="BlogPostsTable">
+                <ScalarProperty Name="EditBy" ColumnName="EditBy" />
+                <ScalarProperty Name="EditDate" ColumnName="EditDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+                <ScalarProperty Name="Statslink" ColumnName="Statslink" />
+                <ScalarProperty Name="Youtubelink" ColumnName="Youtubelink" />
+                <ScalarProperty Name="PostPhoto" ColumnName="PostPhoto" />
+                <ScalarProperty Name="PostBody" ColumnName="PostBody" />
+                <ScalarProperty Name="PostSummary" ColumnName="PostSummary" />
+                <ScalarProperty Name="PostTitle" ColumnName="PostTitle" />
+                <ScalarProperty Name="Activepost" ColumnName="Activepost" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="BlogProgramma">
             <EntityTypeMapping TypeName="atlasModel.BlogProgramma">
               <MappingFragment StoreEntitySet="BlogProgramma">
@@ -555,6 +533,28 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="BlogYpokathgoriesTable">
+            <EntityTypeMapping TypeName="atlasModel.BlogYpokathgoriesTable">
+              <MappingFragment StoreEntitySet="BlogYpokathgoriesTable">
+                <ScalarProperty Name="EditBy" ColumnName="EditBy" />
+                <ScalarProperty Name="EditDate" ColumnName="EditDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+                <ScalarProperty Name="ActiveKathgoria" ColumnName="ActiveKathgoria" />
+                <ScalarProperty Name="YpokathgoriaName" ColumnName="YpokathgoriaName" />
+                <ScalarProperty Name="KathgoriaId" ColumnName="KathgoriaId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="AspNetUserRoles" TypeName="atlasModel.AspNetUserRoles" StoreEntitySet="AspNetUserRoles">
+            <EndProperty Name="AspNetUsers">
+              <ScalarProperty Name="Id" ColumnName="UserId" />
+            </EndProperty>
+            <EndProperty Name="AspNetRoles">
+              <ScalarProperty Name="Id" ColumnName="RoleId" />
+            </EndProperty>
+          </AssociationSetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
