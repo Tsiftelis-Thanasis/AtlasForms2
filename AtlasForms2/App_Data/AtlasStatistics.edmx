@@ -5,20 +5,6 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="atlasStatisticsModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'atlas.dbo.AgwnistikesTable' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="AgwnistikesTable">
-          <Key>
-            <PropertyRef Name="Id" />
-            <PropertyRef Name="Agwnistiki" />
-          </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Agwnistiki" Type="int" Nullable="false" />
-          <Property Name="CreationDate" Type="datetime" />
-          <Property Name="CreatedBy" Type="varchar" MaxLength="100" />
-          <Property Name="EditDate" Type="datetime" />
-          <Property Name="EditBy" Type="varchar" MaxLength="100" />
-        </EntityType>
         <EntityType Name="DiorganwshTable">
           <Key>
             <PropertyRef Name="Id" />
@@ -260,16 +246,6 @@ warning 6002: The table/view 'atlas.dbo.AgwnistikesTable' does not have a primar
           <EntitySet Name="TeamsandPlayersTable" EntityType="Self.TeamsandPlayersTable" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TeamsStatisticsTable" EntityType="Self.TeamsStatisticsTable" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TeamsTable" EntityType="Self.TeamsTable" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="AgwnistikesTable" EntityType="Self.AgwnistikesTable" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [AgwnistikesTable].[Id] AS [Id], 
-    [AgwnistikesTable].[Agwnistiki] AS [Agwnistiki], 
-    [AgwnistikesTable].[CreationDate] AS [CreationDate], 
-    [AgwnistikesTable].[CreatedBy] AS [CreatedBy], 
-    [AgwnistikesTable].[EditDate] AS [EditDate], 
-    [AgwnistikesTable].[EditBy] AS [EditBy]
-    FROM [dbo].[AgwnistikesTable] AS [AgwnistikesTable]</DefiningQuery>
-          </EntitySet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -288,7 +264,6 @@ warning 6002: The table/view 'atlas.dbo.AgwnistikesTable' does not have a primar
           <EntitySet Name="TeamsandPlayersTable" EntityType="atlasStatisticsModel.TeamsandPlayersTable" />
           <EntitySet Name="TeamsStatisticsTable" EntityType="atlasStatisticsModel.TeamsStatisticsTable" />
           <EntitySet Name="TeamsTable" EntityType="atlasStatisticsModel.TeamsTable" />
-          <EntitySet Name="AgwnistikesTable" EntityType="atlasStatisticsModel.AgwnistikesTable" />
           <FunctionImport Name="getallteamsrankings" ReturnType="Collection(atlasStatisticsModel.getallteamsrankings_Result)">
             <Parameter Name="season" Mode="In" Type="Int32" />
             <Parameter Name="diorganwsh" Mode="In" Type="Int32" />
@@ -517,18 +492,6 @@ warning 6002: The table/view 'atlas.dbo.AgwnistikesTable' does not have a primar
           <Property Name="TeamLogo" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="TeamLogo_small" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="resizeflag" Type="Int32" />
-        </EntityType>
-        <EntityType Name="AgwnistikesTable">
-          <Key>
-            <PropertyRef Name="Id" />
-            <PropertyRef Name="Agwnistiki" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Agwnistiki" Type="Int32" Nullable="false" />
-          <Property Name="CreationDate" Type="DateTime" Precision="3" />
-          <Property Name="CreatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="EditDate" Type="DateTime" Precision="3" />
-          <Property Name="EditBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
         </EntityType>
         <ComplexType Name="getallteamsrankings_Result">
           <Property Type="Int64" Name="ncount" Nullable="false" />
@@ -838,18 +801,6 @@ warning 6002: The table/view 'atlas.dbo.AgwnistikesTable' does not have a primar
                 <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
                 <ScalarProperty Name="ActiveTeam" ColumnName="ActiveTeam" />
                 <ScalarProperty Name="TeamName" ColumnName="TeamName" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="AgwnistikesTable">
-            <EntityTypeMapping TypeName="atlasStatisticsModel.AgwnistikesTable">
-              <MappingFragment StoreEntitySet="AgwnistikesTable">
-                <ScalarProperty Name="EditBy" ColumnName="EditBy" />
-                <ScalarProperty Name="EditDate" ColumnName="EditDate" />
-                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
-                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
-                <ScalarProperty Name="Agwnistiki" ColumnName="Agwnistiki" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>

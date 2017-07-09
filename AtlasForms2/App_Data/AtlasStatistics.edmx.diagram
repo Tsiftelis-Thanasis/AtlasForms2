@@ -17,7 +17,6 @@
         <EntityTypeShape EntityType="atlasStatisticsModel.TeamsandPlayersTable" Width="1.5" PointX="8.75" PointY="0.75" />
         <EntityTypeShape EntityType="atlasStatisticsModel.TeamsStatisticsTable" Width="1.5" PointX="8.75" PointY="4.75" />
         <EntityTypeShape EntityType="atlasStatisticsModel.TeamsTable" Width="1.5" PointX="10.75" PointY="0.75" />
-        <EntityTypeShape EntityType="atlasStatisticsModel.AgwnistikesTable" Width="1.5" PointX="10.75" PointY="4.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
