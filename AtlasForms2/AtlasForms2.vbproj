@@ -245,9 +245,6 @@
     <Import Include="System.Web.UI.HtmlControls" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_Data\AgwnistikesTable.vb">
-      <DependentUpon>AtlasStatistics.tt</DependentUpon>
-    </Compile>
     <Compile Include="App_Data\AspNetRoles.vb">
       <DependentUpon>Blogs.tt</DependentUpon>
     </Compile>
@@ -260,47 +257,14 @@
     <Compile Include="App_Data\AspNetUsers.vb">
       <DependentUpon>Blogs.tt</DependentUpon>
     </Compile>
-    <Compile Include="App_Data\AtlasStatistics.Context.vb">
-      <DependentUpon>AtlasStatistics.Context.tt</DependentUpon>
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-    </Compile>
-    <Compile Include="App_Data\AtlasStatistics.Designer.vb">
-      <DependentUpon>AtlasStatistics.edmx</DependentUpon>
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-    </Compile>
-    <Compile Include="App_Data\AtlasStatistics.vb">
-      <DependentUpon>AtlasStatistics.tt</DependentUpon>
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-    </Compile>
-    <Compile Include="App_Data\BlogKathgoriesTable.vb">
-      <DependentUpon>Blogs.tt</DependentUpon>
-    </Compile>
     <Compile Include="App_Data\BlogPostKathgoriaTable.vb">
       <DependentUpon>Blogs.tt</DependentUpon>
     </Compile>
-    <Compile Include="App_Data\BlogPostsTable.vb">
+    <Compile Include="App_Data\BlogPostKathgoriaTable2.vb">
       <DependentUpon>Blogs.tt</DependentUpon>
     </Compile>
     <Compile Include="App_Data\BlogProgramma.vb">
       <DependentUpon>Blogs.tt</DependentUpon>
-    </Compile>
-    <Compile Include="App_Data\Blogs.Context.vb">
-      <DependentUpon>Blogs.Context.tt</DependentUpon>
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-    </Compile>
-    <Compile Include="App_Data\Blogs.Designer.vb">
-      <DependentUpon>Blogs.edmx</DependentUpon>
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-    </Compile>
-    <Compile Include="App_Data\Blogs.vb">
-      <DependentUpon>Blogs.tt</DependentUpon>
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
     </Compile>
     <Compile Include="App_Data\BlogYpokathgoriesTable.vb">
       <DependentUpon>Blogs.tt</DependentUpon>
@@ -363,6 +327,42 @@
     <Compile Include="App_Start\FilterConfig.vb" />
     <Compile Include="App_Start\IdentityConfig.vb" />
     <Compile Include="App_Start\RouteConfig.vb" />
+    <Compile Include="App_Data\BlogKathgoriesTable.vb">
+      <DependentUpon>Blogs.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Data\BlogPostsTable.vb">
+      <DependentUpon>Blogs.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Data\Blogs.Context.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Blogs.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Data\Blogs.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Blogs.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Data\Blogs.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Blogs.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Data\AtlasStatistics.Context.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AtlasStatistics.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Data\AtlasStatistics.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AtlasStatistics.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Data\AtlasStatistics.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AtlasStatistics.tt</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\Startup.Auth.vb" />
     <Compile Include="Controllers\AccountController.vb" />
     <Compile Include="Controllers\KathgoriesController.vb" />
@@ -408,31 +408,25 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\AtlasStatistics.Context.tt">
-      <DependentUpon>AtlasStatistics.edmx</DependentUpon>
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>AtlasStatistics.Context.vb</LastGenOutput>
-    </Content>
-    <Content Include="App_Data\AtlasStatistics.edmx.diagram">
-      <DependentUpon>AtlasStatistics.edmx</DependentUpon>
-    </Content>
-    <Content Include="App_Data\AtlasStatistics.tt">
-      <DependentUpon>AtlasStatistics.edmx</DependentUpon>
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>AtlasStatistics.vb</LastGenOutput>
-    </Content>
     <Content Include="App_Data\Blogs.Context.tt">
-      <DependentUpon>Blogs.edmx</DependentUpon>
       <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Blogs.edmx</DependentUpon>
       <LastGenOutput>Blogs.Context.vb</LastGenOutput>
     </Content>
-    <Content Include="App_Data\Blogs.edmx.diagram">
-      <DependentUpon>Blogs.edmx</DependentUpon>
-    </Content>
     <Content Include="App_Data\Blogs.tt">
-      <DependentUpon>Blogs.edmx</DependentUpon>
       <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Blogs.edmx</DependentUpon>
       <LastGenOutput>Blogs.vb</LastGenOutput>
+    </Content>
+    <Content Include="App_Data\AtlasStatistics.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>AtlasStatistics.edmx</DependentUpon>
+      <LastGenOutput>AtlasStatistics.Context.vb</LastGenOutput>
+    </Content>
+    <Content Include="App_Data\AtlasStatistics.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>AtlasStatistics.edmx</DependentUpon>
+      <LastGenOutput>AtlasStatistics.vb</LastGenOutput>
     </Content>
     <Content Include="Content\bootstrap-slider.css" />
     <Content Include="Content\bootstrap-theme.css" />
@@ -838,9 +832,23 @@
     <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
+    <EntityDeploy Include="App_Data\Blogs.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Blogs.Designer.vb</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="App_Data\Blogs.edmx.diagram">
+      <DependentUpon>Blogs.edmx</DependentUpon>
+    </Content>
     <Content Include="Content\DataTables\css\semanticui.scss" />
     <Content Include="Content\DataTables\css\mixins.scss" />
     <Content Include="Content\DataTables\css\common.scss" />
+    <EntityDeploy Include="App_Data\AtlasStatistics.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>AtlasStatistics.Designer.vb</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="App_Data\AtlasStatistics.edmx.diagram">
+      <DependentUpon>AtlasStatistics.edmx</DependentUpon>
+    </Content>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="Content\bootstrap.min.css.map" />
     <Content Include="Content\bootstrap.css.map" />
@@ -1217,16 +1225,6 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-  </ItemGroup>
-  <ItemGroup>
-    <EntityDeploy Include="App_Data\AtlasStatistics.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>AtlasStatistics.Designer.vb</LastGenOutput>
-    </EntityDeploy>
-    <EntityDeploy Include="App_Data\Blogs.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Blogs.Designer.vb</LastGenOutput>
-    </EntityDeploy>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

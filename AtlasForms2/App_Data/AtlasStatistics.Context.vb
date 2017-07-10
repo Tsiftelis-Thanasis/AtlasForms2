@@ -36,7 +36,6 @@ Partial Public Class atlasStatisticsEntities
     Public Overridable Property TeamsandPlayersTable() As DbSet(Of TeamsandPlayersTable)
     Public Overridable Property TeamsStatisticsTable() As DbSet(Of TeamsStatisticsTable)
     Public Overridable Property TeamsTable() As DbSet(Of TeamsTable)
-    Public Overridable Property AgwnistikesTable() As DbSet(Of AgwnistikesTable)
 
     Public Overridable Function getallteamsrankings(season As Nullable(Of Integer), diorganwsh As Nullable(Of Integer), omilos As Nullable(Of Integer), kathgoria As Nullable(Of Integer)) As ObjectResult(Of getallteamsrankings_Result)
         Dim seasonParameter As ObjectParameter = If(season.HasValue, New ObjectParameter("season", season), New ObjectParameter("season", GetType(Integer)))

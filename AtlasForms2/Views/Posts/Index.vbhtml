@@ -35,7 +35,7 @@
 End Code
 
 
-
+@Html.Hidden("atlasomilosid", ViewBag.AtlasOmilos)
 @Html.Hidden("kathgoriaid", ViewBag.Kathgoria)
 @Html.Hidden("ypokathgoriaid", ViewBag.Ypokathgoria)
 
@@ -1748,6 +1748,48 @@ End Code
                 $("#divstandcommon2").hide();
             }*@
 
+
+
+        //xrisimopoihse jquery kai oxi server metablites! ναι ρε το ξερω. ειπαμε πρωτα να παιξει και μετα 
+        
+        if ($('#ypokathgoriaid').val() == 2) { //news
+            $("#divstandings1").hide();
+            $("#divstandings2").hide();
+            $("#divfixture").hide();
+            $("#divteams").hide();
+        }
+        else if ($('#ypokathgoriaid').val() == 3) { //omades
+            $("#divcommon").hide();
+            $("#divstandings1").hide();
+            $("#divstandings2").hide();
+            $("#divfixture").hide();
+        }
+        
+        //if (@ViewBag.Ypokathgoria != 6) {//βαθμολογια
+        //    if (@ViewBag.Ypokathgoria == 3) { //ομαδες
+        //       $("#divcommon").hide();
+        //        $("#divstandings1").hide();
+        //        $("#divstandings2").hide();
+        //    } else if (@ViewBag.Ypokathgoria == 5) {//προγραμμα
+        //        $("#divresults1").hide();
+        //        $("#divnextgames1").hide();
+        //        $("#divresults2").hide();
+        //        $("#divnextgames2").hide();
+        //    } else {
+        //        $("#divstandings1").hide();
+        //        $("#divstandings2").hide();
+        //        $("#divteams").hide();
+        //    }
+        //    $("#divcommon").hide(); //includes divteams
+        //    $("#divstandcommon1").hide();
+        //    $("#divstandcommon2").hide();
+        //} 
+        //else {
+        //    $("#divteams").hide();
+        //    $("#divcommon").hide();           
+        //}
+        
+
         $('#teamstable').DataTable({
             "sAjaxSource": baseUrl + '@Url.Action("GetLastNewsByCategory")',
              "fnServerParams": function (aoData) {
@@ -1776,6 +1818,7 @@ End Code
                     {
                         "targets": 0,
                         "render": function (data, type, row) {
+
                             if (row === undefined || row === null) return '';
 
                             var teamDet = row.PostTitle.split('-');
@@ -1806,20 +1849,29 @@ End Code
         });
 
 
+
         $('#newstable').DataTable({
-            "sAjaxSource": baseUrl + '@Url.Action("GetLastNewsByCategory")',
+            "sAjaxSource": baseUrl + '@Url.Action("GetLastNewsByBothCategories")',
             "fnServerParams": function (aoData) {
+                aoData.push({
+                    "name": "AtlasOmilosid",
+                    "value": $('#atlasomilosid').val()
+                })
                 aoData.push({
                     "name": "nCount",
                     "value": 100
                 })
                 aoData.push({
-                    "name": "k",
-                    "value": $('#kathgoriaid').val()
+                    "name": "KathgoriaId",
+                    "value": $('#ypokathgoriaid').val()
                 })
                 aoData.push({
-                    "name": "yk",
-                    "value": $('#ypokathgoriaid').val()
+                    "name": "IsYpokathgoria",
+                    "value": 1
+                })
+                aoData.push({
+                    "name": "IsAtlasKathgoria",
+                    "value": 1
                 })
             },
             "contentType": "application/json; charset=utf-8",
@@ -1857,7 +1909,7 @@ End Code
                                 ' </a> ' +
                                 ' </article> '+
                                 '</li>';
-
+                                  
                             return dd;
                         }
 

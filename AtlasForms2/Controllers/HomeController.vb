@@ -131,4 +131,33 @@
     End Function
 
 
+    <HttpPost>
+    Public Function Getdiorganwseis() As JsonResult
+
+        Dim kat = (From d In pdb.DiorganwshTable
+                   Join s In pdb.SeasonTable On s.Id Equals d.Seasonid
+                   Where s.ActiveSeason = True
+                   Order By d.DiorganwshName
+                   Select d.DiorganwshName, d.Id).ToList
+
+        Return Json(kat, JsonRequestBehavior.AllowGet)
+
+
+    End Function
+
+    <HttpPost>
+    Public Function GetOmiloiByDiorganwsh(ByVal dId As Integer) As JsonResult
+
+        Dim om = (From o In pdb.OmilosTable
+                  Join d In pdb.DiorganwshTable On d.Id Equals o.Diorganwshid
+                  Where d.Id = dId
+                  Order By o.OmilosName
+                  Select o.OmilosName, o.Id).ToList
+
+        Return Json(om, JsonRequestBehavior.AllowGet)
+
+
+    End Function
+
+
 End Class

@@ -10,18 +10,18 @@
 Imports System
 Imports System.Collections.Generic
 
-Partial Public Class BlogPostsTable
+Partial Public Class BlogPostKathgoriaTable2
     Public Property Id As Integer
-    Public Property Activepost As Boolean
-    Public Property PostTitle As String
-    Public Property PostBody As String
-    Public Property PostPhoto As Byte()
-    Public Property Youtubelink As String
-    Public Property Statslink As String
+    Public Property IsKathgoria As Boolean
+    Public Property IsYpokathgoria As Boolean
+    Public Property IsAtlasOmilos As Boolean
+    Public Property IsAtlasKathgoria As Boolean
+    Public Property PostId As Integer
     Public Property CreationDate As Nullable(Of Date)
     Public Property CreatedBy As String
     Public Property EditDate As Nullable(Of Date)
     Public Property EditBy As String
-    Public Property PostSummary As String
+    Public Property AtlasKathgoriaId As Nullable(Of Integer)
+    Public Property KathgoriaId As Nullable(Of Integer)
 
 End Class
