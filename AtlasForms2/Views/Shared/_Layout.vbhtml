@@ -1,4 +1,15 @@
-﻿<!DOCTYPE html>
+﻿@code
+
+    Dim pdb2 As New atlasStatisticsEntities
+
+    Dim firstDiorganwshid = (From d In pdb2.DiorganwshTable
+                             Join s In pdb2.SeasonTable On d.Seasonid Equals s.Id
+                             Where d.DiorganwshName.Contains("πρωταθλημα") And s.ActiveSeason = True
+                             Select d.Id).FirstOrDefault
+
+End Code
+
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -15,8 +26,6 @@
         var url1 = window.location.href.split('/');
         var baseUrl = url1[0] + '//' + url1[2];
 
-
-
     </script>
 
     <link href='https://fonts.googleapis.com/css?family=Open+Sans&subset=latin,greek' rel='stylesheet' type='text/css'>
@@ -25,6 +34,9 @@
 
 
 <body>
+
+    @Html.Hidden("firstDiorganwshid", firstDiorganwshid)
+
 
     <header class="kopa-header">
 
@@ -60,8 +72,10 @@
                                 <li><a href="gallery4.html">επικοινωνια</a></li>
                             </ul>
                         </li>
-                        @If (User.IsInRole("Admins")) Then
+                        @if User.Identity.IsAuthenticated Then
+                            If User.IsInRole("Admins") Then
                             @<li Class="current-menu-item"><a href="@Url.Action("Panel", "Home")"><span>διαχειριση</span></a></li>
+                            End If
                         End If
                     </ul>
                 </nav>
@@ -78,7 +92,25 @@
 
                 <nav class="kopa-main-nav-2">
                     <ul class="main-menu-2 sf-menu" id="omiloinavbarid">
-                      
+                        <li>
+                            <div class="sf-mega col-md-push-0 col-xs-push-0 col-sm-push-0">
+                                <div class="sf-mega-section col-md-3 col-xs-3 col-sm-3">
+                                    <div class="widget kopa-sub-list-widget">
+                                       ****na kanw edw to spasimo?? mhpws menei kai stis alles selides??
+                                         <ul class="sub-menu">
+                                            <li>
+                                            </li> 
+                                        </ul> 
+                                    </div> 
+                                </div> 
+                            <div class="sf-mega-section col-md-9 col-xs-9 col-sm-9">
+                                <div class="widget kopa-sub-list-widget sub-list-1">
+                                    <h4></h4> 
+                                        <ul class="row"></ul> 
+                                    </div>
+                                </div>
+                            </div> 
+                        </li>
                     </ul>
                 </nav>
                 <!--/end main-nav-2-->
@@ -96,13 +128,13 @@
                                         <div class="entry-item">
                                             <a href="#">
                                                 <p>Σαβ 01/06/2017 19:00</p>
-                                                <ul class="clearfix">
+                                                                        <ul class="clearfix">
                                                     <li>
-                                                        <span title="all stars">all stars</span>
+                                                                            <span title="all stars">all stars</span>
                                                         <span>74</span>
                                                     </li>
                                                     <li>
-                                                        <span title="drink team tequila">drink team tequila</span>
+                                                                            <span title="drink team tequila">drink team tequila</span>
                                                         <span>64</span>
                                                     </li>
                                                 </ul>
@@ -114,13 +146,13 @@
                                         <div class="entry-item">
                                             <a href="#">
                                                 <p>Σαβ 01/06/2017 21:00</p>
-                                                <ul class="clearfix">
+                                                                                    <ul class="clearfix">
                                                     <li>
-                                                        <span title="brooklyn bets">brooklyn bets</span>
+                                                                                        <span title="brooklyn bets">brooklyn bets</span>
                                                         <span>48</span>
                                                     </li>
                                                     <li>
-                                                        <span title="crocodiles">crocodiles</span>
+                                                                                        <span title="crocodiles">crocodiles</span>
                                                         <span>52</span>
                                                     </li>
                                                 </ul>
@@ -132,13 +164,13 @@
                                         <div class="entry-item">
                                             <a href="#">
                                                 <p>Κυρ 02/06/2017 11:00</p>
-                                                <ul class="clearfix">
+                                                                                                <ul class="clearfix">
                                                     <li>
-                                                        <span title="ΚΑΡΕΑΣ">ΚΑΡΕΑΣ</span>
+                                                                                                    <span title="ΚΑΡΕΑΣ">ΚΑΡΕΑΣ</span>
                                                         <span>47</span>
                                                     </li>
                                                     <li>
-                                                        <span title="VIP">VIP</span>
+                                                                                                    <span title="VIP">VIP</span>
                                                         <span>43</span>
                                                     </li>
                                                 </ul>
@@ -150,13 +182,13 @@
                                         <div class="entry-item">
                                             <a href="#">
                                                 <p>Κυρ 02/06/2017 13:00</p>
-                                                <ul class="clearfix">
+                                                                                                            <ul class="clearfix">
                                                     <li>
-                                                        <span title="KYPSELI 38ers">KYPSELI 38ers</span>
+                                                                                                                <span title="KYPSELI 38ers">KYPSELI 38ers</span>
                                                         <span>48</span>
                                                     </li>
                                                     <li>
-                                                        <span title="ΟΙΩΝΟΣ CELTICS	">ΟΙΩΝΟΣ CELTICS</span>
+                                                                                                                <span title="ΟΙΩΝΟΣ CELTICS	">ΟΙΩΝΟΣ CELTICS</span>
                                                         <span>72</span>
                                                     </li>
                                                 </ul>
@@ -168,13 +200,13 @@
                                         <div class="entry-item">
                                             <a href="#">
                                                 <p>Κυρ 02/06/2017 15:00</p>
-                                                <ul class="clearfix">
+                                                                                                                        <ul class="clearfix">
                                                     <li>
-                                                        <span>BEAUX GOSSES	</span>
+                                                                                                                            <span>BEAUX GOSSES	</span>
                                                         <span>67</span>
                                                     </li>
                                                     <li>
-                                                        <span>BLACK WIDOWS	</span>
+                                                                                                                            <span>BLACK WIDOWS	</span>
                                                         <span>64</span>
                                                     </li>
                                                 </ul>
@@ -187,13 +219,13 @@
                                         <div class="entry-item">
                                             <a href="#">
                                                 <p>Σαβ 01/06/2017 19:00</p>
-                                                <ul class="clearfix">
+                                                                                                                                    <ul class="clearfix">
                                                     <li>
-                                                        <span title="all stars">all stars</span>
+                                                                                                                                        <span title="all stars">all stars</span>
                                                         <span>74</span>
                                                     </li>
                                                     <li>
-                                                        <span title="drink team tequila">drink team tequila</span>
+                                                                                                                                        <span title="drink team tequila">drink team tequila</span>
                                                         <span>64</span>
                                                     </li>
                                                 </ul>
@@ -205,13 +237,13 @@
                                         <div class="entry-item">
                                             <a href="#">
                                                 <p>Σαβ 01/06/2017 21:00</p>
-                                                <ul class="clearfix">
+                                                                                                                                                <ul class="clearfix">
                                                     <li>
-                                                        <span title="brooklyn bets">brooklyn bets</span>
+                                                                                                                                                    <span title="brooklyn bets">brooklyn bets</span>
                                                         <span>48</span>
                                                     </li>
                                                     <li>
-                                                        <span title="crocodiles">crocodiles</span>
+                                                                                                                                                    <span title="crocodiles">crocodiles</span>
                                                         <span>52</span>
                                                     </li>
                                                 </ul>
@@ -223,13 +255,13 @@
                                         <div class="entry-item">
                                             <a href="#">
                                                 <p>Κυρ 02/06/2017 11:00</p>
-                                                <ul class="clearfix">
+                                                                                                                                                            <ul class="clearfix">
                                                     <li>
-                                                        <span title="ΚΑΡΕΑΣ">ΚΑΡΕΑΣ</span>
+                                                                                                                                                                <span title="ΚΑΡΕΑΣ">ΚΑΡΕΑΣ</span>
                                                         <span>47</span>
                                                     </li>
                                                     <li>
-                                                        <span title="VIP">VIP</span>
+                                                                                                                                                                <span title="VIP">VIP</span>
                                                         <span>43</span>
                                                     </li>
                                                 </ul>
@@ -241,13 +273,13 @@
                                         <div class="entry-item">
                                             <a href="#">
                                                 <p>Κυρ 02/06/2017 13:00</p>
-                                                <ul class="clearfix">
+                                                                                                                                                                        <ul class="clearfix">
                                                     <li>
-                                                        <span title="KYPSELI 38ers">KYPSELI 38ers</span>
+                                                                                                                                                                            <span title="KYPSELI 38ers">KYPSELI 38ers</span>
                                                         <span>48</span>
                                                     </li>
                                                     <li>
-                                                        <span title="ΟΙΩΝΟΣ CELTICS	">ΟΙΩΝΟΣ CELTICS</span>
+                                                                                                                                                                            <span title="ΟΙΩΝΟΣ CELTICS	">ΟΙΩΝΟΣ CELTICS</span>
                                                         <span>72</span>
                                                     </li>
                                                 </ul>
@@ -259,13 +291,13 @@
                                         <div class="entry-item">
                                             <a href="#">
                                                 <p>Κυρ 02/06/2017 15:00</p>
-                                                <ul class="clearfix">
+                                                                                                                                                                                    <ul class="clearfix">
                                                     <li>
-                                                        <span>BEAUX GOSSES	</span>
+                                                                                                                                                                                        <span>BEAUX GOSSES	</span>
                                                         <span>67</span>
                                                     </li>
                                                     <li>
-                                                        <span>BLACK WIDOWS	</span>
+                                                                                                                                                                                        <span>BLACK WIDOWS	</span>
                                                         <span>64</span>
                                                     </li>
                                                 </ul>
@@ -363,14 +395,12 @@
         $.fn.bootstrapBtn = bootstrapButton;           // give $().bootstrapBtn the Bootstrap functionality
     });
 
-    fillomiloinavbar(0);
-
-    //var OmiloiNamesArray = [];
-
     //fillomiloinavbar
     function fillomiloinavbar(i) {
 
-        $.ajax({
+        $("#firstDiorganwshid").val(i);
+
+       $.ajax({
             type: "POST",
             url: baseUrl + '@Url.Action("GetOmiloiByDiorganwsh", "Home")',
             data: "{dId: " + i + "}",
@@ -378,11 +408,8 @@
             contentType: "application/json; charset=utf-8",
             dataType: "json",
             success: function (result) {
+
                 var choiceContainer = $("#omiloinavbarid");
-
-                choiceContainer.find('ul').toggle();
-                choiceContainer.siblings('li').find('ul').hide();
-
 
                 if (result.length > 0) {
                     choiceContainer.empty();
@@ -427,7 +454,7 @@
                                                 '</div>' +
                                                 '</div> ' +
                                                 '</li>';
-                                                choiceContainer.append(d);
+                        choiceContainer.append(d);
 
                         appendnewstoOmilos(omilosnaming, this.Id);
 
@@ -483,7 +510,6 @@
     }
 
 
-
     $(document).ready(function () {
 
         // get diorganwseis
@@ -511,4 +537,8 @@
             });
 
     });
+
+
+    fillomiloinavbar($("#firstDiorganwshid").val());
+
 </script>
