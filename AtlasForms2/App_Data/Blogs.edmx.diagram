@@ -5,19 +5,19 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="9af4830b60b54cbd9e2fa24ba0d80aa2" Name="Diagram1" ZoomLevel="55">
-        <EntityTypeShape EntityType="atlasModel.BlogKathgoriesTable" Width="1.5" PointX="0.75" PointY="0.75" />
-        <EntityTypeShape EntityType="atlasModel.BlogPostKathgoriaTable" Width="1.5" PointX="2.75" PointY="0.75" />
-        <EntityTypeShape EntityType="atlasModel.BlogPostsTable" Width="1.5" PointX="4.75" PointY="0.75" />
-        <EntityTypeShape EntityType="atlasModel.BlogYpokathgoriesTable" Width="1.5" PointX="9.625" PointY="0.625" />
-        <EntityTypeShape EntityType="atlasModel.AspNetRoles" Width="1.5" PointX="0.5" PointY="5.875" />
-        <EntityTypeShape EntityType="atlasModel.AspNetUserClaims" Width="1.5" PointX="5" PointY="4.625" />
-        <EntityTypeShape EntityType="atlasModel.AspNetUserLogins" Width="1.5" PointX="5" PointY="7.375" />
-        <EntityTypeShape EntityType="atlasModel.AspNetUsers" Width="1.5" PointX="2.75" PointY="4.125" />
+        <EntityTypeShape EntityType="atlasModel.AspNetRoles" Width="1.5" PointX="0.75" PointY="2.875" />
+        <EntityTypeShape EntityType="atlasModel.AspNetUserClaims" Width="1.5" PointX="5.25" PointY="4.25" />
+        <EntityTypeShape EntityType="atlasModel.AspNetUserLogins" Width="1.5" PointX="5.25" PointY="1.625" />
+        <EntityTypeShape EntityType="atlasModel.AspNetUsers" Width="1.5" PointX="3" PointY="1.125" />
+        <EntityTypeShape EntityType="atlasModel.BlogKathgoriesTable" Width="1.5" PointX="7.75" PointY="0.75" />
+        <EntityTypeShape EntityType="atlasModel.BlogPostKathgoriaTable" Width="1.5" PointX="0.75" PointY="7.75" />
+        <EntityTypeShape EntityType="atlasModel.BlogPostKathgoriaTable2" Width="1.5" PointX="2.75" PointY="7.75" />
+        <EntityTypeShape EntityType="atlasModel.BlogPostsTable" Width="1.5" PointX="7.75" PointY="4.75" />
+        <EntityTypeShape EntityType="atlasModel.BlogProgramma" Width="1.5" PointX="4.75" PointY="7.75" />
+        <EntityTypeShape EntityType="atlasModel.BlogYpokathgoriesTable" Width="1.5" PointX="9.75" PointY="0.75" />
         <AssociationConnector Association="atlasModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" />
         <AssociationConnector Association="atlasModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" />
         <AssociationConnector Association="atlasModel.AspNetUserRoles" />
-        <EntityTypeShape EntityType="atlasModel.BlogProgramma" Width="1.5" PointX="7.375" PointY="0.75" />
-        <EntityTypeShape EntityType="atlasModel.BlogPostKathgoriaTable2" Width="1.5" PointX="12" PointY="0.625" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

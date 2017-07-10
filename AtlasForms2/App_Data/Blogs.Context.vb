@@ -22,15 +22,15 @@ Partial Public Class atlasEntities
         Throw New UnintentionalCodeFirstException()
     End Sub
 
-    Public Overridable Property BlogKathgoriesTable() As DbSet(Of BlogKathgoriesTable)
-    Public Overridable Property BlogPostKathgoriaTable() As DbSet(Of BlogPostKathgoriaTable)
-    Public Overridable Property BlogPostsTable() As DbSet(Of BlogPostsTable)
-    Public Overridable Property BlogYpokathgoriesTable() As DbSet(Of BlogYpokathgoriesTable)
     Public Overridable Property AspNetRoles() As DbSet(Of AspNetRoles)
     Public Overridable Property AspNetUserClaims() As DbSet(Of AspNetUserClaims)
     Public Overridable Property AspNetUserLogins() As DbSet(Of AspNetUserLogins)
     Public Overridable Property AspNetUsers() As DbSet(Of AspNetUsers)
-    Public Overridable Property BlogProgramma() As DbSet(Of BlogProgramma)
+    Public Overridable Property BlogKathgoriesTable() As DbSet(Of BlogKathgoriesTable)
+    Public Overridable Property BlogPostKathgoriaTable() As DbSet(Of BlogPostKathgoriaTable)
     Public Overridable Property BlogPostKathgoriaTable2() As DbSet(Of BlogPostKathgoriaTable2)
+    Public Overridable Property BlogPostsTable() As DbSet(Of BlogPostsTable)
+    Public Overridable Property BlogProgramma() As DbSet(Of BlogProgramma)
+    Public Overridable Property BlogYpokathgoriesTable() As DbSet(Of BlogYpokathgoriesTable)
 
 End Class

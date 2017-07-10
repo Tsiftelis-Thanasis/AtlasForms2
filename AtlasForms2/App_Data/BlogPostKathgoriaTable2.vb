@@ -12,6 +12,7 @@ Imports System.Collections.Generic
 
 Partial Public Class BlogPostKathgoriaTable2
     Public Property Id As Integer
+    Public Property AtlasKathgoriaId As Nullable(Of Integer)
     Public Property IsKathgoria As Boolean
     Public Property IsYpokathgoria As Boolean
     Public Property IsAtlasOmilos As Boolean
@@ -21,7 +22,6 @@ Partial Public Class BlogPostKathgoriaTable2
     Public Property CreatedBy As String
     Public Property EditDate As Nullable(Of Date)
     Public Property EditBy As String
-    Public Property AtlasKathgoriaId As Nullable(Of Integer)
     Public Property KathgoriaId As Nullable(Of Integer)
 
 End Class

@@ -1727,43 +1727,20 @@ End Code
                 $("#divstandcommon2").hide();
             }
 
-            @*if (@ViewBag.Ypokathgoria != 6) {//βαθμολογια
-                if (@ViewBag.Ypokathgoria == 3) { //ομαδες
-                    $("#divcommon").hide();
-                    $("#divstandings1").hide();
-                    $("#divstandings2").hide();
-                } else if (@ViewBag.Ypokathgoria == 5) {//προγραμμα
-                    $("#divresults1").hide();
-                    $("#divnextgames1").hide();
-                    $("#divresults2").hide();
-                    $("#divnextgames2").hide();
-                } else {
-                    $("#divstandings1").hide();
-                    $("#divstandings2").hide();
-                    $("#divteams").hide();
-                }
-
-                $("#divcommon").hide(); //includes divteams
-                $("#divstandcommon1").hide();
-                $("#divstandcommon2").hide();
-            }*@
-
-
-
-        //xrisimopoihse jquery kai oxi server metablites! ναι ρε το ξερω. ειπαμε πρωτα να παιξει και μετα 
+        //xrisimopoihse jquery kai oxi server metablites! NN: ναι ρε το ξερω. ειπαμε πρωτα να παιξει και μετα 
         
-        if ($('#ypokathgoriaid').val() == 2) { //news
-            $("#divstandings1").hide();
-            $("#divstandings2").hide();
-            $("#divfixture").hide();
-            $("#divteams").hide();
-        }
-        else if ($('#ypokathgoriaid').val() == 3) { //omades
-            $("#divcommon").hide();
-            $("#divstandings1").hide();
-            $("#divstandings2").hide();
-            $("#divfixture").hide();
-        }
+        //if ($('#ypokathgoriaid').val() == 2) { //news
+        //    $("#divstandings1").hide();
+        //    $("#divstandings2").hide();
+        //    $("#divfixture").hide();
+        //    $("#divteams").hide();
+        //}
+        //else if ($('#ypokathgoriaid').val() == 3) { //omades
+        //    $("#divcommon").hide();
+        //    $("#divstandings1").hide();
+        //    $("#divstandings2").hide();
+        //    $("#divfixture").hide();
+        //}
         
         //if (@ViewBag.Ypokathgoria != 6) {//βαθμολογια
         //    if (@ViewBag.Ypokathgoria == 3) { //ομαδες
