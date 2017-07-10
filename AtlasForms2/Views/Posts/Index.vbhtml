@@ -1708,31 +1708,45 @@ End Code
     <Script type="text/javascript" language="javascript">
     $(document).ready(function () {
 
-        if (@ViewBag.Ypokathgoria != 6) {//βαθμολογια
-            if (@ViewBag.Ypokathgoria == 3) { //ομαδες
+         if (@ViewBag.Ypokathgoria == 3) { //ομαδες
                 $("#divcommon").hide();
                 $("#divstandings1").hide();
                 $("#divstandings2").hide();
-            } else if (@ViewBag.Ypokathgoria == 5) {//προγραμμα 
+            } else if (@ViewBag.Ypokathgoria == 5) {//προγραμμα
                 $("#divresults1").hide();
                 $("#divnextgames1").hide();
                 $("#divresults2").hide();
                 $("#divnextgames2").hide();
-            } else {
+            } else if (@ViewBag.Ypokathgoria == 6) { //βαθμολογια
                 $("#divstandings1").hide();
                 $("#divstandings2").hide();
                 $("#divteams").hide();
+            } else {
+                $("#divcommon").hide(); //includes divteams
+                $("#divstandcommon1").hide();
+                $("#divstandcommon2").hide();
             }
-        
-            $("#divcommon").hide(); //includes divteams
-            $("#divstandcommon1").hide();
-            $("#divstandcommon2").hide();
-        }
-        else {
-            $("#divteams").hide();
-            $("#divcommon").hide();
-            $("#divfixture").hide();
-        }
+
+            @*if (@ViewBag.Ypokathgoria != 6) {//βαθμολογια
+                if (@ViewBag.Ypokathgoria == 3) { //ομαδες
+                    $("#divcommon").hide();
+                    $("#divstandings1").hide();
+                    $("#divstandings2").hide();
+                } else if (@ViewBag.Ypokathgoria == 5) {//προγραμμα
+                    $("#divresults1").hide();
+                    $("#divnextgames1").hide();
+                    $("#divresults2").hide();
+                    $("#divnextgames2").hide();
+                } else {
+                    $("#divstandings1").hide();
+                    $("#divstandings2").hide();
+                    $("#divteams").hide();
+                }
+
+                $("#divcommon").hide(); //includes divteams
+                $("#divstandcommon1").hide();
+                $("#divstandcommon2").hide();
+            }*@
 
         $('#teamstable').DataTable({
             "sAjaxSource": baseUrl + '@Url.Action("GetLastNewsByCategory")',
