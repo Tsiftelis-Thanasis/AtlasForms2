@@ -3012,10 +3012,10 @@ address {
         .owl-carousel-1.owl-theme .owl-controls .owl-buttons div.owl-next:before {
           content: "\f0da"; }
   .owl-carousel-1 .item {
-      width: 200px;
+      width: auto;/*200px;*/
     padding: 0 5px; }
   .owl-carousel-1 .entry-item {
-      width: 200px;
+      width: auto;/*200px;*/
     text-align: center;
     font-size: 12px;
     line-height: 20px;

@@ -123,191 +123,9 @@ End Code
                     <div class="kopa-tab style1">
                         <div class="tab-content">
                             <div class="tab-pane active" id="agroup">
-                                <div class="owl-carousel owl-carousel-1">
-                                    <div class="item">
-                                        <div class="entry-item">
-                                            <a href="#">
-                                                <p>Σαβ 01/06/2017 19:00</p>
-                                                                        <ul class="clearfix">
-                                                    <li>
-                                                                            <span title="all stars">all stars</span>
-                                                        <span>74</span>
-                                                    </li>
-                                                    <li>
-                                                                            <span title="drink team tequila">drink team tequila</span>
-                                                        <span>64</span>
-                                                    </li>
-                                                </ul>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <!-- item -->
-                                    <div class="item">
-                                        <div class="entry-item">
-                                            <a href="#">
-                                                <p>Σαβ 01/06/2017 21:00</p>
-                                                                                    <ul class="clearfix">
-                                                    <li>
-                                                                                        <span title="brooklyn bets">brooklyn bets</span>
-                                                        <span>48</span>
-                                                    </li>
-                                                    <li>
-                                                                                        <span title="crocodiles">crocodiles</span>
-                                                        <span>52</span>
-                                                    </li>
-                                                </ul>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <!-- item -->
-                                    <div class="item">
-                                        <div class="entry-item">
-                                            <a href="#">
-                                                <p>Κυρ 02/06/2017 11:00</p>
-                                                                                                <ul class="clearfix">
-                                                    <li>
-                                                                                                    <span title="ΚΑΡΕΑΣ">ΚΑΡΕΑΣ</span>
-                                                        <span>47</span>
-                                                    </li>
-                                                    <li>
-                                                                                                    <span title="VIP">VIP</span>
-                                                        <span>43</span>
-                                                    </li>
-                                                </ul>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <!-- item -->
-                                    <div class="item">
-                                        <div class="entry-item">
-                                            <a href="#">
-                                                <p>Κυρ 02/06/2017 13:00</p>
-                                                                                                            <ul class="clearfix">
-                                                    <li>
-                                                                                                                <span title="KYPSELI 38ers">KYPSELI 38ers</span>
-                                                        <span>48</span>
-                                                    </li>
-                                                    <li>
-                                                                                                                <span title="ΟΙΩΝΟΣ CELTICS	">ΟΙΩΝΟΣ CELTICS</span>
-                                                        <span>72</span>
-                                                    </li>
-                                                </ul>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <!-- item -->
-                                    <div class="item">
-                                        <div class="entry-item">
-                                            <a href="#">
-                                                <p>Κυρ 02/06/2017 15:00</p>
-                                                                                                                        <ul class="clearfix">
-                                                    <li>
-                                                                                                                            <span>BEAUX GOSSES	</span>
-                                                        <span>67</span>
-                                                    </li>
-                                                    <li>
-                                                                                                                            <span>BLACK WIDOWS	</span>
-                                                        <span>64</span>
-                                                    </li>
-                                                </ul>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <!-- item -->
-
-                                    <div class="item">
-                                        <div class="entry-item">
-                                            <a href="#">
-                                                <p>Σαβ 01/06/2017 19:00</p>
-                                                                                                                                    <ul class="clearfix">
-                                                    <li>
-                                                                                                                                        <span title="all stars">all stars</span>
-                                                        <span>74</span>
-                                                    </li>
-                                                    <li>
-                                                                                                                                        <span title="drink team tequila">drink team tequila</span>
-                                                        <span>64</span>
-                                                    </li>
-                                                </ul>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <!-- item -->
-                                    <div class="item">
-                                        <div class="entry-item">
-                                            <a href="#">
-                                                <p>Σαβ 01/06/2017 21:00</p>
-                                                                                                                                                <ul class="clearfix">
-                                                    <li>
-                                                                                                                                                    <span title="brooklyn bets">brooklyn bets</span>
-                                                        <span>48</span>
-                                                    </li>
-                                                    <li>
-                                                                                                                                                    <span title="crocodiles">crocodiles</span>
-                                                        <span>52</span>
-                                                    </li>
-                                                </ul>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <!-- item -->
-                                    <div class="item">
-                                        <div class="entry-item">
-                                            <a href="#">
-                                                <p>Κυρ 02/06/2017 11:00</p>
-                                                                                                                                                            <ul class="clearfix">
-                                                    <li>
-                                                                                                                                                                <span title="ΚΑΡΕΑΣ">ΚΑΡΕΑΣ</span>
-                                                        <span>47</span>
-                                                    </li>
-                                                    <li>
-                                                                                                                                                                <span title="VIP">VIP</span>
-                                                        <span>43</span>
-                                                    </li>
-                                                </ul>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <!-- item -->
-                                    <div class="item">
-                                        <div class="entry-item">
-                                            <a href="#">
-                                                <p>Κυρ 02/06/2017 13:00</p>
-                                                                                                                                                                        <ul class="clearfix">
-                                                    <li>
-                                                                                                                                                                            <span title="KYPSELI 38ers">KYPSELI 38ers</span>
-                                                        <span>48</span>
-                                                    </li>
-                                                    <li>
-                                                                                                                                                                            <span title="ΟΙΩΝΟΣ CELTICS	">ΟΙΩΝΟΣ CELTICS</span>
-                                                        <span>72</span>
-                                                    </li>
-                                                </ul>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <!-- item -->
-                                    <div class="item">
-                                        <div class="entry-item">
-                                            <a href="#">
-                                                <p>Κυρ 02/06/2017 15:00</p>
-                                                                                                                                                                                    <ul class="clearfix">
-                                                    <li>
-                                                                                                                                                                                        <span>BEAUX GOSSES	</span>
-                                                        <span>67</span>
-                                                    </li>
-                                                    <li>
-                                                                                                                                                                                        <span>BLACK WIDOWS	</span>
-                                                        <span>64</span>
-                                                    </li>
-                                                </ul>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <!-- item -->
-
+                                <div id="lastgamescarouselid" class="owl-carousel owl-carousel-1">
+                                    
                                 </div>
-                                <!-- owl-carousel-1 -->
                             </div>
 
                             <!-- tab-pane -->
@@ -535,6 +353,51 @@ End Code
                     alert(result.status + ' ' + result.statusText);
                 }
             });
+
+
+        //append lastgames carouselid
+
+        $.ajax({
+            type: "POST",
+            url: baseUrl + '@Url.Action("Getlastgames", "Home")',
+            async: false,
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (result) {
+
+                var choiceContainer = $("#lastgamescarouselid");
+                if (result.length > 0) {
+
+                    choiceContainer.empty();
+                    $.each(result, function () {
+
+                        var d= '<div class="item"> ' +
+                                '<div class="entry-item"> ' +
+                                '<a  target="_blank" href="http://www.atlasstatistics.gr/Games/Details/' + this.Id + '"> ' +
+                                '<p>' + this.Gamedate + '</p> ' +
+                                '<ul class="clearfix"> ' +
+                                '<li> ' +
+                                '<span title="' + this.team1 + '">' + this.team1 + '</span> ' +
+                                '<span>' + this.team1score + '</span> ' +
+                                '</li> ' +
+                                '<li> ' +
+                                '<span title="' + this.team2 + '">' + this.team2 + '</span> ' +
+                                '<span>' + this.team2score + '</span> ' +
+                                '</li> ' +
+                                '</ul> ' +
+                                '</a> ' +
+                                '</div> ' +
+                                '</div>';
+                                   
+                        choiceContainer.append(d);
+                    });
+                }
+            },
+            error: function (result) {
+                alert(result.status + ' ' + result.statusText);
+            }
+        });
+
 
     });
 

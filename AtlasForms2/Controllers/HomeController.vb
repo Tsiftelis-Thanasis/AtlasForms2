@@ -159,5 +159,39 @@
 
     End Function
 
+    <HttpPost>
+    Public Function Getlastgames() As JsonResult
+
+
+        'Link
+        'Date as Σαβ 01/06/2017 
+        'gipedo ??
+        'omada a, pontoi a,
+        'omada b, pontoi b         
+
+
+        Dim lastgames = (From g In pdb.GamesTable
+                         Join ta In pdb.TeamsStatisticsTable On ta.Gameid Equals g.Id
+                         Join teama In pdb.TeamsTable On ta.Teamid Equals teama.Id
+                         Join tb In pdb.TeamsStatisticsTable On tb.Gameid Equals g.Id
+                         Join teamb In pdb.TeamsTable On tb.Teamid Equals teamb.Id
+                         Where ta.gipedouxos = 1 And tb.gipedouxos = 0
+                         Order By g.Id Descending
+                         Select g.Id, Gamedate = g.Gamedate,
+                             g.Gamestadium, team1 = teama.TeamName, team1score = ta.ptstotal,
+                            team2 = teamb.TeamName, team2score = tb.ptstotal).Take(10).
+                            AsEnumerable.Select(Function(o) New With {
+                            .Id = o.Id, .Gamedate = o.Gamedate.GetValueOrDefault().ToString("ddd") & " " & o.Gamedate.GetValueOrDefault().ToString("dd/MM/yyyy"),
+                             .Gamestadium = o.Gamestadium, .team1 = o.team1, .team1score = o.team1score,
+                            .team2 = o.team2, .team2score = o.team2score
+                            }).ToList
+
+
+        Return Json(lastgames, JsonRequestBehavior.AllowGet)
+
+
+
+    End Function
+
 
 End Class
